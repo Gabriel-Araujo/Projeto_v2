@@ -1,3 +1,1 @@
-"# Projeto_v2" 
-"# Projeto_v2" 
-"# Projeto_v2" 
+Projeto para as cadeiras de Linguagem de Programação e Laboratório.
