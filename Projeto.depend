@@ -1,0 +1,52 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\david\documents\programação\projeto\main.cpp
+	<iostream>
+
+1620947022 source:c:\users\david\documents\programação\projeto\src\controler.cpp
+	"Controler.h"
+
+1620949844 c:\users\david\documents\programação\projeto\include\controler.h
+	"Local.h"
+
+1620950207 c:\users\david\documents\programação\projeto\include\local.h
+	"Insumos.h"
+
+1620948608 c:\users\david\documents\programação\projeto\include\insumos.h
+	<string>
+
+1620946976 source:c:\users\david\documents\programação\projeto\src\epi.cpp
+	"EPI.h"
+
+1620948633 c:\users\david\documents\programação\projeto\include\epi.h
+	"Insumos.h"
+
+1620946930 source:c:\users\david\documents\programação\projeto\src\insumos.cpp
+	"Insumos.h"
+
+1620946994 source:c:\users\david\documents\programação\projeto\src\local.cpp
+	"Local.h"
+
+1620946966 source:c:\users\david\documents\programação\projeto\src\medicamento.cpp
+	"Medicamento.h"
+
+1620948626 c:\users\david\documents\programação\projeto\include\medicamento.h
+	"Insumos.h"
+
+1620948918 source:c:\users\david\documents\programação\projeto\src\menu.cpp
+	"Menu.h"
+
+1620949842 c:\users\david\documents\programação\projeto\include\menu.h
+	"Controler.h"
+
+1620946949 source:c:\users\david\documents\programação\projeto\src\vacina.cpp
+	"Vacina.h"
+
+1620948619 c:\users\david\documents\programação\projeto\include\vacina.h
+	"Insumos.h"
+
+1620947038 source:c:\users\david\documents\programação\projeto\src\persistencia.cpp
+	"Persistencia.h"
+
+1620950367 c:\users\david\documents\programação\projeto\include\persistencia.h
+	"Controler.h"
+
