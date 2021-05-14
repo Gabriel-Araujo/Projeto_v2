@@ -1,9 +1,11 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << " Gabriel Gentil" << endl;
+    string nome = "Gabriel";
+    cout << "Hello world!" << nome << endl;
     return 0;
 }
