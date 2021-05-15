@@ -6,7 +6,6 @@ class Insumos
 {
     public:
         Insumos();
-        virtual void get_insumo_infos() = 0;
         virtual ~Insumos();
 
     protected:
