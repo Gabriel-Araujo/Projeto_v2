@@ -15,7 +15,10 @@ class Insumos
         int qnt_itens;
         std::string d_vencimento;
         std::string nome_fab;
-        int tipoInsumo;
+        std::string tipoInsumo;
+        std::string local;
+        int codigo_unico;
+
 
     private:
 
