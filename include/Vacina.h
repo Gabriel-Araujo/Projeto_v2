@@ -16,6 +16,9 @@ class Vacina : public Insumos
         void set_fabricante(std::string fab);
         void set_local(std::string l);
         void set_condigo(std::string unico);
+        void set_tipo_vac(std::string t);
+        void set_quant_doses(int qd);
+        void set_intervalo(int it);
 
 
 
