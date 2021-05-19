@@ -2,11 +2,11 @@
 #define CONTROLER_H
 #include "Local.h"
 
-class Controler
+class Controlador
 {
     public:
-        Controler();
-        virtual ~Controler();
+        Controlador();
+        virtual ~Controlador();
         void CadastroInsumosMs();
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*

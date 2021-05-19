@@ -1,13 +1,13 @@
 #ifndef MENU_H
 #define MENU_H
-#include "Controler.h"
+#include "Controlador.h"
 
 class Menu
 {
     public:
         Menu();
         virtual ~Menu();
-        // Funções para exibir informações:
+        // Funï¿½ï¿½es para exibir informaï¿½ï¿½es:
         void Boas_vindas();
         void Escolhaum();
         void Escolhadois();

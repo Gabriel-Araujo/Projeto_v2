@@ -1,6 +1,6 @@
 #ifndef PERSISTENCIA_H
 #define PERSISTENCIA_H
-#include "Controler.h"
+#include "Controlador.h"
 
 class Persistencia
 {
@@ -14,7 +14,7 @@ class Persistencia
         void _criar_estoque(std::string nome_do_arquivo, int tipo);                                                                             // CREATE
 
 
-        // Funções que podem ser usadas pelo programador:
+        // Funï¿½ï¿½es que podem ser usadas pelo programador:
         void criar_estoques();
         void show_file(std::string file_name);                                                                                       // READ
         std::string read_a_line_of_the_file(std::string name, std::string file_name);                                                          // READ
