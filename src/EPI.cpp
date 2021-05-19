@@ -2,7 +2,10 @@
 
 EPI::EPI()
 {
-    //ctor
+    tipoInsumo = "epi";
+
+    tipo_epi = "NULL";
+    descricao = "NULL";
 }
 
 EPI::~EPI()
