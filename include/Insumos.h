@@ -11,8 +11,8 @@ class Insumos
     protected:
 
         std::string nome;
-        std::string quantidade;
-        std::string valor_unitario;
+        int quantidade;
+        int valor_unitario;
         std::string data_vencimento;
         std::string nome_fab;
         std::string tipoInsumo;

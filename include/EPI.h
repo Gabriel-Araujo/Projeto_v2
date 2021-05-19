@@ -11,7 +11,8 @@ class EPI : public Insumos
     protected:
 
     private:
-        std::string info_dtl;
+        std::string tipo_epi;
+        std::string descricao;
 };
 
 #endif // EPI_H

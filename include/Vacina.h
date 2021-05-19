@@ -11,9 +11,9 @@ class Vacina : public Insumos
     protected:
 
     private:
-        std::string tp_vac;
-        int qnt_doses;
-        int intervalo;//intervalo entre as doses
+        std::string tipo_vac;
+        int quantidade_doses;
+        int intervalo; //intervalo entre as doses
 
 };
 
