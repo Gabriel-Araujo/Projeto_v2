@@ -1,8 +1,12 @@
 #include "Vacina.h"
 
-Vacina::Vacina()
+Vacina::Vacina(): Insumos()
 {
-    //ctor
+    tipoInsumo = "vacina";
+
+    tipo_vac = "Indefindo";
+    quantidade_doses = 0;
+    intervalo = 0;
 }
 
 Vacina::~Vacina()
