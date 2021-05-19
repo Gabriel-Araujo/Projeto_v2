@@ -11,13 +11,13 @@ class Insumos
     protected:
 
         std::string nome;
-        float valor;
-        int qnt_itens;
-        std::string d_vencimento;
+        std::string quantidade;
+        std::string valor_unitario;
+        std::string data_vencimento;
         std::string nome_fab;
         std::string tipoInsumo;
         std::string local;
-        int codigo_unico;
+        std::string codigo_unico;
 
 
     private:
