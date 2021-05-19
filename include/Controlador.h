@@ -1,6 +1,8 @@
 #ifndef CONTROLER_H
 #define CONTROLER_H
-#include "Local.h"
+
+#include "Insumos.h"
+#include <vector>
 
 class Controlador
 {
@@ -14,7 +16,7 @@ class Controlador
         void cadastrar_medicamentos(const t_insumos medicamentos, const string local);
         void cadastrar_epis(const t_insumos medicamentos, const string local);
         */
-        void ConsultaInsumos(Local loc);
+        void ConsultaInsumos(Insumos insumo);
 
         // Funções de consulta:
         /*
@@ -27,7 +29,7 @@ class Controlador
     protected:
 
     private:
-        Local local[28];
+        std::vector<Insumos*> insumos;
 };
 
 #endif // CONTROLER_H
