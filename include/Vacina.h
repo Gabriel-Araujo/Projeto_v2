@@ -9,6 +9,15 @@ class Vacina : public Insumos
         int quantidade_doses;
         int intervalo; //intervalo entre as doses
 
+        void set_nome(std::string n);
+        void set_quantidade(int q);
+        void set_valor_unitario(int q);
+        void set_vencimento(std::string data);
+        void set_fabricante(std::string fab);
+        void set_local(std::string l);
+        void set_condigo(std::string unico);
+
+
 
     protected:
 
