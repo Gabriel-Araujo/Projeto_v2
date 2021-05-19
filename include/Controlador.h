@@ -6,6 +6,11 @@
 
 class Controlador
 {
+    private:
+        std::vector<Insumos*> insumos;
+
+    protected:
+
     public:
         Controlador();
         virtual ~Controlador();
@@ -26,10 +31,7 @@ class Controlador
         void consult_est_especifico(t_est *est, std::string busca);
         */
 
-    protected:
 
-    private:
-        std::vector<Insumos*> insumos;
 };
 
 #endif // CONTROLER_H

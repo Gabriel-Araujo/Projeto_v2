@@ -4,16 +4,20 @@
 
 class Vacina : public Insumos
 {
-    public:
-        Vacina();
-        virtual ~Vacina();
-
-    protected:
-
     private:
         std::string tipo_vac;
         int quantidade_doses;
         int intervalo; //intervalo entre as doses
+
+
+    protected:
+
+
+    public:
+        Vacina();
+        virtual ~Vacina();
+
+
 
 };
 
