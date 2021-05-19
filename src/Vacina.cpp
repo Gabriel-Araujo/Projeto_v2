@@ -13,3 +13,18 @@ Vacina::~Vacina()
 {
     //dtor
 }
+
+
+void Vacina::set_nome(std::string nome) {
+    this->nome = nome;
+}
+
+
+void Vacina::set_quantidade(int q) {
+    if (q < 0) {
+        quantidade = 0;
+    }
+    else {
+        quantidade = q;
+    }
+}
