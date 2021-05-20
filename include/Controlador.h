@@ -21,7 +21,7 @@ class Controlador
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs();
-        void cadastrar_vacina();
+        //void cadastrar_vacina();
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
         void cadastrar_medicamentos(const t_insumos medicamentos, const string local);
