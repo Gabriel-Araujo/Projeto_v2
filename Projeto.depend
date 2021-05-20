@@ -50,30 +50,44 @@
 1620950367 c:\users\david\documents\programação\projeto\include\persistencia.h
 	"Controler.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\main.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\main.cpp
 	<iostream>
+	<string>
 
 1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\controler.cpp
 	"Controler.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\epi.cpp
-	"EPI.h"
+1621472322 source:c:\users\david\documents\gitprojeto\projeto_v2\src\epi.cpp
+	"../include/EPI.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\insumos.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\insumos.cpp
 	"Insumos.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\local.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\local.cpp
 	"Local.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\medicamento.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\medicamento.cpp
 	"Medicamento.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\menu.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\menu.cpp
 	"Menu.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\persistencia.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\persistencia.cpp
 	"Persistencia.h"
 
-1621024371 source:c:\users\david\documents\gitprojeto\projeto_v2\src\vacina.cpp
+1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\vacina.cpp
 	"Vacina.h"
+
+1621470218 source:c:\users\david\documents\gitprojeto\projeto_v2\src\controlador.cpp
+	"../include/Controlador.h"
+
+1621469985 c:\users\david\documents\gitprojeto\projeto_v2\include\controlador.h
+	"Insumos.h"
+	<vector>
+
+1621469985 c:\users\david\documents\gitprojeto\projeto_v2\include\insumos.h
+	<string>
+
+1621472274 c:\users\david\documents\gitprojeto\projeto_v2\include\epi.h
+	"Insumos.h"
 
