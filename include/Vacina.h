@@ -15,7 +15,7 @@ class Vacina : public Insumos
         void set_vencimento(std::string data);
         void set_fabricante(std::string fab);
         void set_local(std::string l);
-        void set_condigo(std::string unico);
+        void set_codigo(std::string unico);
         void set_tipo_vac(std::string t);
         void set_quant_doses(int qd);
         void set_intervalo(int it);
@@ -27,6 +27,8 @@ class Vacina : public Insumos
 
     public:
         Vacina();
+        Vacina(std::string nome, int quantidade, int valor_unitario, std::string vencimento, std::string fabricante,
+               std::string local, std::string codigo_unico, std::string tipo_vac, int quant_doses, int intervalo);
         virtual ~Vacina();
 
 
