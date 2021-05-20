@@ -3,6 +3,9 @@
 
 #include "Insumos.h"
 #include "Vacina.h"
+#include "Medicamento.h"
+#include "EPI.h"
+
 #include <vector>
 #include <iostream>
 
@@ -12,7 +15,7 @@ class Controlador
         std::vector<Insumos*> insumos;
         std::string locais[29] = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
                                    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
-                                   "SP", "SE", "TO", "DF", "ministerio"};
+                                   "SP", "SE", "TO", "DF", "Ministerio"};
         bool estado_existe(std::string estado);
 
     protected:
@@ -20,7 +23,8 @@ class Controlador
     public:
         Controlador();
         virtual ~Controlador();
-        void CadastroInsumosMs();
+        void CadastroInsumosMs(std::string tipoInsumo);
+        void CadastroInsumosEst(std::string tipoInsumo);
         //void cadastrar_vacina();
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*

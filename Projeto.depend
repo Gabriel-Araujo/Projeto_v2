@@ -50,7 +50,7 @@
 1620950367 c:\users\david\documents\programação\projeto\include\persistencia.h
 	"Controler.h"
 
-1621473736 source:c:\users\david\documents\gitprojeto\projeto_v2\main.cpp
+1621476359 source:c:\users\david\documents\gitprojeto\projeto_v2\main.cpp
 	<iostream>
 	<string>
 	"include/Vacina.h"
@@ -77,15 +77,17 @@
 1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\persistencia.cpp
 	"Persistencia.h"
 
-1621469985 source:c:\users\david\documents\gitprojeto\projeto_v2\src\vacina.cpp
-	"Vacina.h"
+1621474408 source:c:\users\david\documents\gitprojeto\projeto_v2\src\vacina.cpp
+	"../include/Vacina.h"
 
-1621474246 source:c:\users\david\documents\gitprojeto\projeto_v2\src\controlador.cpp
+1621476205 source:c:\users\david\documents\gitprojeto\projeto_v2\src\controlador.cpp
 	"../include/Controlador.h"
 
-1621473736 c:\users\david\documents\gitprojeto\projeto_v2\include\controlador.h
+1621476193 c:\users\david\documents\gitprojeto\projeto_v2\include\controlador.h
 	"Insumos.h"
 	"Vacina.h"
+	"Medicamento.h"
+	"EPI.h"
 	<vector>
 	<iostream>
 

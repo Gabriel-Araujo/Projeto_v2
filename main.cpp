@@ -10,7 +10,10 @@ int main()
 {
     Controlador controlador;
 
-    controlador.cadastrar_vacina();
+    string tipoinsumo;
+    cin >> tipoinsumo;
+    getchar();
+    controlador.CadastroInsumosMs(tipoinsumo);
 
     string nome = "Gabriel";
     cout << "Hello world!" << nome << endl;
