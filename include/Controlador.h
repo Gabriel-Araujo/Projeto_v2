@@ -2,7 +2,9 @@
 #define CONTROLER_H
 
 #include "Insumos.h"
+#include "Vacina.h"
 #include <vector>
+#include <iostream>
 
 class Controlador
 {
@@ -11,6 +13,7 @@ class Controlador
         std::string locais[29] = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
                                    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
                                    "SP", "SE", "TO", "DF", "ministerio"};
+        bool estado_existe(std::string estado);
 
     protected:
 
@@ -18,9 +21,9 @@ class Controlador
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs();
+        void cadastrar_vacina();
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
-        void cadastrar_vacina(const t_insumos vacina, const string local);
         void cadastrar_medicamentos(const t_insumos medicamentos, const string local);
         void cadastrar_epis(const t_insumos medicamentos, const string local);
         */
