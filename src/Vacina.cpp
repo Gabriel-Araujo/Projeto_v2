@@ -14,14 +14,14 @@ Vacina::Vacina(std::string nome, int quantidade, int valor_unitario, std::string
                std::string local, std::string codigo_unico, std::string tipo_vac, int quant_doses, int intervalo): Insumos() {
     set_nome(nome);
     set_quantidade(quantidade);
-    /*set_valor_unitario(valor_unitario);
+    set_valor_unitario(valor_unitario);
     set_vencimento(vencimento);
     set_fabricante(fabricante);
     set_local(local);
-    set_condigo(codigo_unico);
+    set_codigo(codigo_unico);
     set_tipo_vac(tipo_vac);
     set_quant_doses(quant_doses);
-    set_intervalo(intervalo);*/
+    set_intervalo(intervalo);
     tipoInsumo = "vacina";
 }
 
