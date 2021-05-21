@@ -19,6 +19,6 @@ Local::~Local()
 
 
 bool Local::local_existe(std::string local) {
-    transform(local.begin(), local.end(),local.begin(), [](char c){ return tolower(c);});
+    transform(local.begin(), local.end(),local.begin(), [](char c){ return toupper(c);});
     return any_of(locais_possiveis.begin(), locais_possiveis.end(),[local](const std::string& elem) {return elem == local;});
 }
