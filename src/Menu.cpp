@@ -1,6 +1,3 @@
-
-#include <Menu.h>
-
 #include "Menu.h"
 
 Menu::Menu()
@@ -8,7 +5,7 @@ Menu::Menu()
     //ctor
 }
 
-
+using namespace std;
 
 void Menu::Boas_vindas(){
 
@@ -131,7 +128,17 @@ void Menu::Insumos_distribuidos()
     printf("Digite 0 para sair\n");
     printf("----------------------------------------------------------------------------------\n");
     printf("Digita aqui sua escolha:");
+}
 
+
+void Menu::exibir_estados() {
+    cout << "| AC - Acre      | AL - Alagoas        | AP - Amapá               | AM - Amazonas          |\n";
+    cout << "| BA - Bahia     | CE - Ceará          | ES - Espírito santo      | GO - Goiás             |\n";
+    cout << "| MA - Maranhão  | MT - Mato Grosso    | MS - Mato Grosso do Sul  | MG - Minas Gerais      |\n";
+    cout << "| PA - Pará      | PB - Paraíba        | PR - Paraná              | PE - Pernambuco        |\n";
+    cout << "| PI - Piauí     | RJ - Rio de Janeiro | RN - Rio Grande do Norte | RS - Rio Grande do Sul |\n";
+    cout << "| RO - Rondônia  | RR - Roraima        | SC - Santa Catarina      | SP - São Paulo         |\n";
+    cout << "| SE - Sergipe   | TO - Tocantins      | DF - Distrito Federal    |                        |\n";
 }
 
 Menu::~Menu()

@@ -1,6 +1,7 @@
 #ifndef MENU_H
 #define MENU_H
 #include "Controlador.h"
+#include <iostream>
 
 class Menu
 {
@@ -17,6 +18,7 @@ class Menu
         void Unidades_distribuidas();
         void Unidades_distribuidas_submenu_3();
         void Insumos_distribuidos();
+        void exibir_estados();
 
 
     protected:
