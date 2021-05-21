@@ -30,7 +30,7 @@ void Controlador::CadastroInsumosMs(string tipo_ins)
     }
 }
 
-void Controlador::CadastroInsumosEst(std::string tipoInsumo)
+void Controlador::DistribuirInsumosEstados(std::string tipoInsumo)
 {
     //Aqui falta pensar no jeito de manipular o vector para gente nao ter que cadastrar dnv
 }
