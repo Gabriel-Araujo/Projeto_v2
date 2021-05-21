@@ -157,7 +157,7 @@ void Controlador::cadastrar_epis() {
 
     local = "MIN";
 
-    cout << "Informe a dosagem do Medicamento: " << endl;
+    cout << "Informe o tipo da epi: " << endl;
     getline(cin, tipo_epi);
     cout << "Informe a descricap do EPI: " << endl;
     getline(cin, descricao);
