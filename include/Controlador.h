@@ -5,6 +5,7 @@
 #include "Vacina.h"
 #include "Medicamento.h"
 #include "EPI.h"
+#include "Local.h"
 
 #include <vector>
 #include <array>
@@ -15,10 +16,6 @@ class Controlador
 {
     private:
         std::vector<Insumos*> insumos;
-        std::array<std::string, 29> locais = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
-                                   "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
-                                   "SP", "SE", "TO", "DF", "Ministerio"};
-        bool estado_existe(std::string& estado);
         void cadastrar_vacina();
         void cadastrar_medicamentos();
         void cadastrar_epis();
