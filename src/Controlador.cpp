@@ -57,7 +57,7 @@ void Controlador::cadastrar_vacina() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "Ministerio";
+    local = "MINISTERIO";
 
     cout << "Digite um tipo vacina: " << endl;
     getline(cin, tipo_vacina);
@@ -94,7 +94,7 @@ void Controlador::cadastrar_medicamentos() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "Ministerio";
+    local = "MINISTERIO";
 
     cout << "Informe a dosagem do Medicamento: " << endl;
     getline(cin, dosagem);
@@ -131,7 +131,7 @@ void Controlador::cadastrar_epis() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "Ministerio";
+    local = "MINISTERIO";
 
     cout << "Informe a dosagem do Medicamento: " << endl;
     getline(cin, tipo_epi);
