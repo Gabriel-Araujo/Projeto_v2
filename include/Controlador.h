@@ -7,16 +7,18 @@
 #include "EPI.h"
 
 #include <vector>
+#include <array>
+#include <algorithm>
 #include <iostream>
 
 class Controlador
 {
     private:
         std::vector<Insumos*> insumos;
-        std::string locais[29] = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
+        std::array<std::string, 29> locais = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
                                    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
                                    "SP", "SE", "TO", "DF", "Ministerio"};
-        bool estado_existe(std::string estado);
+        bool estado_existe(const std::string& estado);
 
     protected:
 
@@ -25,7 +27,7 @@ class Controlador
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
         void CadastroInsumosEst(std::string tipoInsumo);
-        //void cadastrar_vacina();
+        void cadastrar_vacina();
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
         void cadastrar_medicamentos(const t_insumos medicamentos, const string local);

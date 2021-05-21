@@ -121,8 +121,8 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo)
     //Aqui falta pensar no jeito de manipular o vector para gente nao ter que cadastrar dnv
 }
 
-/*
-void Controlador::CadastroInsumosMs() {
+
+void Controlador::cadastrar_vacina() {
     string nome, vencimento, fabricante, local, codigo, tipo_vacina;
     int quantidade, valor_unitario, quant_doses, intervalo;
 
@@ -163,13 +163,8 @@ void Controlador::CadastroInsumosMs() {
     Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
     insumos.push_back(vacina);
-}*/
+}
 
-bool Controlador::estado_existe(string estado) {
-    for (auto item: locais) {
-        if (item == estado) {
-            return true;
-        }
-    }
-    return false;
+bool Controlador::estado_existe(const string& estado) {
+    return any_of(locais.begin(), locais.end(),[estado](const string& elem) {return elem == estado;});
 }
