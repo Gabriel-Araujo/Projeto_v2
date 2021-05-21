@@ -36,9 +36,6 @@ Controlador::Controlador()
 
 Controlador::~Controlador()
 {
-    for (auto item: insumos) {
-        delete item;
-    }
 }
 
 //Tem que ser temporaria
@@ -169,6 +166,7 @@ void Controlador::cadastrar_epis() {
 
     insumos.push_back(epi);
 }
+
 
 bool Controlador::local_existe(std::string local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_sigla() == local;});

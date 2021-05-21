@@ -14,7 +14,9 @@ Local::Local(std::string nome, std::string sigla) {
 
 Local::~Local()
 {
-    //dtor
+    for (auto item: insumos) {
+        delete item;
+    }
 }
 
 
