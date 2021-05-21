@@ -19,6 +19,9 @@ class Controlador
                                    "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
                                    "SP", "SE", "TO", "DF", "Ministerio"};
         bool estado_existe(const std::string& estado);
+        void cadastrar_vacina();
+        void cadastrar_medicamentos();
+        void cadastrar_epis();
 
     protected:
 
@@ -27,9 +30,6 @@ class Controlador
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
         void DistribuirInsumosEstados(std::string tipoInsumo);
-        void cadastrar_vacina();
-        void cadastrar_medicamentos();
-        void cadastrar_epis();
 
 
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
