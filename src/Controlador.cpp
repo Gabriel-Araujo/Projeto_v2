@@ -7,7 +7,9 @@ Controlador::Controlador()
 
 Controlador::~Controlador()
 {
-    //dtor
+    for (auto item: insumos) {
+        delete item;
+    }
 }
 //Tem que ser temporaria
 void Controlador::cadastrar_vacina() {
