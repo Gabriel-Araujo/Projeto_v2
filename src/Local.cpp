@@ -30,3 +30,11 @@ std::string Local::get_sigla() {
 std::string Local::get_nome_extenso() {
     return nome_extenso;
 }
+
+
+/* TODO
+ * Implementar uma função pra verificar se um insumo existe
+ *
+ * Implementar uma função pra retornar a posição do insumo no array
+ *
+ */
