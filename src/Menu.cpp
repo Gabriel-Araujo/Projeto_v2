@@ -1,3 +1,6 @@
+
+#include <Menu.h>
+
 #include "Menu.h"
 
 Menu::Menu()
@@ -6,7 +9,7 @@ Menu::Menu()
 }
 
 
-//funcao de inicio do programa para apresentação
+
 void Menu::Boas_vindas(){
 
     printf("----------------------------------------------------------------------------------\n");
@@ -18,13 +21,13 @@ void Menu::Boas_vindas(){
     printf("\t Digite 2 para distribuir os insumos disponiveis no estoque\n\n");
     printf("\t Digite 3 para consultar os insumos disponiveis nos estoques\n\n");
     printf("\t Digite 4 para saber quantas unidades foram destribuidas para os Estados\n\n");
-    printf("\t Digite 5 para consultar os insumos distribuidos por Estado\n\n");// esse aqui eh mais especifico entao acho q cabe deixar ele
+    printf("\t Digite 5 para consultar os insumos distribuidos por Estado\n\n");
     printf("Digite 0 para sair\n");
     printf("-----------------------------------------------------------------------------------\n");
 }
 
 
-void Menu::Escolhaum(){
+void Menu::Cadastro(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 1, qual tipo de insumo voce deseja cadastrar:\n\n");
@@ -38,10 +41,10 @@ void Menu::Escolhaum(){
 }
 
 
-void Menu::Escolhadois(){
+void Menu::Distribuir(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 2, nos informe para qual voce deseja destribuir:\n\n");
+    printf("Como voce escolheu o item 2, nos informe para qual voce deseja distribuir:\n\n");
     printf("----------------------------------------------------------------------------------\n");
     printf("Digite 1 para cadastrar a distribuicao para os Estados:\n");
     printf("Caso nao queira distribuir mais para nehum Estado, digite 0:\n");
@@ -50,10 +53,10 @@ void Menu::Escolhadois(){
 }
 
 
-void Menu::subEscolhadois(){
+void Menu::Distribuir_submenu_1(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 1, qual tipo de insumo voce deseja destribuir para o Estado:\n\n");
+    printf("Como voce escolheu o item 1, qual tipo de insumo voce deseja distribuir para o Estado:\n\n");
     printf("----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira distribuir vacinas\n");
     printf("Digite 2 caso queira distribuir medicamentos\n");
@@ -62,11 +65,11 @@ void Menu::subEscolhadois(){
     printf("Digita aqui sua escolha:");
 
 }
-//funcao caso o usuario escolha o item 3 da funcao acima
-void Menu::Escolhatres(){
+
+void Menu::Consultar(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informação:\n\n");
+    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informaï¿½ï¿½o:\n\n");
     printf("----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira receber a quantidade de itens disponiveis em estoque no geral\n");
     printf("Digite 2 caso queira receber a descricao dos itens disponiveis em estoque\n");
@@ -77,10 +80,10 @@ void Menu::Escolhatres(){
 }
 
 //funcao caso o usuario escolher a opcao 3, escolha novamente a opcao 3, coloca dentro da funcao de insumos disponiveis se a funcao for necessaria
-void Menu::subEscolhatres(){
+void Menu::Consultar_submenu_3(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informação:\n\n");
+    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informaï¿½ï¿½o:\n\n");
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira receber a descricao e quantidade das vacinas\n ");
     printf("Digite 2 caso queira receber a descricao e quantidade dos medicamentos\n ");
@@ -90,11 +93,11 @@ void Menu::subEscolhatres(){
     printf("Digita aqui sua escolha:");
 }
 
-//funcao caso o usario escolha o item 4
-void Menu::Escolhaquatro(){
+
+void Menu::Unidades_distribuidas(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 4, nos diga como voce quer receber a informação:\n\n");
+    printf("Como voce escolheu o item 4, nos diga como voce quer receber a informaÃ§Ã£o:\n\n");
     printf("----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira receber a quantidade de itens distribuidos para os Estados no geral\n");
     printf("Digite 2 caso queira receber a descricao dos itens distribuidos para os Estados\n");
@@ -105,10 +108,10 @@ void Menu::Escolhaquatro(){
 
 }
 //funcao caso o usuario escolher a opcao 4, escolha a opcao 3, coloca dentro da funcao de insumos distribuidos se a funcao for necessaria
-void Menu::subEscolhaquatro(){
+void Menu::Unidades_distribuidas_submenu_3(){
 
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informação:\n\n");
+    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informaÃ§Ã£o:\n\n");
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira receber a descricao e quantidade das vacinas\n ");
     printf("Digite 2 caso queira receber a descricao e quantidade dos medicamentos\n ");
@@ -119,7 +122,7 @@ void Menu::subEscolhaquatro(){
 
 }
 
-void Menu::Escolhacinco()
+void Menu::Insumos_distribuidos()
 {
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 5, informe qual Unidade Federativa voce deseja obter as informacoes\n");
