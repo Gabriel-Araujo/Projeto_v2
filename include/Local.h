@@ -10,7 +10,6 @@ class Local
 private:
     std::string nome_extenso;
     std::string sigla;
-    std::vector<Insumos*> insumos;
 
 protected:
     std::array<std::string, 28> locais_possiveis =
@@ -21,6 +20,7 @@ protected:
             };
 
 public:
+    std::vector<Insumos*> insumos;
     Local();
     Local(std::string nome, std::string sigla);
     virtual ~Local();

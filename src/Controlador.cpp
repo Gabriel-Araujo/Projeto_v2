@@ -81,7 +81,7 @@ void Controlador::cadastrar_vacina() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MINISTERIO";
+    local = "MIN";
 
     cout << "Digite um tipo vacina: " << endl;
     getline(cin, tipo_vacina);
@@ -94,7 +94,7 @@ void Controlador::cadastrar_vacina() {
 
     Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
-    insumos.push_back(vacina);
+    locais.at(get_local(local)).insumos.push_back(vacina);
 }
 
 
@@ -118,7 +118,7 @@ void Controlador::cadastrar_medicamentos() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MINISTERIO";
+    local = "MIN";
 
     cout << "Informe a dosagem do Medicamento: " << endl;
     getline(cin, dosagem);
@@ -131,7 +131,7 @@ void Controlador::cadastrar_medicamentos() {
 
     Medicamento *medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
 
-    insumos.push_back(medicamento);
+    locais.at(get_local(local)).insumos.push_back(medicamento);
 }
 
 
@@ -155,7 +155,7 @@ void Controlador::cadastrar_epis() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MINISTERIO";
+    local = "MIN";
 
     cout << "Informe a dosagem do Medicamento: " << endl;
     getline(cin, tipo_epi);
@@ -164,7 +164,7 @@ void Controlador::cadastrar_epis() {
 
     EPI *epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
-    insumos.push_back(epi);
+    locais.at(get_local(local)).insumos.push_back(epi);
 }
 
 
@@ -174,4 +174,12 @@ bool Controlador::local_existe(std::string local) {
 
     if (test_sigla || test_nome) { return true; }
     else {return false;}
+}
+
+
+int Controlador::get_local(const std::string local) {
+    for (int index = 0; index < locais.size(); index++) {
+        if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; };
+    }
+    return -1;
 }

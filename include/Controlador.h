@@ -11,11 +11,12 @@
 #include <array>
 #include <algorithm>
 #include <iostream>
+#include <iterator>
+
 
 class Controlador
 {
     private:
-        std::vector<Insumos*> insumos;
         std::array<Local, 29> locais;
         void cadastrar_vacina();
         void cadastrar_medicamentos();
@@ -23,6 +24,7 @@ class Controlador
 
     protected:
         bool local_existe(std::string local);
+        int get_local(std::string local);
 
     public:
         Controlador();
