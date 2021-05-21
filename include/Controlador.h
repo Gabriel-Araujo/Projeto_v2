@@ -28,10 +28,12 @@ class Controlador
         void CadastroInsumosMs(std::string tipoInsumo);
         void CadastroInsumosEst(std::string tipoInsumo);
         void cadastrar_vacina();
+        void cadastrar_medicamentos();
+        void cadastrar_epis();
+
+
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
-        void cadastrar_medicamentos(const t_insumos medicamentos, const string local);
-        void cadastrar_epis(const t_insumos medicamentos, const string local);
         */
         void ConsultaInsumos(Insumos insumo);
 
