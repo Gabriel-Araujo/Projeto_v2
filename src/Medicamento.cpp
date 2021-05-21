@@ -21,7 +21,7 @@ Medicamento::Medicamento(std::string nome, int quantidade, int valor_unitario, s
     set_dosagem(dsg);
     set_administracao(adm);
     set_disposicao(disp);
-    tipoInsumo = "medicamento";
+    tipoInsumo = "Medicamento";
 }
 
 void Medicamento::set_nome(std::string nome)

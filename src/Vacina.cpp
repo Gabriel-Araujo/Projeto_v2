@@ -1,4 +1,4 @@
-#include "Vacina.h"
+#include "../include/Vacina.h"
 
 Vacina::Vacina(): Insumos()
 {
@@ -22,7 +22,7 @@ Vacina::Vacina(std::string nome, int quantidade, int valor_unitario, std::string
     set_tipo_vac(tipo_vac);
     set_quant_doses(quant_doses);
     set_intervalo(intervalo);
-    tipoInsumo = "vacina";
+    tipoInsumo = "Vacina";
 }
 
 Vacina::~Vacina()

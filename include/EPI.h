@@ -10,6 +10,16 @@ class EPI : public Insumos
          EPI(std::string nome, int quantidade, int valor_unitario, std::string vencimento, std::string fabricante,
                std::string local, std::string codigo_unico, std::string tipo_epi, std::string descricao);
 
+        std::string get_nome();
+        int get_quantidade();
+        int set_valor_unitario();
+        std::string get_vencimento();
+        std::string get_fabricante();
+        std::string get_local();
+        std::string get_codigo();
+        std::string get_tipo_epi();
+        std::string get_descricao();
+
 
     protected:
 
