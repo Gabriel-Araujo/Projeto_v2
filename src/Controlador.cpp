@@ -144,7 +144,7 @@ void Controlador::cadastrar_epis() {
 }
 
 
-bool Controlador::estado_existe(const string& estado) {
-    transform(estado.begin(), estado.end(),estado.begin(), [](char c){ return toupper(c);});
+bool Controlador::estado_existe(string& estado) {
+    transform(estado.begin(), estado.end(),estado.begin(), [](char c){ return tolower(c);});
     return any_of(locais.begin(), locais.end(),[estado](const string& elem) {return elem == estado;});
 }
