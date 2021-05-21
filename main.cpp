@@ -17,7 +17,8 @@ int main()
     getchar();
     controlador.CadastroInsumosMs(tipoinsumo);
 
-    string nome = "Gabriel";
-    cout << "Hello world!" << nome << endl;
+
+
+    cout << "Hello world!" << endl;
     return 0;
 }
