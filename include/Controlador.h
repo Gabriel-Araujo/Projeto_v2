@@ -16,11 +16,13 @@ class Controlador
 {
     private:
         std::vector<Insumos*> insumos;
+        std::array<Local, 29> locais;
         void cadastrar_vacina();
         void cadastrar_medicamentos();
         void cadastrar_epis();
 
     protected:
+        bool local_existe(std::string local);
 
     public:
         Controlador();

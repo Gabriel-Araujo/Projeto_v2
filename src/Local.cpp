@@ -18,7 +18,13 @@ Local::~Local()
 }
 
 
-bool Local::local_existe(std::string local) {
-    transform(local.begin(), local.end(),local.begin(), [](char c){ return toupper(c);});
-    return any_of(locais_possiveis.begin(), locais_possiveis.end(),[local](const std::string& elem) {return elem == local;});
+
+
+std::string Local::get_sigla() {
+    return sigla;
+}
+
+
+std::string Local::get_nome_extenso() {
+    return nome_extenso;
 }

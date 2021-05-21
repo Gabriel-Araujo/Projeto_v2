@@ -13,9 +13,9 @@ private:
     std::vector<Insumos> insumos;
 
 protected:
-    std::array<std::string, 29> locais_possiveis =
+    std::array<std::string, 28> locais_possiveis =
             {
-            "AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
+            "AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
             "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
             "SP", "SE", "TO", "DF", "MINISTERIO"
             };
@@ -25,7 +25,9 @@ public:
     Local(std::string nome, std::string sigla);
     virtual ~Local();
 
-    bool local_existe();
+
+    std::string get_sigla();
+    std::string get_nome_extenso();
 };
 
 #endif // LOCAL_H
