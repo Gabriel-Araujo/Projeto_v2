@@ -30,14 +30,11 @@ class Controlador
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
-<<<<<<< HEAD
-        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std:string estado);
+
+        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado);
         //void cadastrar_vacina();
-=======
         void DistribuirInsumosEstados(std::string tipoInsumo);
 
-
->>>>>>> 6014249f897011227008879c43fa155abc71db59
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
         */

@@ -175,7 +175,7 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
     for(int index = 0; index < locais.size(); index++){
         if(local_existe(estado)){
             for(int i = 0; i < 100; i++){
-                if(locais.at(index).getInsumos(i).getTipoInsumo){
+                if(locais.at(index).getInsumos(i).getTipoInsumo == tipoInsumo){
 
                 }else{
 

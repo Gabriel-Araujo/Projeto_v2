@@ -20,9 +20,9 @@ Local::~Local()
 }
 
 
-Insumos Local::getInsumos()
+Insumos Local::getInsumos(int index)
 {
-    return insumos;
+    return *insumos[index];
 }
 
 std::string Local::get_sigla() {
