@@ -32,7 +32,23 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Controlador.h" />
+		<Unit filename="include/EPI.h" />
+		<Unit filename="include/Insumos.h" />
+		<Unit filename="include/Local.h" />
+		<Unit filename="include/Medicamento.h" />
+		<Unit filename="include/Menu.h" />
+		<Unit filename="include/Persistencia.h" />
+		<Unit filename="include/Vacina.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Controlador.cpp" />
+		<Unit filename="src/EPI.cpp" />
+		<Unit filename="src/Insumos.cpp" />
+		<Unit filename="src/Local.cpp" />
+		<Unit filename="src/Medicamento.cpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Persistencia.cpp" />
+		<Unit filename="src/Vacina.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
