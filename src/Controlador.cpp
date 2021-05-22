@@ -62,7 +62,7 @@ void Controlador::DistribuirInsumosEstados(std::string tipoInsumo)
 
 void Controlador::cadastrar_vacina() {
     string nome, vencimento, fabricante, local, codigo, tipo_vacina;
-    int quantidade, valor_unitario, quant_doses, intervalo;
+    int quantidade, valor_unitario, quant_doses, intervalo, local_index;
 
 
     cout << "Digite o codigo unico:" << endl;
@@ -81,7 +81,7 @@ void Controlador::cadastrar_vacina() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MIN";
+    local = "MINISTÉRIO DA SAÚDE";
 
     cout << "Digite um tipo vacina: " << endl;
     getline(cin, tipo_vacina);
@@ -94,13 +94,14 @@ void Controlador::cadastrar_vacina() {
 
     Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
-    locais.at(get_local(local)).insumos.push_back(vacina);
+    local_index = get_local(local);
+    locais.at(local_index).insumos.push_back(vacina);
 }
 
 
 void Controlador::cadastrar_medicamentos() {
     string nome, vencimento, fabricante, local, codigo, tipo_vacina, dosagem, disposicao, administracao;
-    int quantidade, valor_unitario;
+    int quantidade, valor_unitario, local_index;
 
     cout << "Digite o codigo unico:" << endl;
     getline(cin, codigo);
@@ -118,7 +119,7 @@ void Controlador::cadastrar_medicamentos() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MIN";
+    local = "MINISTÉRIO DA SAÚDE";
 
     cout << "Informe a dosagem do Medicamento: " << endl;
     getline(cin, dosagem);
@@ -131,13 +132,14 @@ void Controlador::cadastrar_medicamentos() {
 
     Medicamento *medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
 
-    locais.at(get_local(local)).insumos.push_back(medicamento);
+    local_index = get_local(local);
+    locais.at(local_index).insumos.push_back(medicamento);
 }
 
 
 void Controlador::cadastrar_epis() {
     string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao;
-    int quantidade, valor_unitario;
+    int quantidade, valor_unitario, local_index;
 
     cout << "Digite o codigo unico:" << endl;
     getline(cin, codigo);
@@ -155,7 +157,7 @@ void Controlador::cadastrar_epis() {
     cout << "Digite o nome do fabricante: " << endl;
     getline(cin, fabricante);
 
-    local = "MIN";
+    local = "MINISTÉRIO DA SAÚDE";
 
     cout << "Informe o tipo da epi: " << endl;
     getline(cin, tipo_epi);
@@ -164,7 +166,8 @@ void Controlador::cadastrar_epis() {
 
     EPI *epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
-    locais.at(get_local(local)).insumos.push_back(epi);
+    local_index = get_local(local);
+    locais.at(local_index).insumos.push_back(epi);
 }
 
 

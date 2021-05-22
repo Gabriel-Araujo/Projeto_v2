@@ -10,17 +10,17 @@ class Local
 private:
     std::string nome_extenso;
     std::string sigla;
+    std::vector<Insumos*> insumos;
 
 protected:
-    std::array<std::string, 28> locais_possiveis =
+    std::array<std::string, 29> locais_possiveis =
             {
             "AC", "AL", "AP", "AM", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
             "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
-            "SP", "SE", "TO", "DF", "MINISTERIO"
+            "SP", "SE", "TO", "DF", "MINISTÉRIO DA SAÚDE", "MIN"
             };
 
 public:
-    std::vector<Insumos*> insumos;
     Local();
     Local(std::string nome, std::string sigla);
     virtual ~Local();
