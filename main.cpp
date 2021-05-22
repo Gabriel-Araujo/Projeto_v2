@@ -11,11 +11,15 @@ int main()
     Controlador controlador;
 
     string tipoinsumo;
+    cout << "Digite o tipo do insumo:" << endl;
+    cout << "| vacina | medicamento | epi |" << endl;
     cin >> tipoinsumo;
     getchar();
     controlador.CadastroInsumosMs(tipoinsumo);
 
-    string nome = "Gabriel";
-    cout << "Hello world!" << nome << endl;
+
+
+
+    cout << "Hello world!" << endl;
     return 0;
 }

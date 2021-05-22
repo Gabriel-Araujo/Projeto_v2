@@ -1,4 +1,4 @@
-#include "Insumos.h"
+#include "../include/Insumos.h"
 
 Insumos::Insumos()
 {
@@ -11,6 +11,12 @@ Insumos::Insumos()
     local = "INDEFINIDO";
     codigo_unico = "NULL";
 }
+
+std::string Insumos::getTipoInsumo()
+{
+    return tipoInsumo;
+}
+
 
 Insumos::~Insumos()
 {

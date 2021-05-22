@@ -8,6 +8,7 @@ class Insumos
         Insumos();
         virtual ~Insumos();
 
+        std::string getTipoInsumo();
     protected:
 
         std::string nome;

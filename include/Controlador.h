@@ -5,31 +5,41 @@
 #include "Vacina.h"
 #include "Medicamento.h"
 #include "EPI.h"
+#include "Local.h"
 
 #include <vector>
+#include <array>
+#include <algorithm>
 #include <iostream>
+#include <iterator>
+
 
 class Controlador
 {
     private:
-        std::vector<Insumos*> insumos;
-        std::string locais[29] = {"AC", "AL", "AP", "AM", "BA", "BA", "CE", "ES", "GO", "MA", "MT", "MS",
-                                   "MG", "PA", "PB", "PR", "PE", "PI", "RJ", "RN", "RS", "RO", "RR", "SC",
-                                   "SP", "SE", "TO", "DF", "Ministerio"};
-        bool estado_existe(std::string estado);
+        std::array<Local, 29> locais;
+        void cadastrar_vacina();
+        void cadastrar_medicamentos();
+        void cadastrar_epis();
 
     protected:
+        bool local_existe(std::string local);
+        int get_local(std::string local);
 
     public:
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
+<<<<<<< HEAD
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std:string estado);
         //void cadastrar_vacina();
+=======
+        void DistribuirInsumosEstados(std::string tipoInsumo);
+
+
+>>>>>>> 6014249f897011227008879c43fa155abc71db59
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
-        void cadastrar_medicamentos(const t_insumos medicamentos, const string local);
-        void cadastrar_epis(const t_insumos medicamentos, const string local);
         */
         void ConsultaInsumos(Insumos insumo);
 
