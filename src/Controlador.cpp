@@ -173,13 +173,13 @@ void Controlador::cadastrar_epis() {
 void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
 {
     int index = get_local("MINISTÉRIO DA SAÚDE");
-    Insumos ins = locais.at(index).getInsumos(codigo);
-    Insumos hehe = ins;
+    Insumos *ins = locais.at(index).getInsumos(codigo);
+    Insumos *hehe = ins;
 
-    hehe.setQuantidade(quantidade);
+    hehe->setQuantidade(quantidade);
     locais.at(get_local(estado)).adicionar_insumo(hehe);
 
-    ins.DescontaQuantidade(quantidade);
+    ins->DescontaQuantidade(quantidade);
 
 }
 

@@ -25,7 +25,7 @@ public:
     Local(std::string nome, std::string sigla);
     virtual ~Local();
 
-    Insumos getInsumos(std::string cdg);
+    Insumos* getInsumos(std::string cdg);
 
     std::string get_sigla();
     std::string get_nome_extenso();
