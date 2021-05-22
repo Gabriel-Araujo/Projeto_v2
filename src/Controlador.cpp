@@ -95,7 +95,7 @@ void Controlador::cadastrar_vacina() {
     Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
     local_index = get_local(local);
-    locais.at(local_index).insumos.push_back(vacina);
+    locais.at(local_index).adicionar_insumo(vacina);
 }
 
 
@@ -133,7 +133,7 @@ void Controlador::cadastrar_medicamentos() {
     Medicamento *medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
 
     local_index = get_local(local);
-    locais.at(local_index).insumos.push_back(medicamento);
+    locais.at(local_index).adicionar_insumo(medicamento);
 }
 
 
@@ -167,7 +167,7 @@ void Controlador::cadastrar_epis() {
     EPI *epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
     local_index = get_local(local);
-    locais.at(local_index).insumos.push_back(epi);
+    locais.at(local_index).adicionar_insumo(epi);
 }
 
 void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado)
