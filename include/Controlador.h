@@ -31,7 +31,7 @@ class Controlador
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
 
-        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado);
+        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
         //void cadastrar_vacina();
         void DistribuirInsumosEstados(std::string tipoInsumo);
 

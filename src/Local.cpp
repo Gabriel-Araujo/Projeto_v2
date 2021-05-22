@@ -20,9 +20,14 @@ Local::~Local()
 }
 
 
-Insumos Local::getInsumos(int index)
+Insumos Local::getInsumos(std::string cdg)
 {
-    return *insumos[index];
+    for(unsigned int i = 0; i < insumos.size(); i++){
+        if(insumos.at(i)->getCodigoUnico() == cdg){
+            return *insumos[i];
+        }
+    }
+
 }
 
 std::string Local::get_sigla() {

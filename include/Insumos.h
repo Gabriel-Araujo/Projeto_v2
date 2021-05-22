@@ -9,6 +9,10 @@ class Insumos
         virtual ~Insumos();
 
         std::string getTipoInsumo();
+        std::string getCodigoUnico();
+        void DescontaQuantidade(int quant);
+
+        void setQuantidade(int quant);
     protected:
 
         std::string nome;

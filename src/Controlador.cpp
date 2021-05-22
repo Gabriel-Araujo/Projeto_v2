@@ -170,22 +170,17 @@ void Controlador::cadastrar_epis() {
     locais.at(local_index).adicionar_insumo(epi);
 }
 
-void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado)
+void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
 {
-    for(int index = 0; index < locais.size(); index++){
-        if(local_existe(estado)){
-            for(int i = 0; i < 100; i++){
-                if(locais.at(index).getInsumos(i).getTipoInsumo == tipoInsumo){
+    int index = get_local("MINISTÉRIO DA SAÚDE");
+    Insumos ins = locais.at(index).getInsumos(codigo);
+    Insumos hehe = ins;
 
-                }else{
+    hehe.setQuantidade(quantidade);
+    locais.at(get_local(estado)).adicionar_insumo(hehe);
 
-                }
-            }
-        }else{
-            return;
-        }
+    ins.DescontaQuantidade(quantidade);
 
-    }
 }
 
 bool Controlador::local_existe(std::string local) {
@@ -198,7 +193,7 @@ bool Controlador::local_existe(std::string local) {
 
 
 int Controlador::get_local(const std::string local) {
-    for (int index = 0; index < locais.size(); index++) {
+    for (unsigned int index = 0; index < locais.size(); index++) {
         if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; };
     }
     return -1;

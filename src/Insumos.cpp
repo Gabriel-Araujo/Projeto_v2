@@ -12,11 +12,27 @@ Insumos::Insumos()
     codigo_unico = "NULL";
 }
 
+void Insumos::setQuantidade(int quantidade)
+{
+    this->quantidade = quantidade;
+}
+
+std::string Insumos::getCodigoUnico()
+{
+    return codigo_unico;
+}
+
 std::string Insumos::getTipoInsumo()
 {
     return tipoInsumo;
 }
 
+void Insumos::DescontaQuantidade(int quantidade)
+{
+    if(quantidade < this->quantidade){
+        this->quantidade -= quantidade;
+    }
+}
 
 Insumos::~Insumos()
 {
