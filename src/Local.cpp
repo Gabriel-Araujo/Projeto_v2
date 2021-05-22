@@ -32,6 +32,11 @@ std::string Local::get_nome_extenso() {
 }
 
 
+void Local::adicionar_insumo(Insumos *insumo) {
+    insumos.push_back(insumo);
+}
+
+
 /* TODO
  * Implementar uma função pra verificar se um insumo existe
  *

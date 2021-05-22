@@ -28,6 +28,7 @@ public:
 
     std::string get_sigla();
     std::string get_nome_extenso();
+    void adicionar_insumo(Insumos *insumo);
 };
 
 #endif // LOCAL_H
