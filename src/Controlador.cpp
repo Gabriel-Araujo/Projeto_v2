@@ -180,8 +180,9 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
     cout << "Ta passando..." << endl;
 
     hehe->setQuantidade(quantidade);
+    int estado_index = get_local(estado);
     cout << "Ta passando..." << endl;
-    locais.at(get_local(estado)).adicionar_insumo(hehe);
+    locais.at(estado_index).adicionar_insumo(hehe);
     cout << "Ta passando..." << endl;
 
     ins->DescontaQuantidade(quantidade);
