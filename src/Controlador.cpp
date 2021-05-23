@@ -34,9 +34,11 @@ Controlador::Controlador()
     locais[27] = {"MINISTÉRIO DA SAÚDE", "MIN"};
 }
 
+
 Controlador::~Controlador()
 {
 }
+
 
 //Tem que ser temporaria
 void Controlador::CadastroInsumosMs(string tipo_ins)
@@ -53,6 +55,7 @@ void Controlador::CadastroInsumosMs(string tipo_ins)
         cadastrar_epis();
     }
 }
+
 
 void Controlador::DistribuirInsumosEstados(std::string tipoInsumo)
 {
@@ -170,6 +173,7 @@ void Controlador::cadastrar_epis() {
     locais.at(local_index).adicionar_insumo(epi);
 }
 
+
 void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
 {
     int index = get_local("MINISTÉRIO DA SAÚDE");
@@ -189,6 +193,7 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
 
 }
 
+
 void Controlador::ConsultaInsumosMS(std::string tipoInsumo, int n)
 {
     Insumos *ins = locais.at(get_local("MINISTÉRIO DA SAÚDE")).getInsumos(tipoInsumo);
@@ -196,12 +201,14 @@ void Controlador::ConsultaInsumosMS(std::string tipoInsumo, int n)
     cout << "Quantidade restante pos distribuicao: " << ins->getquantidade() << endl;
 }
 
+
 void Controlador::ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n)
 {
     Insumos *ins = locais.at(get_local(estado)).getInsumos(tipoInsumo);
 
     cout << "Quantidade distribuida: " << ins->getquantidade() << endl; ;
 }
+
 
 bool Controlador::local_existe(std::string local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_sigla() == local;});
@@ -211,6 +218,7 @@ bool Controlador::local_existe(std::string local) {
     else {return false;}
 }
 
+
 int Controlador::get_local(const std::string local) {
     for (unsigned int index = 0; index < locais.size(); index++) {
         if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; }
@@ -219,6 +227,14 @@ int Controlador::get_local(const std::string local) {
 }
 
 
+// Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
 void Controlador::exibir_insumos_ministerio() {
     locais.at(get_local("MIN")).exibir_insumos();
+}
+
+
+// Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
+void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
+    int local_index = get_local(local);
+    locais.at(local_index).exibir_insumos_por_tipo(tipo);
 }

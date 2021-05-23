@@ -61,6 +61,19 @@ void Local::exibir_insumos() {
 }
 
 
+void Local::exibir_insumos_por_tipo(std::string tipo) {
+    std::vector<Insumos*> generico;
+
+    for (auto item: insumos) {
+        if (item->getTipoInsumo() == tipo) {
+            auto a = new Insumos(*item);
+            generico.push_back(a);}
+    }
+
+    menus.exibir_formatado(generico);
+}
+
+
 /* TODO
  * Implementar uma função pra verificar se um insumo existe
  *

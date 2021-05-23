@@ -153,6 +153,7 @@ void Menu::exibir_formatado(std::vector<Insumos*> insumos) {
     cout << setfill(' ') << setw(15) << "CODIGO" << setfill(' ') << setw(10) << "|";
     cout << setfill(' ') << setw(15) << "NOME" << setfill(' ') << setw(10) << "|";
     cout << setfill(' ') << setw(15) << "PREÇO (R$)" << setfill(' ') << setw(10) << "|";
+    cout << setfill(' ') << setw(15) << "TIPO" << setfill(' ') << setw(9) << "|";
     cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|" << endl;
 
 
@@ -161,6 +162,7 @@ void Menu::exibir_formatado(std::vector<Insumos*> insumos) {
         cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
         cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
         cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
+        cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
         cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|" << endl;
         index++;
     }

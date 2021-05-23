@@ -22,7 +22,7 @@ Vacina::Vacina(std::string nome, int quantidade, int valor_unitario, std::string
     set_tipo_vac(tipo_vac);
     set_quant_doses(quant_doses);
     set_intervalo(intervalo);
-    tipoInsumo = "Vacina";
+    tipoInsumo = "vacina";
 }
 
 Vacina::~Vacina()

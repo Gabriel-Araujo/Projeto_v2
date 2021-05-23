@@ -18,20 +18,12 @@ int main()
     controlador.CadastroInsumosMs(tipoinsumo);
 
 
-    int n;
-    cout << "Digite a quantidade que quer distribuir: ";
-    cin >> n;
-    std::string estado;
-    getchar();
-    getline(cin, estado);
-    controlador.CadastroInsumosEst(tipoinsumo, "1011", estado, n);
-    controlador.ConsultaInsumosMS(tipoinsumo,1);
-    controlador.ConsultaInsumosEst(estado, "vacina", 1);
+    controlador.exibir_insumos_por_tipo("MIN", "vacina");
 
 
 
 
-    controlador.exibir_insumos_ministerio();
+
 
 
     cout << "Hello world!" << endl;
