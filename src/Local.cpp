@@ -67,9 +67,10 @@ void Local::exibir_insumos_por_tipo(std::string tipo) {
     for (auto item: insumos) {
         if (item->getTipoInsumo() == tipo) {
             auto a = new Insumos(*item);
-            generico.push_back(a);}
+            generico.push_back(a);
+            delete a;
+        }
     }
-
     menus.exibir_formatado(generico);
 }
 
