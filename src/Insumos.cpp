@@ -22,6 +22,21 @@ std::string Insumos::getCodigoUnico()
     return codigo_unico;
 }
 
+
+std::string Insumos::getNome() {
+    return nome;
+}
+
+
+int Insumos::get_valor() {
+    return valor_unitario;
+}
+
+
+int Insumos::get_quantidade() {
+    return quantidade;
+}
+
 std::string Insumos::getTipoInsumo()
 {
     return tipoInsumo;

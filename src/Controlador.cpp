@@ -198,3 +198,8 @@ int Controlador::get_local(const std::string local) {
     }
     return -1;
 }
+
+
+void Controlador::exibir_insumos_ministerio() {
+    locais.at(get_local("MIN")).exibir_insumos();
+}

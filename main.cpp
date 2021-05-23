@@ -17,8 +17,7 @@ int main()
     getchar();
     controlador.CadastroInsumosMs(tipoinsumo);
 
-
-
+    controlador.exibir_insumos_ministerio();
 
     cout << "Hello world!" << endl;
     return 0;
