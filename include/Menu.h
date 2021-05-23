@@ -1,7 +1,11 @@
 #ifndef MENU_H
 #define MENU_H
-#include "Controlador.h"
+
+
+#include <iomanip>
 #include <iostream>
+#include <vector>
+#include "Insumos.h"
 
 class Menu
 {
@@ -19,6 +23,7 @@ class Menu
         void Unidades_distribuidas_submenu_3();
         void Insumos_distribuidos();
         void exibir_estados();
+        void exibir_formatado(std::vector<Insumos*> insumos);
 
 
     protected:

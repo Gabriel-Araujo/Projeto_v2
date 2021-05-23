@@ -56,6 +56,11 @@ void Local::adicionar_insumo(Insumos *insumo) {
 }
 
 
+void Local::exibir_insumos() {
+    menus.exibir_formatado(insumos);
+}
+
+
 /* TODO
  * Implementar uma função pra verificar se um insumo existe
  *

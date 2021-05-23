@@ -1,6 +1,7 @@
 #ifndef LOCAL_H
 #define LOCAL_H
 #include "Insumos.h"
+#include "Menu.h"
 
 #include <vector>
 #include <array>
@@ -11,6 +12,7 @@ private:
     std::string nome_extenso;
     std::string sigla;
     std::vector<Insumos*> insumos;
+    Menu menus;
 
 protected:
     std::array<std::string, 29> locais_possiveis =
@@ -31,6 +33,7 @@ public:
     std::string get_sigla();
     std::string get_nome_extenso();
     void adicionar_insumo(Insumos *insumo);
+    void exibir_insumos();
 };
 
 #endif // LOCAL_H

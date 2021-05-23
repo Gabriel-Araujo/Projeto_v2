@@ -17,6 +17,7 @@ int main()
     getchar();
     controlador.CadastroInsumosMs(tipoinsumo);
 
+<<<<<<< HEAD
     int n;
     cout << "Digite a quantidade que quer distribuir: ";
     cin >> n;
@@ -26,6 +27,9 @@ int main()
 
 
 
+=======
+    controlador.exibir_insumos_ministerio();
+>>>>>>> ff8b3fbc8c0f5b71e65735d1e768d70a86e04cf0
 
     cout << "Hello world!" << endl;
     return 0;

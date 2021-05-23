@@ -6,6 +6,7 @@
 #include "Medicamento.h"
 #include "EPI.h"
 #include "Local.h"
+#include "Menu.h"
 
 #include <vector>
 #include <array>
@@ -21,6 +22,7 @@ class Controlador
         void cadastrar_vacina();
         void cadastrar_medicamentos();
         void cadastrar_epis();
+        Menu menus;
 
     protected:
         bool local_existe(std::string local);
@@ -30,6 +32,7 @@ class Controlador
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
+        void exibir_insumos_ministerio();
 
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
         //void cadastrar_vacina();
