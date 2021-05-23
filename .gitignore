@@ -4,5 +4,5 @@ CMakeLists.txt
 /cmake-build-debug-wsl
 /obj
 /bin
-*.cbp
-*.depend
+Projeto.cbp
+Projeto.depend
