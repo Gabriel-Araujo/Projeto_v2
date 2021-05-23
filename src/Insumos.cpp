@@ -27,6 +27,11 @@ std::string Insumos::getTipoInsumo()
     return tipoInsumo;
 }
 
+int Insumos::getquantidade()
+{
+    return quantidade;
+}
+
 void Insumos::DescontaQuantidade(int quantidade)
 {
     if(quantidade < this->quantidade){

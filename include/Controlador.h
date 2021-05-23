@@ -38,7 +38,8 @@ class Controlador
         //void Cadastro_Est(t_est *est, int escolha, std::string estado);
         /*
         */
-        void ConsultaInsumos(Insumos insumo);
+        void ConsultaInsumosMS(std::string tipoInsumo, int n);
+        void ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n);
 
         // Funções de consulta:
         /*

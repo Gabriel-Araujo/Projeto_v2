@@ -1,5 +1,6 @@
 #include "../include/Local.h"
 #include <algorithm>
+#include <iostream>
 
 Local::Local()
 {
@@ -19,13 +20,25 @@ Local::~Local()
     }
 }
 
-Insumos* Local::getInsumos(std::string codigo) {
+Insumos* Local::getInsumosVerify(std::string codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
+            std::cout << "Vai passar..." << std::endl;
             return item;
         }
     }
     return new Insumos();
+}
+
+Insumos* Local::getInsumos(std::string tipoInsumo)
+{
+    for (auto item: insumos) {
+        if (item->getTipoInsumo() == tipoInsumo) {
+            return item;
+        }
+    }
+    return new Insumos();
+
 }
 
 std::string Local::get_sigla() {

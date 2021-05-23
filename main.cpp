@@ -17,6 +17,13 @@ int main()
     getchar();
     controlador.CadastroInsumosMs(tipoinsumo);
 
+    int n;
+    cout << "Digite a quantidade que quer distribuir: ";
+    cin >> n;
+    controlador.CadastroInsumosEst(tipoinsumo, "1011", "Paraíba", n);
+    controlador.ConsultaInsumosMS(tipoinsumo,1);
+    controlador.ConsultaInsumosEst("Paraíba", "vacina", 1);
+
 
 
 
