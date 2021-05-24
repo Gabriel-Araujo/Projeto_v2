@@ -81,7 +81,12 @@ void Local::exibir_insumos_por_tipo(const std::string& tipo) {
 bool Local::insumo_existe(const std::string codigo) {
     return std::any_of(insumos.begin(), insumos.end(), [&codigo](Insumos *item){return item->getCodigoUnico() == codigo;});
 }
-/* TODO
- * Implementar uma função pra retornar a posição do insumo no array
- *
- */
+
+
+int Local::get_insumo_index(const std::string codigo) {
+    for (int index = 0; index < insumos.size(); index++) {
+        if (insumos.at(index)->getCodigoUnico() == codigo) {return index;}
+    }
+    return -1;
+}
+

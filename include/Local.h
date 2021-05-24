@@ -36,6 +36,7 @@ public:
     void exibir_insumos();
     void exibir_insumos_por_tipo(const std::string& tipo);
     bool insumo_existe(const std::string codigo);
+    int get_insumo_index(const std::string codigo);
 };
 
 #endif // LOCAL_H
