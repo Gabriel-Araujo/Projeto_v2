@@ -177,6 +177,8 @@ void Controlador::cadastrar_epis() {
 void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
 {
     int index = get_local("MINISTÉRIO DA SAÚDE");
+    int insumo_index = locais.at(index).get_insumo_index(codigo);
+
     Insumos *insumo_do_ms = locais.at(index).getInsumosVerify(codigo);
 
     Insumos *insumo_distribuido = new Insumos(*insumo_do_ms);
