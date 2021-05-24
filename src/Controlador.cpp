@@ -234,3 +234,11 @@ void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
     int local_index = get_local(local);
     locais.at(local_index).exibir_insumos_por_tipo(tipo);
 }
+
+
+// Talvez temporario.
+void Controlador::insumo_existe_no_local(const std::string local, const std::string codigo) {
+    if (locais.at(get_local(local)).insumo_existe(codigo)) {
+        cout <<"SIM";
+    }
+}

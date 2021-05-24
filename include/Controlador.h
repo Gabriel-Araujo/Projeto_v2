@@ -44,6 +44,7 @@ class Controlador
         */
         void ConsultaInsumosMS(std::string tipoInsumo, int n);
         void ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n);
+        void insumo_existe_no_local(const std::string local, const std::string codigo);
 
         // Funções de consulta:
         /*
