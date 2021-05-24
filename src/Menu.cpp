@@ -147,7 +147,7 @@ Menu::~Menu()
 }
 
 
-void Menu::exibir_formatado(std::vector<Insumos*> insumos) {
+void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
     int index = 1;
     cout << " 0 |";
     cout << setfill(' ') << setw(15) << "CODIGO" << setfill(' ') << setw(10) << "|";
@@ -157,7 +157,7 @@ void Menu::exibir_formatado(std::vector<Insumos*> insumos) {
     cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|" << endl;
 
 
-    for (auto insumo: insumos) {
+    for (auto &insumo: insumos) {
         cout << " " << index << " |";
         cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
         cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";

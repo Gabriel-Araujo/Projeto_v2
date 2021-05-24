@@ -95,10 +95,11 @@ void Controlador::cadastrar_vacina() {
     cout << "Digite o tempo entre doses: " << endl;
     cin >> intervalo;
 
-    Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
+    auto vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
     local_index = get_local(local);
     locais.at(local_index).adicionar_insumo(vacina);
+    delete vacina;
 }
 
 

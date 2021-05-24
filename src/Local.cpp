@@ -52,7 +52,8 @@ std::string Local::get_nome_extenso() {
 
 
 void Local::adicionar_insumo(Insumos *insumo) {
-    insumos.push_back(insumo);
+    auto a = new Insumos(*insumo);
+    insumos.push_back(a);
 }
 
 
