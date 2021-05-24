@@ -1,6 +1,7 @@
 #include "../include/Local.h"
 #include <algorithm>
 #include <iostream>
+#include <utility>
 
 Local::Local()
 {
@@ -9,8 +10,8 @@ Local::Local()
 }
 
 Local::Local(std::string nome, std::string sigla) {
-    nome_extenso = nome;
-    this->sigla = sigla;
+    nome_extenso = std::move(nome);
+    this->sigla = std::move(sigla);
 }
 
 Local::~Local(){
@@ -19,7 +20,7 @@ Local::~Local(){
     }
 }
 
-Insumos* Local::getInsumosVerify(std::string codigo) {
+Insumos* Local::getInsumosVerify(const std::string& codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
             std::cout << "Vai passar..." << std::endl;
@@ -29,7 +30,7 @@ Insumos* Local::getInsumosVerify(std::string codigo) {
     return new Insumos();
 }
 
-Insumos* Local::getInsumos(std::string tipoInsumo)
+Insumos* Local::getInsumos(const std::string& tipoInsumo)
 {
     for (auto item: insumos) {
         if (item->getTipoInsumo() == tipoInsumo) {

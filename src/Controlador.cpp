@@ -228,8 +228,8 @@ int Controlador::get_local(const std::string local) {
 
 
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
-void Controlador::exibir_insumos_ministerio() {
-    locais.at(get_local("MIN")).exibir_insumos();
+void Controlador::exibir_insumos(std::string local) {
+    locais.at(get_local(local)).exibir_insumos();
 }
 
 
