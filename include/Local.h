@@ -34,7 +34,7 @@ public:
     std::string get_nome_extenso();
     void adicionar_insumo(Insumos *insumo);
     void exibir_insumos();
-    void exibir_insumos_por_tipo(std::string tipo);
+    void exibir_insumos_por_tipo(const std::string& tipo);
 };
 
 #endif // LOCAL_H

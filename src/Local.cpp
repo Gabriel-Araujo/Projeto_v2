@@ -13,11 +13,8 @@ Local::Local(std::string nome, std::string sigla) {
     this->sigla = sigla;
 }
 
-Local::~Local()
-{
-    for (auto item: insumos) {
-        delete item;
-    }
+Local::~Local(){
+    insumos.erase(insumos.begin(), insumos.end());
 }
 
 Insumos* Local::getInsumosVerify(std::string codigo) {
@@ -52,8 +49,7 @@ std::string Local::get_nome_extenso() {
 
 
 void Local::adicionar_insumo(Insumos *insumo) {
-    auto a = new Insumos(*insumo);
-    insumos.push_back(a);
+    insumos.push_back(insumo);
 }
 
 
@@ -62,17 +58,20 @@ void Local::exibir_insumos() {
 }
 
 
-void Local::exibir_insumos_por_tipo(std::string tipo) {
+void Local::exibir_insumos_por_tipo(const std::string& tipo) {
     std::vector<Insumos*> generico;
 
     for (auto item: insumos) {
         if (item->getTipoInsumo() == tipo) {
             auto a = new Insumos(*item);
             generico.push_back(a);
-            delete a;
         }
     }
     menus.exibir_formatado(generico);
+
+    for (auto item: generico) {
+        delete item;
+    }
 }
 
 
