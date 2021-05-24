@@ -14,7 +14,9 @@ Local::Local(std::string nome, std::string sigla) {
 }
 
 Local::~Local(){
-    insumos.erase(insumos.begin(), insumos.end());
+    for (auto item: insumos) {
+        delete item;
+    }
 }
 
 Insumos* Local::getInsumosVerify(std::string codigo) {

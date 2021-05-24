@@ -99,7 +99,6 @@ void Controlador::cadastrar_vacina() {
 
     local_index = get_local(local);
     locais.at(local_index).adicionar_insumo(vacina);
-    delete vacina;
 }
 
 
