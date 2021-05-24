@@ -1,8 +1,9 @@
 .idea
-/cmake-build-debug
 CMakeLists.txt
+/cmake-build-debug
 /cmake-build-debug-wsl
+/cmake-build-debug-visual-studio
 /obj
 /bin
-*.cbp
-*.depend
+Projeto.cbp
+Projeto.depend

@@ -27,13 +27,16 @@ public:
     Local(std::string nome, std::string sigla);
     virtual ~Local();
 
-    Insumos* getInsumosVerify(std::string cdg);
-    Insumos* getInsumos(std::string tipoInsumo);
+    Insumos* getInsumosVerify(const std::string& cdg);
+    Insumos* getInsumos(const std::string& tipoInsumo);
 
     std::string get_sigla();
     std::string get_nome_extenso();
     void adicionar_insumo(Insumos *insumo);
     void exibir_insumos();
+    void exibir_insumos_por_tipo(const std::string& tipo);
+    bool insumo_existe(const std::string codigo);
+    int get_insumo_index(const std::string codigo);
 };
 
 #endif // LOCAL_H

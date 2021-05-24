@@ -19,32 +19,32 @@ void Insumos::setQuantidade(int quantidade)
 
 std::string Insumos::getCodigoUnico()
 {
-    return codigo_unico;
+    return this->codigo_unico;
 }
 
 
 std::string Insumos::getNome() {
-    return nome;
+    return this->nome;
 }
 
 
 int Insumos::get_valor() {
-    return valor_unitario;
+    return this->valor_unitario;
 }
 
 
 int Insumos::get_quantidade() {
-    return quantidade;
+    return this->quantidade;
 }
 
 std::string Insumos::getTipoInsumo()
 {
-    return tipoInsumo;
+    return this->tipoInsumo;
 }
 
 int Insumos::getquantidade()
 {
-    return quantidade;
+    return this->quantidade;
 }
 
 void Insumos::DescontaQuantidade(int quantidade)

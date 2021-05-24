@@ -34,9 +34,11 @@ Controlador::Controlador()
     locais[27] = {"MINISTÉRIO DA SAÚDE", "MIN"};
 }
 
+
 Controlador::~Controlador()
 {
 }
+
 
 //Tem que ser temporaria
 void Controlador::CadastroInsumosMs(string tipo_ins)
@@ -53,6 +55,7 @@ void Controlador::CadastroInsumosMs(string tipo_ins)
         cadastrar_epis();
     }
 }
+
 
 void Controlador::DistribuirInsumosEstados(std::string tipoInsumo)
 {
@@ -92,7 +95,7 @@ void Controlador::cadastrar_vacina() {
     cout << "Digite o tempo entre doses: " << endl;
     cin >> intervalo;
 
-    Vacina *vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
+    auto vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
     local_index = get_local(local);
     locais.at(local_index).adicionar_insumo(vacina);
@@ -170,23 +173,22 @@ void Controlador::cadastrar_epis() {
     locais.at(local_index).adicionar_insumo(epi);
 }
 
+
 void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
 {
     int index = get_local("MINISTÉRIO DA SAÚDE");
-    cout << "Passou..." << endl;
-    Insumos *ins = locais.at(index).getInsumosVerify(codigo);
-    cout << "Ta passando..." << endl;
-    Insumos *hehe = ins;
-    cout << "Ta passando..." << endl;
+    Insumos *insumo_do_ms = locais.at(index).getInsumosVerify(codigo);
 
-    hehe->setQuantidade(quantidade);
-    cout << "Ta passando..." << endl;
-    locais.at(get_local(estado)).adicionar_insumo(hehe);
-    cout << "Ta passando..." << endl;
+    Insumos *insumo_distribuido = new Insumos(*insumo_do_ms);
+    insumo_do_ms->DescontaQuantidade(quantidade);
 
-    ins->DescontaQuantidade(quantidade);
+    insumo_distribuido->setQuantidade(quantidade);
 
+
+    int estado_index = get_local(estado);
+    locais.at(estado_index).adicionar_insumo(insumo_distribuido);
 }
+
 
 void Controlador::ConsultaInsumosMS(std::string tipoInsumo, int n)
 {
@@ -195,12 +197,14 @@ void Controlador::ConsultaInsumosMS(std::string tipoInsumo, int n)
     cout << "Quantidade restante pos distribuicao: " << ins->getquantidade() << endl;
 }
 
+
 void Controlador::ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n)
 {
     Insumos *ins = locais.at(get_local(estado)).getInsumos(tipoInsumo);
 
     cout << "Quantidade distribuida: " << ins->getquantidade() << endl; ;
 }
+
 
 bool Controlador::local_existe(std::string local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_sigla() == local;});
@@ -210,6 +214,7 @@ bool Controlador::local_existe(std::string local) {
     else {return false;}
 }
 
+
 int Controlador::get_local(const std::string local) {
     for (unsigned int index = 0; index < locais.size(); index++) {
         if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; }
@@ -218,6 +223,22 @@ int Controlador::get_local(const std::string local) {
 }
 
 
-void Controlador::exibir_insumos_ministerio() {
-    locais.at(get_local("MIN")).exibir_insumos();
+// Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
+void Controlador::exibir_insumos(std::string local) {
+    locais.at(get_local(local)).exibir_insumos();
+}
+
+
+// Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
+void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
+    int local_index = get_local(local);
+    locais.at(local_index).exibir_insumos_por_tipo(tipo);
+}
+
+
+// Talvez temporario.
+void Controlador::insumo_existe_no_local(const std::string local, const std::string codigo) {
+    if (locais.at(get_local(local)).insumo_existe(codigo)) {
+        cout <<"SIM";
+    }
 }

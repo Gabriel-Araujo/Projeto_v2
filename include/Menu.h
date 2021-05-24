@@ -23,7 +23,7 @@ class Menu
         void Unidades_distribuidas_submenu_3();
         void Insumos_distribuidos();
         void exibir_estados();
-        void exibir_formatado(std::vector<Insumos*> insumos);
+        void exibir_formatado(std::vector<Insumos*> &insumos);
 
 
     protected:

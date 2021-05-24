@@ -32,7 +32,8 @@ class Controlador
         Controlador();
         virtual ~Controlador();
         void CadastroInsumosMs(std::string tipoInsumo);
-        void exibir_insumos_ministerio();
+        void exibir_insumos(std::string local);
+        void exibir_insumos_por_tipo(std::string local, std::string tipo);
 
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
         //void cadastrar_vacina();
@@ -43,6 +44,7 @@ class Controlador
         */
         void ConsultaInsumosMS(std::string tipoInsumo, int n);
         void ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n);
+        void insumo_existe_no_local(const std::string local, const std::string codigo);
 
         // Funções de consulta:
         /*
