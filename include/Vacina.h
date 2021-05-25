@@ -7,7 +7,7 @@ class Vacina : public Insumos
     private:
         std::string tipo_vac;
         int quantidade_doses;
-        int intervalo; //intervalo entre as doses
+        int intervalo;
 
         void set_nome(std::string n);
         void set_quantidade(int q);

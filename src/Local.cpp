@@ -23,7 +23,7 @@ Local::~Local(){
 Insumos* Local::getInsumosVerify(const std::string& codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
-            std::cout << "Vai passar..." << std::endl;
+            //std::cout << "Vai passar..." << std::endl;
             return item;
         }
     }
@@ -55,6 +55,15 @@ void Local::adicionar_insumo(Insumos *insumo) {
     insumos.push_back(insumo);
 }
 
+void Local::exibir_insumos_quantidade()
+{
+    menus.exibir_quantidades(insumos);
+}
+
+void Local::exibir_insumos_descricao()
+{
+    menus.exibir_formatado(insumos);
+}
 
 void Local::exibir_insumos() {
     menus.exibir_formatado(insumos);
@@ -84,7 +93,7 @@ bool Local::insumo_existe(const std::string codigo) {
 
 
 int Local::get_insumo_index(const std::string codigo) {
-    for (int index = 0; index < insumos.size(); index++) {
+    for (unsigned int index = 0; index < insumos.size(); index++) {
         if (insumos.at(index)->getCodigoUnico() == codigo) {return index;}
     }
     return -1;

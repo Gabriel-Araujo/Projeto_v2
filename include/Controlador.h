@@ -31,20 +31,20 @@ class Controlador
     public:
         Controlador();
         virtual ~Controlador();
+        //Funcoes de cadastro
         void CadastroInsumosMs(std::string tipoInsumo);
-        void exibir_insumos(std::string local);
-        void exibir_insumos_por_tipo(std::string local, std::string tipo);
-
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
-        //void cadastrar_vacina();
+
+        //Funcao de distribuicao, acho que nao ta usando ela
         void DistribuirInsumosEstados(std::string tipoInsumo);
 
-        //void Cadastro_Est(t_est *est, int escolha, std::string estado);
-        /*
-        */
-        void ConsultaInsumosMS(std::string tipoInsumo, int n);
-        void ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n);
+
         void insumo_existe_no_local(const std::string local, const std::string codigo);
+
+        void Exibe_menu();
+        void exibir_insumos_quantidade(std::string local);
+        void exibir_insumos_descricao(std::string local);
+        void exibir_insumos_por_tipo(std::string local, std::string tipo);
 
         // Funções de consulta:
         /*

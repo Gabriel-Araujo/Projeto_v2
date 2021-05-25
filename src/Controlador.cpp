@@ -133,7 +133,7 @@ void Controlador::cadastrar_medicamentos() {
     cout << "Informe a disposicao do Medicamento: " << endl;
     getline(cin, disposicao);
 
-    Medicamento *medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
+    auto medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
 
     local_index = get_local(local);
     locais.at(local_index).adicionar_insumo(medicamento);
@@ -167,7 +167,7 @@ void Controlador::cadastrar_epis() {
     cout << "Informe a descricap do EPI: " << endl;
     getline(cin, descricao);
 
-    EPI *epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
+    auto epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
     local_index = get_local(local);
     locais.at(local_index).adicionar_insumo(epi);
@@ -192,21 +192,6 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
 }
 
 
-void Controlador::ConsultaInsumosMS(std::string tipoInsumo, int n)
-{
-    Insumos *ins = locais.at(get_local("MINISTÉRIO DA SAÚDE")).getInsumos(tipoInsumo);
-
-    cout << "Quantidade restante pos distribuicao: " << ins->getquantidade() << endl;
-}
-
-
-void Controlador::ConsultaInsumosEst(std::string estado, std::string tipoInsumo, int n)
-{
-    Insumos *ins = locais.at(get_local(estado)).getInsumos(tipoInsumo);
-
-    cout << "Quantidade distribuida: " << ins->getquantidade() << endl; ;
-}
-
 
 bool Controlador::local_existe(std::string local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_sigla() == local;});
@@ -226,10 +211,14 @@ int Controlador::get_local(const std::string local) {
 
 
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
-void Controlador::exibir_insumos(std::string local) {
-    locais.at(get_local(local)).exibir_insumos();
+void Controlador::exibir_insumos_quantidade(std::string local) {
+    locais.at(get_local(local)).exibir_insumos_quantidade();
 }
 
+//Sla, vey, to seguindo o fluxo
+void Controlador::exibir_insumos_descricao(std::string local) {
+    locais.at(get_local(local)).exibir_insumos_descricao();
+}
 
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
 void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
@@ -242,5 +231,72 @@ void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
 void Controlador::insumo_existe_no_local(const std::string local, const std::string codigo) {
     if (locais.at(get_local(local)).insumo_existe(codigo)) {
         cout <<"SIM";
+    }
+}
+
+void Controlador::Exibe_menu()
+{
+    int opcao, quantidade;
+    string opcao_string, estado, codigo;
+    while(1){
+    menus.Boas_vindas();
+
+    cin >> opcao;
+    getchar();
+    if(opcao == 0){
+        break;0
+    }
+        switch (opcao){
+        case 1:
+            menus.Cadastro();
+            getline(cin, opcao_string);
+            CadastroInsumosMs(opcao_string);
+            break;
+        case 2:
+            menus.Distribuir();
+            cin >> opcao;
+            getchar();
+            if(opcao == 1){
+                menus.exibir_estados();
+                getline(cin, estado);
+                if(estado == "voltar"){
+                    break;
+                }
+
+                menus.Distribuir_submenu_1();
+                getline(cin, opcao_string);
+                if(opcao_string == "voltar"){
+                    break;
+                }
+
+                menus.Distribuir_submenu_2();
+                getline(cin, codigo);
+                if(opcao_string == "voltar"){
+                    break;
+                }
+
+                menus.Distribuir_submenu_3();
+                cin.ignore() >> quantidade;
+
+                CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
+
+            }else{
+                break;
+            }
+            break;
+        case 3:
+            menus.ConsultarMs();
+            cin >> opcao;
+            getchar();
+            if(opcao == 1){
+                exibir_insumos_quantidade("MINISTÉRIO DA SAÚDE");
+            }else if(opcao == 2){
+
+                exibir_insumos_descricao("MINISTÉRIO DA SAÚDE");
+            }
+        default:
+            break;
+
+        }
     }
 }
