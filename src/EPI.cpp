@@ -59,10 +59,6 @@ void EPI::set_fabricante(std::string nome_fab)
     this->nome_fab = nome_fab;
 }
 
-void EPI::set_local(std::string local)
-{
-    this->local = local;
-}
 
 void EPI::set_codigo(std::string codigo_unico)
 {

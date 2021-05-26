@@ -29,7 +29,6 @@ class Medicamento : public Insumos
         void set_valor_unitario(int q);
         void set_vencimento(std::string data);
         void set_fabricante(std::string fab);
-        void set_local(std::string l);
         void set_codigo(std::string unico);
         void set_dosagem(std::string dsg);
         void set_administracao(std::string adm);

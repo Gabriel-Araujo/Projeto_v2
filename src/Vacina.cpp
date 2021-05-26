@@ -66,9 +66,6 @@ void Vacina::set_fabricante(std::string fab) {
 }
 
 
-void Vacina::set_local(std::string l) {
-    local = l;
-}
 
 
 void Vacina::set_codigo(std::string unico) {

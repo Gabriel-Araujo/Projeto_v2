@@ -80,6 +80,7 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
                 auto insumo_estado = new Vacina(*insumo_ministerio);
                 if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
                 insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
                 locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
@@ -111,6 +112,7 @@ int Controlador::distribuir_medicamento_para(const std::string estado, std::stri
                 auto insumo_estado = new Medicamento(*insumo_ministerio);
                 if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
                 insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
                 locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
@@ -143,6 +145,7 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
                 auto insumo_estado = new EPI(*insumo_ministerio);
                 if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
                 insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
                 locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
@@ -357,11 +360,14 @@ void Controlador::Exibe_menu()
                 }
 
                 menus.Distribuir_submenu_1();
-                getline(cin, opcao_string);
-                if(opcao_string == "voltar"){
-                    break;
+                while (true) {
+                    getline(cin, opcao_string);
+                    if(opcao_string == "voltar" || tipo_existe(opcao_string)){
+                        break;
+                    }
                 }
 
+                exibir_insumos_por_tipo("MIN", opcao_string);
                 menus.Distribuir_submenu_2();
                 getline(cin, codigo);
                 if(opcao_string == "voltar"){
@@ -369,7 +375,7 @@ void Controlador::Exibe_menu()
                 }
 
                 menus.Distribuir_submenu_3();
-                cin.ignore() >> quantidade;
+                cin >> quantidade;
 
                 //CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
                 if (opcao_string == "vacina") {
@@ -395,4 +401,12 @@ void Controlador::Exibe_menu()
 
         }
     }
+}
+
+
+
+bool Controlador::tipo_existe(std::string tipo) {
+    transform(tipo.begin(), tipo.end(), tipo.begin(), [](char c) {return tolower(c);});
+
+    return any_of(tipos_possiveis.begin(), tipos_possiveis.end(), [&tipo](std::string &item){return item == tipo;});
 }

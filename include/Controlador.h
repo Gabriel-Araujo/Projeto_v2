@@ -19,6 +19,7 @@ class Controlador
 {
     private:
         std::array<Local, 29> locais;
+        std::array<std::string, 3> tipos_possiveis = {"vacina", "medicamento", "epi"};
         void cadastrar_vacina();
         void cadastrar_medicamentos();
         void cadastrar_epis();
@@ -46,6 +47,7 @@ class Controlador
         void exibir_insumos_quantidade(std::string local);
         void exibir_insumos_descricao(std::string local);
         void exibir_insumos_por_tipo(std::string local, std::string tipo);
+        bool tipo_existe(std::string tipo);
 
         // Funções de consulta:
         /*

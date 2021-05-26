@@ -63,3 +63,8 @@ Insumos::~Insumos()
 std::string Insumos::get_tipo() {
     return tipoInsumo;
 }
+
+
+void Insumos::set_local(std::string estado) {
+    local = estado;
+}

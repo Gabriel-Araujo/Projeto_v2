@@ -22,6 +22,7 @@ class Insumos
         void acrescentar_quantidade(int quantidade);
 
         void setQuantidade(int quant);
+        void set_local(std::string estado);
     protected:
 
         std::string nome;

@@ -66,10 +66,6 @@ void Medicamento::set_fabricante(std::string nome_fab)
     this->nome_fab = nome_fab;
 }
 
-void Medicamento::set_local(std::string local)
-{
-    this->local = local;
-}
 
 void Medicamento::set_codigo(std::string codigo_unico)
 {
