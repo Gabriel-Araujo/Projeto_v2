@@ -42,10 +42,6 @@ std::string Insumos::getTipoInsumo()
     return this->tipoInsumo;
 }
 
-int Insumos::getquantidade()
-{
-    return this->quantidade;
-}
 
 void Insumos::DescontaQuantidade(int quantidade)
 {
@@ -54,7 +50,16 @@ void Insumos::DescontaQuantidade(int quantidade)
     }
 }
 
+
+void Insumos::acrescentar_quantidade(int quantidade) {
+    this->quantidade += quantidade;
+}
+
 Insumos::~Insumos()
 {
     //dtor
+}
+
+std::string Insumos::get_tipo() {
+    return tipoInsumo;
 }

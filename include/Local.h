@@ -2,6 +2,9 @@
 #define LOCAL_H
 #include "Insumos.h"
 #include "Menu.h"
+#include "Vacina.h"
+#include "Medicamento.h"
+#include "EPI.h"
 
 #include <vector>
 #include <array>
@@ -27,8 +30,12 @@ public:
     Local(std::string nome, std::string sigla);
     virtual ~Local();
 
-    Insumos* getInsumosVerify(const std::string& cdg);
+    Insumos* get_insumo(const std::string& codigo);
+    Vacina* get_vacina(const std::string& codigo);
+    Medicamento* get_medicamento(const std::string& codigo);
+    EPI* get_epi(const std::string& codigo);
     Insumos* getInsumos(const std::string& tipoInsumo);
+
 
     std::string get_sigla();
     std::string get_nome_extenso();

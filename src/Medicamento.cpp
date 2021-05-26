@@ -1,5 +1,12 @@
 #include "../include/Medicamento.h"
 
+
+Medicamento::~Medicamento()
+{
+    //dtor
+}
+
+
 Medicamento::Medicamento()
 {
     tipoInsumo = "medicamento";
@@ -21,7 +28,7 @@ Medicamento::Medicamento(std::string nome, int quantidade, int valor_unitario, s
     set_dosagem(dsg);
     set_administracao(adm);
     set_disposicao(disp);
-    tipoInsumo = "Medicamento";
+    tipoInsumo = "medicamento";
 }
 
 void Medicamento::set_nome(std::string nome)
@@ -85,7 +92,7 @@ void Medicamento::set_disposicao(std::string disposicao)
 }
 
 
-Medicamento::~Medicamento()
-{
-    //dtor
+
+int Medicamento::get_quantidade() {
+    return Insumos::get_quantidade();
 }

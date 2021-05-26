@@ -21,7 +21,7 @@ EPI::EPI(std::string nome, int quantidade, int valor_unitario, std::string venci
     set_tipo_epi(tipo_epi);
     set_descricao(descricao);
 
-    tipoInsumo = "EPI";
+    tipoInsumo = "epi";
 }
 
 void EPI::set_nome(std::string nome)
@@ -82,4 +82,8 @@ void EPI::set_descricao(std::string descricao)
 EPI::~EPI()
 {
     //dtor
+}
+
+int EPI::get_quantidade() {
+    return Insumos::get_quantidade();
 }

@@ -97,3 +97,7 @@ void Vacina::set_intervalo(int it) {
         intervalo = it;
     }
 }
+
+int Vacina::get_quantidade() {
+    return Insumos::get_quantidade();
+}

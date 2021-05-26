@@ -4,14 +4,14 @@
 
 class Medicamento : public Insumos
 {
-        Medicamento();
     public:
+        Medicamento();
         virtual ~Medicamento();
         Medicamento(std::string nome, int quantidade, int valor_unitario, std::string vencimento, std::string fabricante,
                std::string local, std::string codigo_unico, std::string dsg, std::string adm, std::string disp);
 
         std::string get_nome();
-        int get_quantidade();
+        int get_quantidade() override;
         int set_valor_unitario();
         std::string get_vencimento();
         std::string get_fabricante();

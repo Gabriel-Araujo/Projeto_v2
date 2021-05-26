@@ -20,7 +20,7 @@ Local::~Local(){
     }
 }
 
-Insumos* Local::getInsumosVerify(const std::string& codigo) {
+Insumos* Local::get_insumo(const std::string& codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
             //std::cout << "Vai passar..." << std::endl;
@@ -30,6 +30,38 @@ Insumos* Local::getInsumosVerify(const std::string& codigo) {
     return new Insumos();
 }
 
+
+Vacina* Local::get_vacina(const std::string& codigo) {
+    for (auto item: insumos) {
+        if (item->getCodigoUnico() == codigo && item->getTipoInsumo() == "vacina") {
+            return dynamic_cast<Vacina *>(item);
+        }
+    }
+    return new Vacina();
+}
+
+
+Medicamento* Local::get_medicamento(const std::string& codigo) {
+    for (auto item: insumos) {
+        if (item->getCodigoUnico() == codigo && item->getTipoInsumo() == "medicamento") {
+            return dynamic_cast<Medicamento *>(item);
+        }
+    }
+    return new Medicamento();
+}
+
+
+
+EPI *Local::get_epi(const std::string &codigo) {
+    for (auto item: insumos) {
+        if (item->getCodigoUnico() == codigo && item->getTipoInsumo() == "epi") {
+            return dynamic_cast<EPI *>(item);
+        }
+    }
+    return new EPI();
+}
+
+
 Insumos* Local::getInsumos(const std::string& tipoInsumo)
 {
     for (auto item: insumos) {
@@ -38,7 +70,6 @@ Insumos* Local::getInsumos(const std::string& tipoInsumo)
         }
     }
     return new Insumos();
-
 }
 
 std::string Local::get_sigla() {

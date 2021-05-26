@@ -25,7 +25,7 @@ class Controlador
         Menu menus;
 
     protected:
-        bool local_existe(std::string local);
+        bool local_existe(std::string &local);
         int get_local(std::string local);
 
     public:
@@ -36,8 +36,9 @@ class Controlador
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
 
         //Funcao de distribuicao, acho que nao ta usando ela
-        void DistribuirInsumosEstados(std::string tipoInsumo);
-
+        int distribuir_vacina_para(const std::string estado, const std::string codigo, const int quantidade);
+        int distribuir_medicamento_para(const std::string estado, const std::string codigo, const int quantidade);
+        int distribuir_epi_para(const std::string estado, std::string codigo, int quantidade);
 
         void insumo_existe_no_local(const std::string local, const std::string codigo);
 
