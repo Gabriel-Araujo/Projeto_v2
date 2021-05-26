@@ -293,8 +293,11 @@ bool Controlador::local_existe(std::string &local) {
 
 
 int Controlador::get_local(const std::string local) {
+    string local_mut = local;
+    transform(local_mut.begin(), local_mut.end(), local_mut.begin(), [](char c){ return toupper(c);});
+
     for (unsigned int index = 0; index < locais.size(); index++) {
-        if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; }
+        if (locais.at(index).get_sigla() == local_mut || locais.at(index).get_nome_extenso() == local_mut) {return index; }
     }
     return -1;
 }
@@ -368,7 +371,10 @@ void Controlador::Exibe_menu()
                 menus.Distribuir_submenu_3();
                 cin.ignore() >> quantidade;
 
-                CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
+                //CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
+                if (opcao_string == "vacina") {
+                    distribuir_vacina_para(estado, codigo, quantidade);
+                }
 
             }else{
                 break;
