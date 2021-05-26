@@ -57,7 +57,7 @@ void Controlador::CadastroInsumosMs(string tipo_ins)
     }
 }
 
-
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
 int Controlador::distribuir_vacina_para(const std::string estado, std::string codigo, int quantidade){
     int index_estado = get_local(estado);
     int index_ministerio = get_local("MIN");
@@ -90,6 +90,8 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
     return 0;
 }
 
+
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
 int Controlador::distribuir_medicamento_para(const std::string estado, std::string codigo, int quantidade){
     int index_estado = get_local(estado);
     int index_ministerio = get_local("MIN");
@@ -123,6 +125,7 @@ int Controlador::distribuir_medicamento_para(const std::string estado, std::stri
 }
 
 
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
 int Controlador::distribuir_epi_para(const std::string estado, std::string codigo, int quantidade){
     int index_estado = get_local(estado);
     int index_ministerio = get_local("MIN");
@@ -379,13 +382,13 @@ void Controlador::Exibe_menu()
 
                 //CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
                 if (opcao_string == "vacina") {
-                    distribuir_vacina_para(estado, codigo, quantidade);
+                    if (!distribuir_vacina_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir vacina.";}
                 }
                 else if (opcao_string == "medicamento") {
-                    distribuir_medicamento_para(estado, codigo, quantidade);
+                    if (!distribuir_medicamento_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir medicamento.";}
                 }
                 else if (opcao_string == "epi") {
-                    distribuir_epi_para(estado, codigo, quantidade);
+                    if (!distribuir_epi_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir epi.";}
                 }
 
             }else{
