@@ -381,6 +381,12 @@ void Controlador::Exibe_menu()
                 if (opcao_string == "vacina") {
                     distribuir_vacina_para(estado, codigo, quantidade);
                 }
+                else if (opcao_string == "medicamento") {
+                    distribuir_medicamento_para(estado, codigo, quantidade);
+                }
+                else if (opcao_string == "epi") {
+                    distribuir_epi_para(estado, codigo, quantidade);
+                }
 
             }else{
                 break;
