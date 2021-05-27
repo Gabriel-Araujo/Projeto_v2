@@ -20,7 +20,7 @@ class Vacina : public Insumos
         void set_quant_doses(int qd);
         void set_intervalo(int it);
 
-
+        void exibe_exclusivos();
 
     protected:
 
@@ -38,8 +38,10 @@ class Vacina : public Insumos
         std::string get_local();
         std::string get_codigo();
         std::string get_tipo_vac();
-        std::string get_quant_doses();
-        std::string get_intervalo();
+        int get_quant_doses();
+        int get_intervalo();
+
+        //void get_exclusivo();
 
         virtual ~Vacina();
 

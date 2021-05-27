@@ -22,12 +22,5 @@ int main()
 
     controlador.Exibe_menu();
 
-
-
-
-
-
-
-    cout << "Hello world!" << endl;
     return 0;
 }

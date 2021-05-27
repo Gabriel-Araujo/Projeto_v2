@@ -32,13 +32,17 @@ public:
 
     std::string get_sigla();
     std::string get_nome_extenso();
+
     void adicionar_insumo(Insumos *insumo);
     void exibir_insumos_quantidade();
     void exibir_insumos_descricao();
+    void exibir_insumos_total();
     void exibir_insumos();
     void exibir_insumos_por_tipo(const std::string& tipo);
+
     bool insumo_existe(const std::string codigo);
     int get_insumo_index(const std::string codigo);
+
 };
 
 #endif // LOCAL_H

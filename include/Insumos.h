@@ -8,17 +8,19 @@ class Insumos
         Insumos();
         virtual ~Insumos();
 
+        std::string getNome();
+        int get_quantidade();
+        int get_valor();
         std::string getTipoInsumo();
         std::string getCodigoUnico();
-
-        int getquantidade();
-        std::string getNome();
-        int get_valor();
-        int get_quantidade();
+        std::string getnome_fab();
 
         void DescontaQuantidade(int quant);
 
         void setQuantidade(int quant);
+
+        //virtual void get_exclusivo();
+
     protected:
 
         std::string nome;

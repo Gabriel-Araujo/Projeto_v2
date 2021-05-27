@@ -42,9 +42,9 @@ std::string Insumos::getTipoInsumo()
     return this->tipoInsumo;
 }
 
-int Insumos::getquantidade()
+std::string Insumos::getnome_fab()
 {
-    return this->quantidade;
+    return nome_fab;
 }
 
 void Insumos::DescontaQuantidade(int quantidade)
@@ -53,6 +53,7 @@ void Insumos::DescontaQuantidade(int quantidade)
         this->quantidade -= quantidade;
     }
 }
+
 
 Insumos::~Insumos()
 {

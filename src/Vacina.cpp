@@ -1,4 +1,8 @@
 #include "../include/Vacina.h"
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
 
 Vacina::Vacina(): Insumos()
 {
@@ -96,4 +100,24 @@ void Vacina::set_intervalo(int it) {
     else {
         intervalo = it;
     }
+}
+
+/*void Vacina::get_exclusivo()
+{
+    cout << setfill(' ') << setw(15) << get_tipo_vac() << setfill(' ') << setw(9) << "|";
+}
+*/
+std::string Vacina::get_tipo_vac()
+{
+    return tipo_vac;
+}
+
+int Vacina::get_quant_doses()
+{
+    return quantidade_doses;
+}
+
+int Vacina::get_intervalo()
+{
+    return intervalo;
 }

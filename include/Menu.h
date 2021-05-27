@@ -31,6 +31,7 @@ class Menu
 
         void exibir_quantidades(std::vector<Insumos*> &Insumos);
         void exibir_formatado(std::vector<Insumos*> &insumos);
+        void exibir_total(std::vector<Insumos*> &Insumos);
 
 
     protected:

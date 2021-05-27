@@ -174,7 +174,8 @@ void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
     cout << setfill(' ') << setw(15) << "NOME" << setfill(' ') << setw(10) << "|";
     cout << setfill(' ') << setw(15) << "PREÇO (R$)" << setfill(' ') << setw(10) << "|";
     cout << setfill(' ') << setw(15) << "TIPO" << setfill(' ') << setw(9) << "|";
-    cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|" << endl;
+    cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|";
+    cout << setfill(' ') << setw(15) << "FABRICANTE" << setfill(' ') << setw(9) << "|" << endl;
 
 
     for (auto &insumo: insumos) {
@@ -183,7 +184,65 @@ void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
         cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
         cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
         cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
-        cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|" << endl;
+        cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
+        cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|" << endl;
         index++;
     }
 }
+
+void Menu::exibir_total(std::vector<Insumos*> &Insumos)
+{
+     int index = 1;
+    cout << " 0 |";
+    cout << setfill(' ') << setw(15) << "CODIGO" << setfill(' ') << setw(10) << "|";
+    cout << setfill(' ') << setw(15) << "NOME" << setfill(' ') << setw(10) << "|";
+    cout << setfill(' ') << setw(15) << "PREÇO (R$)" << setfill(' ') << setw(10) << "|";
+    cout << setfill(' ') << setw(15) << "TIPO" << setfill(' ') << setw(9) << "|";
+    cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|";
+    cout << setfill(' ') << setw(15) << "FABRICANTE" << setfill(' ') << setw(9) << "|" ;
+
+
+    for (auto &insumo: Insumos) {
+        if(insumo->getTipoInsumo() == "vacina"){
+            cout << setfill(' ') << setw(15) << "TIPO DA VACINA" << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << "QUANTIDADE DE DOSES" << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << "INTERVALO DE DOSES" << setfill(' ') << setw(9) << "|" << endl;
+
+            cout << " " << index << " |";
+            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
+
+
+        }else if(insumo->getTipoInsumo() == "medicamento"){
+
+            cout << setfill(' ') << setw(15) << "TIPO DA VACINA" << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << "QUANTIDADE DE DOSES" << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << "INTERVALO DE DOSES" << setfill(' ') << setw(9) << "|" << endl;
+
+            cout << " " << index << " |";
+            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
+
+
+        }else{
+            cout << " " << index << " |";
+            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
+            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
+
+        }
+        index++;
+    }
+}
+

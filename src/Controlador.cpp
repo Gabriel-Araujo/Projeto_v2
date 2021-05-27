@@ -220,6 +220,10 @@ void Controlador::exibir_insumos_descricao(std::string local) {
     locais.at(get_local(local)).exibir_insumos_descricao();
 }
 
+void Controlador::exibir_insumos_total(std::string local)
+{
+    locais.at(get_local(local)).exibir_insumos_total();
+}
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
 void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
     int local_index = get_local(local);
@@ -244,7 +248,7 @@ void Controlador::Exibe_menu()
     cin >> opcao;
     getchar();
     if(opcao == 0){
-        break;0
+        break;
     }
         switch (opcao){
         case 1:
@@ -291,9 +295,8 @@ void Controlador::Exibe_menu()
             if(opcao == 1){
                 exibir_insumos_quantidade("MINISTÉRIO DA SAÚDE");
             }else if(opcao == 2){
-
                 exibir_insumos_descricao("MINISTÉRIO DA SAÚDE");
-            }
+            }else if(opcao == 3)
         default:
             break;
 

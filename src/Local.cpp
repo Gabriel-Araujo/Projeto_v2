@@ -65,10 +65,14 @@ void Local::exibir_insumos_descricao()
     menus.exibir_formatado(insumos);
 }
 
+void Local::exibir_insumos_total()
+{
+    menus.exibir_total(insumos);
+}
+
 void Local::exibir_insumos() {
     menus.exibir_formatado(insumos);
 }
-
 
 void Local::exibir_insumos_por_tipo(const std::string& tipo) {
     std::vector<Insumos*> generico;
@@ -79,7 +83,7 @@ void Local::exibir_insumos_por_tipo(const std::string& tipo) {
             generico.push_back(a);
         }
     }
-    menus.exibir_formatado(generico);
+    menus.exibir_total(generico);
 
     for (auto item: generico) {
         delete item;

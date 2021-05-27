@@ -44,6 +44,7 @@ class Controlador
         void Exibe_menu();
         void exibir_insumos_quantidade(std::string local);
         void exibir_insumos_descricao(std::string local);
+        void exibir_insumos_total(std::string local);
         void exibir_insumos_por_tipo(std::string local, std::string tipo);
 
         // Funções de consulta:
