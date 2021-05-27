@@ -322,6 +322,8 @@ void Controlador::exibir_insumos_descricao(std::string local) {
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
 void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
     int local_index = get_local(local);
+
+    cout << tipo << "disponíveis no estoque de " << local << "." << endl;
     locais.at(local_index).exibir_insumos_por_tipo(tipo);
 }
 
@@ -350,6 +352,7 @@ void Controlador::Exibe_menu()
             menus.Cadastro();
             getline(cin, opcao_string);
             CadastroInsumosMs(opcao_string);
+                exibir_vacina("1000", "MIN");
             break;
         case 2:
             menus.Distribuir();
@@ -370,7 +373,8 @@ void Controlador::Exibe_menu()
                     }
                 }
 
-                exibir_insumos_por_tipo("MIN", opcao_string);
+                system(CLEAR_DEFINE);
+                exibir_insumos_por_tipo("MINISTÉRIO DA SAÚDE", opcao_string);
                 menus.Distribuir_submenu_2();
                 getline(cin, codigo);
                 if(opcao_string == "voltar"){
@@ -418,4 +422,12 @@ bool Controlador::tipo_existe(std::string tipo) {
     transform(tipo.begin(), tipo.end(), tipo.begin(), [](char c) {return tolower(c);});
 
     return any_of(tipos_possiveis.begin(), tipos_possiveis.end(), [&tipo](std::string &item){return item == tipo;});
+}
+
+
+
+void Controlador::exibir_vacina(std::string codigo, std::string local) {
+    Vacina *vacina = locais.at(get_local(local)).get_vacina(codigo);
+
+    menus.exibir_vacina(*vacina);
 }

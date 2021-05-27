@@ -6,6 +6,11 @@
 #include <iostream>
 #include <vector>
 #include "Insumos.h"
+#include "Vacina.h"
+#include <cstdlib>
+
+#define CLEAR_DEFINE "cls"
+
 
 class Menu
 {
@@ -31,6 +36,7 @@ class Menu
 
         void exibir_quantidades(std::vector<Insumos*> &Insumos);
         void exibir_formatado(std::vector<Insumos*> &insumos);
+        void exibir_vacina(Vacina &vacina);
 
 
     protected:

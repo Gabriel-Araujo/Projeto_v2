@@ -6,8 +6,11 @@
 
 using namespace std;
 
+#define CLEAR_DEFINE "cls"
+
 int main()
 {
+    system("chcp 65001");
 
     Controlador controlador;
     //string tipoinsumo;

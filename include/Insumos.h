@@ -10,13 +10,15 @@ class Insumos
 
         std::string getTipoInsumo();
         std::string getCodigoUnico();
-
-
         std::string getNome();
-        int get_valor();
-
-        virtual int get_quantidade();
         std::string get_tipo();
+        std::string get_vencimento();
+        std::string get_fabricante();
+        int get_valor();
+        virtual int get_quantidade();
+
+
+
 
         void DescontaQuantidade(int quant);
         void acrescentar_quantidade(int quantidade);

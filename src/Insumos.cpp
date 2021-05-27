@@ -68,3 +68,13 @@ std::string Insumos::get_tipo() {
 void Insumos::set_local(std::string estado) {
     local = estado;
 }
+
+
+std::string Insumos::get_vencimento() {
+    return data_vencimento;
+}
+
+
+std::string Insumos::get_fabricante() {
+    return nome_fab;
+}
