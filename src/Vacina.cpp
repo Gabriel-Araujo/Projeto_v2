@@ -70,11 +70,6 @@ void Vacina::set_fabricante(std::string fab) {
 }
 
 
-void Vacina::set_local(std::string l) {
-    local = l;
-}
-
-
 void Vacina::set_codigo(std::string unico) {
     codigo_unico = unico;
 }
@@ -102,6 +97,7 @@ void Vacina::set_intervalo(int it) {
     }
 }
 
+<<<<<<< HEAD
 /*void Vacina::get_exclusivo()
 {
     cout << setfill(' ') << setw(15) << get_tipo_vac() << setfill(' ') << setw(9) << "|";
@@ -121,3 +117,23 @@ int Vacina::get_intervalo()
 {
     return intervalo;
 }
+=======
+int Vacina::get_quantidade() {
+    return Insumos::get_quantidade();
+}
+
+
+std::string Vacina::get_tipo_vac() {
+    return tipo_vac;
+}
+
+
+int Vacina::get_quant_doses() {
+    return quantidade_doses;
+}
+
+
+int Vacina::get_intervalo() {
+    return intervalo;
+}
+>>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65

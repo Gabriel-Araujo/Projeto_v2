@@ -11,7 +11,7 @@ class EPI : public Insumos
                std::string local, std::string codigo_unico, std::string tipo_epi, std::string descricao);
 
         std::string get_nome();
-        int get_quantidade();
+        int get_quantidade()override;
         int set_valor_unitario();
         std::string get_vencimento();
         std::string get_fabricante();
@@ -29,7 +29,6 @@ class EPI : public Insumos
         void set_valor_unitario(int q);
         void set_vencimento(std::string data);
         void set_fabricante(std::string fab);
-        void set_local(std::string l);
         void set_codigo(std::string unico);
         void set_tipo_epi(std::string tp);
         void set_descricao(std::string desc);

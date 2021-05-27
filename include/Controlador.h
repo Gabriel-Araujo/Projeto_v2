@@ -19,13 +19,14 @@ class Controlador
 {
     private:
         std::array<Local, 29> locais;
+        std::array<std::string, 3> tipos_possiveis = {"vacina", "medicamento", "epi"};
         void cadastrar_vacina();
         void cadastrar_medicamentos();
         void cadastrar_epis();
         Menu menus;
 
     protected:
-        bool local_existe(std::string local);
+        bool local_existe(std::string &local);
         int get_local(std::string local);
 
     public:
@@ -35,9 +36,10 @@ class Controlador
         void CadastroInsumosMs(std::string tipoInsumo);
         void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
 
-        //Funcao de distribuicao, acho que nao ta usando ela
-        void DistribuirInsumosEstados(std::string tipoInsumo);
 
+        int distribuir_vacina_para(const std::string estado, const std::string codigo, const int quantidade);
+        int distribuir_medicamento_para(const std::string estado, const std::string codigo, const int quantidade);
+        int distribuir_epi_para(const std::string estado, std::string codigo, int quantidade);
 
         void insumo_existe_no_local(const std::string local, const std::string codigo);
 
@@ -46,6 +48,8 @@ class Controlador
         void exibir_insumos_descricao(std::string local);
         void exibir_insumos_total(std::string local);
         void exibir_insumos_por_tipo(std::string local, std::string tipo);
+        void exibir_vacina(std::string codigo, std::string local);
+        bool tipo_existe(std::string tipo);
 
         // Funções de consulta:
         /*

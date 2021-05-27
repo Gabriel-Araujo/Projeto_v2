@@ -42,10 +42,13 @@ std::string Insumos::getTipoInsumo()
     return this->tipoInsumo;
 }
 
+<<<<<<< HEAD
 std::string Insumos::getnome_fab()
 {
     return nome_fab;
 }
+=======
+>>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
 
 void Insumos::DescontaQuantidade(int quantidade)
 {
@@ -55,7 +58,33 @@ void Insumos::DescontaQuantidade(int quantidade)
 }
 
 
+<<<<<<< HEAD
+=======
+void Insumos::acrescentar_quantidade(int quantidade) {
+    this->quantidade += quantidade;
+}
+
+>>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
 Insumos::~Insumos()
 {
     //dtor
+}
+
+std::string Insumos::get_tipo() {
+    return tipoInsumo;
+}
+
+
+void Insumos::set_local(std::string estado) {
+    local = estado;
+}
+
+
+std::string Insumos::get_vencimento() {
+    return data_vencimento;
+}
+
+
+std::string Insumos::get_fabricante() {
+    return nome_fab;
 }

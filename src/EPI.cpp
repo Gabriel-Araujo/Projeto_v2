@@ -21,7 +21,7 @@ EPI::EPI(std::string nome, int quantidade, int valor_unitario, std::string venci
     set_tipo_epi(tipo_epi);
     set_descricao(descricao);
 
-    tipoInsumo = "EPI";
+    tipoInsumo = "epi";
 }
 
 void EPI::set_nome(std::string nome)
@@ -59,10 +59,6 @@ void EPI::set_fabricante(std::string nome_fab)
     this->nome_fab = nome_fab;
 }
 
-void EPI::set_local(std::string local)
-{
-    this->local = local;
-}
 
 void EPI::set_codigo(std::string codigo_unico)
 {
@@ -82,4 +78,8 @@ void EPI::set_descricao(std::string descricao)
 EPI::~EPI()
 {
     //dtor
+}
+
+int EPI::get_quantidade() {
+    return Insumos::get_quantidade();
 }

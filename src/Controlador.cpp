@@ -1,5 +1,6 @@
 #include "../include/Controlador.h"
 
+
  using namespace std;
 
 Controlador::Controlador()
@@ -56,10 +57,105 @@ void Controlador::CadastroInsumosMs(string tipo_ins)
     }
 }
 
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
+int Controlador::distribuir_vacina_para(const std::string estado, std::string codigo, int quantidade){
+    int index_estado = get_local(estado);
+    int index_ministerio = get_local("MIN");
+    std::string tipo_insumo = "vacina";
 
-void Controlador::DistribuirInsumosEstados(std::string tipoInsumo)
-{
-    //Aqui falta pensar no jeito de manipular o vector para gente nao ter que cadastrar dnv
+    if (locais.at(index_ministerio).insumo_existe(codigo)) {
+        auto insumo_ministerio = locais.at(index_ministerio).get_vacina(codigo);
+        if (quantidade > insumo_ministerio->get_quantidade()) {
+            return 0;
+        }
+        else {
+            if (locais.at(index_estado).insumo_existe(codigo)) {
+                auto insumo_estado = locais.at(index_estado).get_vacina(codigo);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->acrescentar_quantidade(quantidade);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                return 1;
+            }
+            else {
+                auto insumo_estado = new Vacina(*insumo_ministerio);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
+int Controlador::distribuir_medicamento_para(const std::string estado, std::string codigo, int quantidade){
+    int index_estado = get_local(estado);
+    int index_ministerio = get_local("MIN");
+    std::string tipo_insumo = "medicamento";
+
+    if (locais.at(index_ministerio).insumo_existe(codigo)) {
+        auto insumo_ministerio = locais.at(index_ministerio).get_medicamento(codigo);
+        if (quantidade > insumo_ministerio->get_quantidade()) {
+            return 0;
+        }
+        else {
+            if (locais.at(index_estado).insumo_existe(codigo)) {
+                auto insumo_estado = locais.at(index_estado).get_medicamento(codigo);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->acrescentar_quantidade(quantidade);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                return 1;
+            }
+            else {
+                auto insumo_estado = new Medicamento(*insumo_ministerio);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+
+// Retorna 0 quando da algum erro, e 1 quando há sucesso.
+int Controlador::distribuir_epi_para(const std::string estado, std::string codigo, int quantidade){
+    int index_estado = get_local(estado);
+    int index_ministerio = get_local("MIN");
+    std::string tipo_insumo = "epi";
+
+    if (locais.at(index_ministerio).insumo_existe(codigo)) {
+        auto insumo_ministerio = locais.at(index_ministerio).get_epi(codigo);
+        if (quantidade > insumo_ministerio->get_quantidade()) {
+            return 0;
+        }
+        else {
+            if (locais.at(index_estado).insumo_existe(codigo)) {
+                auto insumo_estado = locais.at(index_estado).get_epi(codigo);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->acrescentar_quantidade(quantidade);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                return 1;
+            }
+            else {
+                auto insumo_estado = new EPI(*insumo_ministerio);
+                if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
+                insumo_estado->setQuantidade(quantidade);
+                insumo_estado->set_local(estado);
+                insumo_ministerio->DescontaQuantidade(quantidade);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                return 1;
+            }
+        }
+    }
+    return 0;
 }
 
 
@@ -179,7 +275,7 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
     int index = get_local("MINISTÉRIO DA SAÚDE");
     int insumo_index = locais.at(index).get_insumo_index(codigo);
 
-    Insumos *insumo_do_ms = locais.at(index).getInsumosVerify(codigo);
+    Insumos *insumo_do_ms = locais.at(index).get_insumo(codigo);
 
     Insumos *insumo_distribuido = new Insumos(*insumo_do_ms);
     insumo_do_ms->DescontaQuantidade(quantidade);
@@ -193,9 +289,9 @@ void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo,
 
 
 
-bool Controlador::local_existe(std::string local) {
-    bool test_sigla =  any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_sigla() == local;});
-    bool test_nome = any_of(locais.begin(), locais.end(),[local](Local elem) {return elem.get_nome_extenso() == local;});
+bool Controlador::local_existe(std::string &local) {
+    bool test_sigla =  any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_sigla() == local;});
+    bool test_nome = any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_nome_extenso() == local;});
 
     if (test_sigla || test_nome) { return true; }
     else {return false;}
@@ -203,8 +299,11 @@ bool Controlador::local_existe(std::string local) {
 
 
 int Controlador::get_local(const std::string local) {
+    string local_mut = local;
+    transform(local_mut.begin(), local_mut.end(), local_mut.begin(), [](char c){ return toupper(c);});
+
     for (unsigned int index = 0; index < locais.size(); index++) {
-        if (locais.at(index).get_sigla() == local || locais.at(index).get_nome_extenso() == local) {return index; }
+        if (locais.at(index).get_sigla() == local_mut || locais.at(index).get_nome_extenso() == local_mut) {return index; }
     }
     return -1;
 }
@@ -227,6 +326,8 @@ void Controlador::exibir_insumos_total(std::string local)
 // Só para ser usada no main. ( Não é pra existir quando o projeto terminar)
 void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
     int local_index = get_local(local);
+
+    cout << tipo << "disponíveis no estoque de " << local << "." << endl;
     locais.at(local_index).exibir_insumos_por_tipo(tipo);
 }
 
@@ -255,6 +356,7 @@ void Controlador::Exibe_menu()
             menus.Cadastro();
             getline(cin, opcao_string);
             CadastroInsumosMs(opcao_string);
+                exibir_vacina("1000", "MIN");
             break;
         case 2:
             menus.Distribuir();
@@ -268,11 +370,15 @@ void Controlador::Exibe_menu()
                 }
 
                 menus.Distribuir_submenu_1();
-                getline(cin, opcao_string);
-                if(opcao_string == "voltar"){
-                    break;
+                while (true) {
+                    getline(cin, opcao_string);
+                    if(opcao_string == "voltar" || tipo_existe(opcao_string)){
+                        break;
+                    }
                 }
 
+                system(CLEAR_DEFINE);
+                exibir_insumos_por_tipo("MINISTÉRIO DA SAÚDE", opcao_string);
                 menus.Distribuir_submenu_2();
                 getline(cin, codigo);
                 if(opcao_string == "voltar"){
@@ -280,9 +386,18 @@ void Controlador::Exibe_menu()
                 }
 
                 menus.Distribuir_submenu_3();
-                cin.ignore() >> quantidade;
+                cin >> quantidade;
 
-                CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
+                //CadastroInsumosEst(opcao_string, codigo, estado, quantidade);
+                if (opcao_string == "vacina") {
+                    if (!distribuir_vacina_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir vacina.";}
+                }
+                else if (opcao_string == "medicamento") {
+                    if (!distribuir_medicamento_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir medicamento.";}
+                }
+                else if (opcao_string == "epi") {
+                    if (!distribuir_epi_para(estado, codigo, quantidade)) { cout << "não foi possível distribuir epi.";}
+                }
 
             }else{
                 break;
@@ -302,4 +417,20 @@ void Controlador::Exibe_menu()
 
         }
     }
+}
+
+
+
+bool Controlador::tipo_existe(std::string tipo) {
+    transform(tipo.begin(), tipo.end(), tipo.begin(), [](char c) {return tolower(c);});
+
+    return any_of(tipos_possiveis.begin(), tipos_possiveis.end(), [&tipo](std::string &item){return item == tipo;});
+}
+
+
+
+void Controlador::exibir_vacina(std::string codigo, std::string local) {
+    Vacina *vacina = locais.at(get_local(local)).get_vacina(codigo);
+
+    menus.exibir_vacina(*vacina);
 }

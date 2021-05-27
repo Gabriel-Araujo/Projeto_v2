@@ -8,7 +8,7 @@ Menu::Menu()
 using namespace std;
 
 void Menu::Boas_vindas(){
-
+    std::system(CLEAR_DEFINE);
     printf("----------------------------------------------------------------------------------\n");
     printf("\t\t Boas vindas ao sistema de vacinacao\n");
     printf("-----------------------------------------------------------------------------------\n");
@@ -25,7 +25,7 @@ void Menu::Boas_vindas(){
 
 
 void Menu::Cadastro(){
-
+    std::system(CLEAR_DEFINE);
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 1, qual tipo de insumo voce deseja cadastrar:\n\n");
     printf("----------------------------------------------------------------------------------\n");
@@ -39,7 +39,7 @@ void Menu::Cadastro(){
 
 
 void Menu::Distribuir(){
-
+    std::system(CLEAR_DEFINE);
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 2, nos informe para qual Estado voce deseja distribuir:\n\n");
     printf("----------------------------------------------------------------------------------\n");
@@ -51,7 +51,6 @@ void Menu::Distribuir(){
 
 
 void Menu::Distribuir_submenu_1(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 1, qual tipo de insumo voce deseja distribuir para o Estado:\n\n");
     printf("----------------------------------------------------------------------------------\n");
@@ -64,7 +63,6 @@ void Menu::Distribuir_submenu_1(){
 }
 
 void Menu::Distribuir_submenu_2(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Informe-nos o codigo do produto desejado a distribuicao: ");
     printf("----------------------------------------------------------------------------------\n");
@@ -73,7 +71,6 @@ void Menu::Distribuir_submenu_2(){
 }
 
 void Menu::Distribuir_submenu_3(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Informe-nos a quantidade do produto desejado a distribuicao: ");
     printf("----------------------------------------------------------------------------------\n");
@@ -82,7 +79,6 @@ void Menu::Distribuir_submenu_3(){
 }
 
 void Menu::ConsultarMs(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 3, nos diga como voce quer receber a informacao:\n\n");
     printf("----------------------------------------------------------------------------------\n");
@@ -96,7 +92,6 @@ void Menu::ConsultarMs(){
 
 //funcao caso o usuario escolher a opcao 3, escolha novamente a opcao 3, coloca dentro da funcao de insumos disponiveis se a funcao for necessaria
 void Menu::Consultar_submenu_3(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 3, nos diga como voce quer receber a informa��o:\n\n");
     printf("\n\n----------------------------------------------------------------------------------\n");
@@ -110,7 +105,6 @@ void Menu::Consultar_submenu_3(){
 
 
 void Menu::Unidades_distribuidas(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 4, nos diga como voce quer receber a informação:\n\n");
     printf("----------------------------------------------------------------------------------\n");
@@ -124,7 +118,6 @@ void Menu::Unidades_distribuidas(){
 }
 //funcao caso o usuario escolher a opcao 4, escolha a opcao 3, coloca dentro da funcao de insumos distribuidos se a funcao for necessaria
 void Menu::Unidades_distribuidas_submenu_3(){
-
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 3, nos diga como voce quer receber a informação:\n\n");
     printf("\n\n----------------------------------------------------------------------------------\n");
@@ -246,3 +239,20 @@ void Menu::exibir_total(std::vector<Insumos*> &Insumos)
     }
 }
 
+<<<<<<< HEAD
+=======
+
+void Menu::exibir_vacina(Vacina &vacina) {
+
+    cout << "\t\tInformações da vacina escolhida:" << endl;
+    cout << "codigo do insumo: " << vacina.getCodigoUnico() << endl;
+    cout << "nome da vacina: " << vacina.getNome() << endl;
+    cout << "Preço: R$ " << vacina.get_valor() << endl;
+    cout << "data de vencimento: " << vacina.get_vencimento() << endl;
+    cout << "fabricante: " << vacina.get_fabricante() << endl;
+    cout << "quantidade de doses: " << vacina.get_quant_doses() << endl;
+    cout << "tempo entre doses: " << vacina.get_intervalo() << endl;
+    cout << "tipo de tecnologia: " << vacina.get_tipo_vac() << endl;
+
+}
+>>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
