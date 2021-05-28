@@ -448,6 +448,7 @@ void Controlador::exibir_epi(std::string codigo, std::string local) {
 
 
 void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
+    if (insumo -> getNome() == "NULL") {return;}
     std::string tipo_do_insumo = insumo->get_tipo();
     std::string codigo_do_insumo = insumo->getCodigoUnico();
     Local local = locais.at(get_local(insumo->get_local()));
