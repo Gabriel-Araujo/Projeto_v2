@@ -12,6 +12,7 @@
 #include <cstdlib>
 
 #define CLEAR_DEFINE "cls"
+#define WAIT_DEFINE "pause"
 
 
 class Menu

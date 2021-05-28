@@ -34,18 +34,24 @@ public:
     Vacina* get_vacina(const std::string& codigo);
     Medicamento* get_medicamento(const std::string& codigo);
     EPI* get_epi(const std::string& codigo);
+
     Insumos* getInsumos(const std::string& tipoInsumo);
-
-
+    int get_insumo_index(const std::string codigo);
+    std::string get_insumo_tipo(const std::string codigo);
     std::string get_sigla();
     std::string get_nome_extenso();
+
+    int get_vacina_quantidade();
+    int get_medicamento_quantidade();
+    int get_epi_quantidade();
+
+
     void adicionar_insumo(Insumos *insumo);
     void exibir_insumos_quantidade();
     void exibir_insumos_descricao();
     void exibir_insumos();
     void exibir_insumos_por_tipo(const std::string& tipo);
     bool insumo_existe(const std::string codigo);
-    int get_insumo_index(const std::string codigo);
 };
 
 #endif // LOCAL_H

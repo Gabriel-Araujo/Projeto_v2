@@ -24,7 +24,7 @@ int main()
     controlador.exibir_insumos_por_tipo("MIN", "vacina");*/
 
 
-    controlador.Exibe_menu();
+    controlador.loop_hole();
 
 
 

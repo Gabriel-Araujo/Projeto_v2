@@ -445,3 +445,116 @@ void Controlador::exibir_epi(std::string codigo, std::string local) {
 
     menus.exibir_EPI(*epi);
 }
+
+
+[[noreturn]] void Controlador::loop_hole() {
+    int escolha, quantidade_distribuir, opcao_consultar, consulta_submenu_3;
+    std::string tipo_para_cadastro, local, tipo_para_distribuir, codigo_distribuir, codigo_consulta, tipo_consulta;
+    // Mantem o programa rodando até chegar um break.
+    while(true) {
+        system(CLEAR_DEFINE);
+        menus.Boas_vindas();
+
+        cout << "Digite a sua escolha : ";
+        cin >> escolha;
+        getchar();
+
+        switch (escolha) {
+            case 0:
+                break;
+            case 1: // Cadastro
+                system(CLEAR_DEFINE);
+                menus.Cadastro();
+                getline(cin, tipo_para_cadastro);
+
+                if (tipo_para_cadastro == "0" || tipo_para_cadastro == "voltar") {break;}
+                else {
+                    CadastroInsumosMs(tipo_para_cadastro);
+                }
+                break;
+            case 2: // Distribuir
+                system(CLEAR_DEFINE);
+                menus.Distribuir();
+                menus.exibir_estados();
+                getline(cin, local);
+                menus.Distribuir_submenu_1();
+                getline(cin, tipo_para_distribuir);
+                if (tipo_para_distribuir == "0" || tipo_para_distribuir == "voltar") {break;}
+                else if (tipo_existe(tipo_para_distribuir)) {
+                    cout << "Tipo expecificado não existe. Tente novamente.";
+                    break;
+                }
+                else {
+                    menus.Distribuir_submenu_2();
+                    getline(cin, codigo_distribuir);
+                    menus.Distribuir_submenu_3();
+                    cin >> quantidade_distribuir;
+                    getchar();
+
+                    if (tipo_para_distribuir == "vacina") {
+                        distribuir_vacina_para(local, codigo_distribuir, quantidade_distribuir);
+                    }
+                    else if (tipo_para_distribuir == "medicamento") {
+                        distribuir_medicamento_para(local, codigo_distribuir, quantidade_distribuir);
+                    }
+                    else if (tipo_para_distribuir == "epi") {
+                        distribuir_epi_para(local, codigo_distribuir, quantidade_distribuir);
+                    }
+                }
+                break;
+            case 3: // Exibir
+                system(CLEAR_DEFINE);
+                menus.ConsultarMs();
+                cin >> opcao_consultar;
+                getchar();
+
+                system(CLEAR_DEFINE);
+                switch (opcao_consultar) {
+                    case 0:
+                        break;
+                    case 1:
+                        exibir_insumos_quantidade("MIN");
+                        break;
+                    case 2:
+                        exibir_insumos_descricao("MIN");
+                        cout << "Digite o insumo que você quer ver detalhado: ";
+                        getline(cin, codigo_consulta);
+                        tipo_consulta = locais.at(get_local("MIN")).get_insumo_tipo(codigo_consulta);
+
+                        if (tipo_consulta == "vacina") { exibir_vacina(codigo_consulta, "MIN");}
+                        else if (tipo_consulta == "medicamento") { exibir_medicamento(codigo_consulta, "MIN");}
+                        else if (tipo_consulta == "epi") { exibir_epi(codigo_consulta, "MIN");}
+                        else {cout << "Tipo inválido ou digitado errado. Tente novamente"; system(WAIT_DEFINE); break;}
+                        break;
+
+                    case 3:
+                        menus.Consultar_submenu_3();
+                        cin >> consulta_submenu_3;
+                        getchar();
+                        switch (consulta_submenu_3) {
+                            case 1:
+                                cout << "\nQuantidade de vacinas: " << locais.at(get_local("MIN")).get_vacina_quantidade() <<
+                                     "\n_____________________________________________________________________________________________________\n" << endl;
+                                exibir_insumos_por_tipo("MIN", "vacina");
+                                break;
+                            case 2:
+                                cout << "\nQuantidade de medicamentos: " << locais.at(get_local("MIN")).get_vacina_quantidade() <<
+                                     "\n_____________________________________________________________________________________________________\n" << endl;
+                                exibir_insumos_por_tipo("MIN", "vacina");
+                                break;
+                            case 3:
+                                cout << "\nQuantiade de EPIs: " << locais.at(get_local("MIN")).get_vacina_quantidade() <<
+                                     "\n______________________________________________________________________________________________________\n" << endl;
+                                exibir_insumos_por_tipo("MIN", "vacina");
+                                break;
+                            default:
+                                cout << "Entrada incorreta." << endl;
+                            }
+                        system("pause");
+                        break;
+                    case 4: ;
+
+                }
+        }
+    }
+}
