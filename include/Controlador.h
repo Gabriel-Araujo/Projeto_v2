@@ -59,7 +59,7 @@ class Controlador
 
         bool tipo_existe(std::string tipo);
 
-    [[noreturn]] void loop_hole();
+        int loop_hole();
 
         // Funções de consulta:
         /*

@@ -11,7 +11,6 @@ class EPI : public Insumos
                std::string local, std::string codigo_unico, std::string tipo_epi, std::string descricao);
 
 
-        int get_quantidade()override;
 
         std::string get_tipo_epi();
         std::string get_descricao();

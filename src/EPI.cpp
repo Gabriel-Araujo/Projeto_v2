@@ -80,9 +80,6 @@ EPI::~EPI()
     //dtor
 }
 
-int EPI::get_quantidade() {
-    return Insumos::get_quantidade();
-}
 
 std::string EPI::get_tipo_epi() {
     return tipo_epi;

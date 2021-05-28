@@ -38,6 +38,9 @@ Controlador::Controlador()
 
 Controlador::~Controlador()
 {
+    for (auto local: locais) {
+        local.delete_all();
+    }
 }
 
 
@@ -468,7 +471,7 @@ void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
 }
 
 
-[[noreturn]] void Controlador::loop_hole() {
+int Controlador::loop_hole() {
     int escolha;
 
     // Mantem o programa rodando até chegar um break.
@@ -480,12 +483,14 @@ void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
         cin >> escolha;
         getchar();
 
-        exibir_menus(escolha);
+        if (escolha == 0) {return 0;}
+        else exibir_menus(escolha);
     }
 }
 
 
 void Controlador::exibir_menus(int escolha) {
+
     switch (escolha) {
         case 0:
             break;
@@ -561,7 +566,7 @@ void Controlador::exibir_menus_distribuir() {
 void Controlador::exibir_menus_consultar_ms() {
     int opcao_consultar, escolha_submenu_3;
     std::string codigo_consulta, tipo_consulta, escolha_submenu_2;
-    Local local = locais.at(get_local("MIN"));
+
 
     system(CLEAR_DEFINE);
     menus.ConsultarMs();
@@ -571,9 +576,9 @@ void Controlador::exibir_menus_consultar_ms() {
     system(CLEAR_DEFINE);
     if (opcao_consultar == 0) { return; }
     else if (opcao_consultar == 1) {
+        Local local = locais.at(get_local("MIN"));
         cout << "Quantidade de insumos (Vacinas, Medicamentos e EPIs)." << endl;
-        cout
-                << "___________________________________________________________________________________________________________\n";
+        cout << "___________________________________________________________________________________________________________\n";
         cout << "Quantidade de vacinas (em unidades):" << local.get_vacina_quantidade() << endl;
         cout << "\nQuantidade de medicamentos (em unidades):" << local.get_medicamento_quantidade() << endl;
         cout << "\nQuantidade de EPIs (em unidades):" << local.get_epi_quantidade() << endl;
@@ -582,7 +587,9 @@ void Controlador::exibir_menus_consultar_ms() {
         system(WAIT_DEFINE);
         return;
     }
+
     else if (opcao_consultar == 2) {
+        Local local = locais.at(get_local("MIN"));
         cout << "\n\nVacinas:______________________________________________________________________________________________\n";
         exibir_insumos_por_tipo("MIN", "vacina");
 
@@ -604,6 +611,7 @@ void Controlador::exibir_menus_consultar_ms() {
         return;
     }
     else if (opcao_consultar == 3) {
+        Local local = locais.at(get_local("MIN"));
         menus.Consultar_submenu_3();
         cin >> escolha_submenu_3;
         getchar();

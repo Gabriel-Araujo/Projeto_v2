@@ -11,7 +11,7 @@ using namespace std;
 
 int main()
 {
-    Persistencia persistencia;
+    //Persistencia persistencia;
     system("chcp 65001");
 
     Controlador controlador;

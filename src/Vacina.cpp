@@ -93,9 +93,6 @@ void Vacina::set_intervalo(int it) {
     }
 }
 
-int Vacina::get_quantidade() {
-    return Insumos::get_quantidade();
-}
 
 
 std::string Vacina::get_tipo_vac() {
