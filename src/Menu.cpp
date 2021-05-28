@@ -183,15 +183,38 @@ void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
 
 
 void Menu::exibir_vacina(Vacina &vacina) {
-
     cout << "\t\tInformações da vacina escolhida:" << endl;
-    cout << "codigo do insumo: " << vacina.getCodigoUnico() << endl;
-    cout << "nome da vacina: " << vacina.getNome() << endl;
+    cout << "Codigo do insumo: " << vacina.getCodigoUnico() << endl;
+    cout << "Nome da vacina: " << vacina.getNome() << endl;
     cout << "Preço: R$ " << vacina.get_valor() << endl;
-    cout << "data de vencimento: " << vacina.get_vencimento() << endl;
-    cout << "fabricante: " << vacina.get_fabricante() << endl;
-    cout << "quantidade de doses: " << vacina.get_quant_doses() << endl;
-    cout << "tempo entre doses: " << vacina.get_intervalo() << endl;
-    cout << "tipo de tecnologia: " << vacina.get_tipo_vac() << endl;
+    cout << "Data de vencimento: " << vacina.get_vencimento() << endl;
+    cout << "Fabricante: " << vacina.get_fabricante() << endl;
+    cout << "Quantidade de doses: " << vacina.get_quant_doses() << endl;
+    cout << "Tempo entre doses: " << vacina.get_intervalo() << endl;
+    cout << "Tipo de tecnologia: " << vacina.get_tipo_vac() << endl;
+}
 
+
+void exibir_medicamento(Medicamento &medicamento) {
+    cout << "\t\tInformações do medicamento escolhida:" << endl;
+    cout << "Codigo do insumo: " << medicamento.getCodigoUnico() << endl;
+    cout << "nome da vacina: " << medicamento.getNome() << endl;
+    cout << "Preço: R$ " << medicamento.get_valor() << endl;
+    cout << "Data de vencimento: " << medicamento.get_vencimento() << endl;
+    cout << "Fabricante: " << medicamento.get_fabricante() << endl;
+    cout << "Dosagem: " << medicamento.get_dosagem() << endl;
+    cout << "Administracao: " << medicamento.get_administracao() << endl;
+    cout << "Disposicao: " << medicamento.get_disposicao() << endl;
+}
+
+
+void exibir_EPI(EPI &epi) {
+    cout << "\t\tInformações da EPI escolhida:" << endl;
+    cout << "Codigo do insumo: " << epi.getCodigoUnico() << endl;
+    cout << "Nome da vacina: " << epi.getNome() << endl;
+    cout << "Preço: R$ " << epi.get_valor() << endl;
+    cout << "Data de vencimento: " << epi.get_vencimento() << endl;
+    cout << "Fabricante: " << epi.get_fabricante() << endl;
+    cout << "Tipo da epi: " << epi.get_tipo_epi() << endl;
+    cout << "Informacoes detalhadas: \n\t" << epi.get_descricao() << endl;
 }

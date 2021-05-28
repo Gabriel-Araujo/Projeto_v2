@@ -7,6 +7,8 @@
 #include <vector>
 #include "Insumos.h"
 #include "Vacina.h"
+#include "Medicamento.h"
+#include "EPI.h"
 #include <cstdlib>
 
 #define CLEAR_DEFINE "cls"
