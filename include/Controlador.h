@@ -50,6 +50,12 @@ class Controlador
         void exibir_vacina(std::string codigo, std::string local);
         void exibir_medicamento(std::string codigo, std::string local);
         void exibir_epi(std::string codigo, std::string local);
+        void exibir_insumo_detalhado(Insumos *insumo);
+        void exibir_menus(int escolha);
+        void exibir_menus_cadastro();
+        void exibir_menus_distribuir();
+        void exibir_menus_consultar_ms();
+        void exibir_menus_consulta_estados();
 
         bool tipo_existe(std::string tipo);
 
