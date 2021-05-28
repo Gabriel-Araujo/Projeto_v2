@@ -1,0 +1,85 @@
+# depslib dependency file v1.0
+1621720100 source:c:\users\david\documents\programação\projeto_v2\src\persistencia.cpp
+	"../include/Persistencia.h"
+
+1621469985 c:\users\david\documents\programação\projeto_v2\include\persistencia.h
+	"Controlador.h"
+
+1622165342 c:\users\david\documents\programação\projeto_v2\include\controlador.h
+	"Insumos.h"
+	"Vacina.h"
+	"Medicamento.h"
+	"EPI.h"
+	"Local.h"
+	"Menu.h"
+	<vector>
+	<array>
+	<algorithm>
+	<iostream>
+	<iterator>
+
+1622161108 c:\users\david\documents\programação\projeto_v2\include\insumos.h
+	<string>
+
+1622161121 c:\users\david\documents\programação\projeto_v2\include\vacina.h
+	"Insumos.h"
+
+1622165528 c:\users\david\documents\programação\projeto_v2\include\medicamento.h
+	"Insumos.h"
+
+1622160934 c:\users\david\documents\programação\projeto_v2\include\epi.h
+	"Insumos.h"
+
+1622164993 c:\users\david\documents\programação\projeto_v2\include\local.h
+	"Insumos.h"
+	"Menu.h"
+	"Vacina.h"
+	"Medicamento.h"
+	"EPI.h"
+	<vector>
+	<array>
+
+1622164993 c:\users\david\documents\programação\projeto_v2\include\menu.h
+	<iomanip>
+	<iostream>
+	<vector>
+	"Insumos.h"
+	"Vacina.h"
+	"Medicamento.h"
+	"EPI.h"
+	<cstdlib>
+
+1622165715 source:c:\users\david\documents\programação\projeto_v2\src\epi.cpp
+	"../include/EPI.h"
+
+1622161045 source:c:\users\david\documents\programação\projeto_v2\src\insumos.cpp
+	"../include/Insumos.h"
+
+1622165656 source:c:\users\david\documents\programação\projeto_v2\src\medicamento.cpp
+	"../include/Medicamento.h"
+
+1622162367 source:c:\users\david\documents\programação\projeto_v2\main.cpp
+	<iostream>
+	<string>
+	"include/Vacina.h"
+	"include/Controlador.h"
+
+1622166023 source:c:\users\david\documents\programação\projeto_v2\src\controlador.cpp
+	"../include/Controlador.h"
+
+1622165113 source:c:\users\david\documents\programação\projeto_v2\src\local.cpp
+	"../include/Local.h"
+	<algorithm>
+	<iostream>
+	<utility>
+
+1622161237 source:c:\users\david\documents\programação\projeto_v2\src\vacina.cpp
+	"../include/Vacina.h"
+	<iostream>
+	<iomanip>
+
+1622166828 source:c:\users\david\documents\programação\projeto_v2\src\menu.cpp
+	"../include/Menu.h"
+	"../include/Controlador.h"
+	<iostream>
+

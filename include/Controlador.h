@@ -49,7 +49,18 @@ class Controlador
         void exibir_insumos_total(std::string local);
         void exibir_insumos_por_tipo(std::string local, std::string tipo);
         void exibir_vacina(std::string codigo, std::string local);
+        void exibir_medicamento(std::string codigo, std::string local);
+        void exibir_epi(std::string codigo, std::string local);
+        void exibir_insumo_detalhado(Insumos *insumo);
+        void exibir_menus(int escolha);
+        void exibir_menus_cadastro();
+        void exibir_menus_distribuir();
+        void exibir_menus_consultar_ms();
+        void exibir_menus_consulta_estados();
+
         bool tipo_existe(std::string tipo);
+
+    [[noreturn]] void loop_hole();
 
         // Funções de consulta:
         /*

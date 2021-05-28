@@ -3,6 +3,7 @@
 
 #include "include/Vacina.h"
 #include "include/Controlador.h"
+#include "include/Persistencia.h"
 
 using namespace std;
 
@@ -10,6 +11,7 @@ using namespace std;
 
 int main()
 {
+    Persistencia persistencia;
     system("chcp 65001");
 
     Controlador controlador;
@@ -28,7 +30,7 @@ int main()
 
 =======
 
-    controlador.Exibe_menu();
+    controlador.loop_hole();
 
 
 

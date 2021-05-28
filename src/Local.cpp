@@ -134,3 +134,50 @@ int Local::get_insumo_index(const std::string codigo) {
     return -1;
 }
 
+
+std::string Local::get_insumo_tipo(const std::string codigo) {
+    Insumos *insumo = get_insumo(codigo);
+    return insumo->get_tipo();
+}
+
+
+int Local::get_vacina_quantidade() {
+    int quantidade = 0;
+    for (auto item: insumos) {
+        if (item->getTipoInsumo() == "vacina"){
+        quantidade += item->get_quantidade();
+        }
+    }
+    return quantidade;
+}
+
+
+int Local::get_medicamento_quantidade() {
+    int quantidade = 0;
+    for (auto item: insumos) {
+        if (item->getTipoInsumo() == "medicamento"){
+            quantidade += item->get_quantidade();
+        }
+    }
+    return quantidade;
+}
+
+
+int Local::get_epi_quantidade() {
+    int quantidade = 0;
+    for (auto item: insumos) {
+        if (item->getTipoInsumo() == "epi"){
+            quantidade += item->get_quantidade();
+        }
+    }
+    return quantidade;
+}
+
+
+int Local::get_insumos_quantidade() {
+    int quantidade = 0;
+    for (auto item: insumos) {
+        quantidade += item->get_quantidade();
+    }
+    return quantidade;
+}

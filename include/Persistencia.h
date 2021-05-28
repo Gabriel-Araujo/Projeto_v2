@@ -1,21 +1,29 @@
 #ifndef PERSISTENCIA_H
 #define PERSISTENCIA_H
 #include "Controlador.h"
+#include "Insumos.h"
+#include "Vacina.h"
+#include "Medicamento.h"
+#include "EPI.h"
+
+
+#include <filesystem>
+#include <fstream>
+
+
 
 class Persistencia
 {
     public:
         Persistencia();
         virtual ~Persistencia();
-        void _create_empty_csv(std::string file_name);
-        void _add_header_to_file(std::string a_header, std::string file_name);
-        int _find_row(std::string word, std::string file_name);
-        //void _criar_diretorios();
-        void _criar_estoque(std::string nome_do_arquivo, int tipo);                                                                             // CREATE
-
-
-        // Fun��es que podem ser usadas pelo programador:
+        // IMPLEMENTADOS
+        void add_header_to_file(std::string a_header, std::string endereco);
         void criar_estoques();
+
+
+        // NÂO IMPLEMENTADOS
+        int _find_row(std::string word, std::string file_name);                                                                           // CREATE
         void show_file(std::string file_name);                                                                                       // READ
         std::string read_a_line_of_the_file(std::string name, std::string file_name);                                                          // READ
         void adicionar_item_ao_estoque(std::string item, std::string file_name);                                                          // UPDATE
@@ -28,6 +36,15 @@ class Persistencia
     protected:
 
     private:
+    std::string vacina_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, doses, tempo entre doses\n";
+    std::string medicamento_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, dosagem, administração, disposição\n";
+    std::string epi_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, informações\n";
+
+    std::string VACINA_ENDERECO = "database/vacinas.csv";
+    std::string MEDICAMENTO_ENDERECO = "database/medicamentos.csv";
+    std::string EPI_ENDERECO = "database/epis.csv";
+
+    bool estoques_existem();
 };
 
 #endif // PERSISTENCIA_H
