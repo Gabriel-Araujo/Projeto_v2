@@ -1,6 +1,7 @@
 #ifndef INSUMOS_H
 #define INSUMOS_H
 #include <string>
+#include <algorithm>
 
 class Insumos
 {
@@ -14,6 +15,7 @@ class Insumos
         std::string get_tipo();
         std::string get_vencimento();
         std::string get_fabricante();
+        std::string get_local();
         int get_valor();
         virtual int get_quantidade();
 
