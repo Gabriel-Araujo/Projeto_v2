@@ -44,6 +44,7 @@ public:
     int get_vacina_quantidade();
     int get_medicamento_quantidade();
     int get_epi_quantidade();
+    int get_insumos_quantidade();
 
 
     void adicionar_insumo(Insumos *insumo);

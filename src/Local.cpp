@@ -168,3 +168,12 @@ int Local::get_epi_quantidade() {
     }
     return quantidade;
 }
+
+
+int Local::get_insumos_quantidade() {
+    int quantidade = 0;
+    for (auto item: insumos) {
+        quantidade += item->get_quantidade();
+    }
+    return quantidade;
+}
