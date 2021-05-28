@@ -39,9 +39,9 @@ class Menu
         void exibir_estados();
         void exibir_quantidades(std::vector<Insumos*> &Insumos);
         void exibir_formatado(std::vector<Insumos*> &insumos);
-        void exibir_vacina(Vacina &vacina);
-        void exibir_medicamento(Medicamento &medicamento);
-        void exibir_EPI(EPI &epi);
+        void exibir_vacina(Vacina *vacina);
+        void exibir_medicamento(Medicamento *medicamento);
+        void exibir_EPI(EPI *epi);
 
 
     protected:
