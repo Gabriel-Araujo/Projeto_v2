@@ -34,11 +34,13 @@ class Menu
         void Unidades_distribuidas();
         void Unidades_distribuidas_submenu_3();
         void Insumos_distribuidos();
-        void exibir_estados();
 
+        void exibir_estados();
         void exibir_quantidades(std::vector<Insumos*> &Insumos);
         void exibir_formatado(std::vector<Insumos*> &insumos);
         void exibir_vacina(Vacina &vacina);
+        void exibir_medicamento(Medicamento &medicamento);
+        void exibir_EPI(EPI &epi);
 
 
     protected:

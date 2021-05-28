@@ -431,3 +431,17 @@ void Controlador::exibir_vacina(std::string codigo, std::string local) {
 
     menus.exibir_vacina(*vacina);
 }
+
+
+void Controlador::exibir_medicamento(std::string codigo, std::string local) {
+    Medicamento *medicamento = locais.at(get_local(local)).get_medicamento(codigo);
+
+    menus.exibir_medicamento(*medicamento);
+}
+
+
+void Controlador::exibir_epi(std::string codigo, std::string local) {
+    EPI *epi = locais.at(get_local(local)).get_epi(codigo);
+
+    menus.exibir_EPI(*epi);
+}

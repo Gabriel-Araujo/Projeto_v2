@@ -195,7 +195,7 @@ void Menu::exibir_vacina(Vacina &vacina) {
 }
 
 
-void exibir_medicamento(Medicamento &medicamento) {
+void Menu::exibir_medicamento(Medicamento &medicamento) {
     cout << "\t\tInformações do medicamento escolhida:" << endl;
     cout << "Codigo do insumo: " << medicamento.getCodigoUnico() << endl;
     cout << "nome da vacina: " << medicamento.getNome() << endl;
@@ -208,7 +208,7 @@ void exibir_medicamento(Medicamento &medicamento) {
 }
 
 
-void exibir_EPI(EPI &epi) {
+void Menu::exibir_EPI(EPI &epi) {
     cout << "\t\tInformações da EPI escolhida:" << endl;
     cout << "Codigo do insumo: " << epi.getCodigoUnico() << endl;
     cout << "Nome da vacina: " << epi.getNome() << endl;

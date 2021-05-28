@@ -48,6 +48,9 @@ class Controlador
         void exibir_insumos_descricao(std::string local);
         void exibir_insumos_por_tipo(std::string local, std::string tipo);
         void exibir_vacina(std::string codigo, std::string local);
+        void exibir_medicamento(std::string codigo, std::string local);
+        void exibir_epi(std::string codigo, std::string local);
+
         bool tipo_existe(std::string tipo);
 
         // Funções de consulta:
