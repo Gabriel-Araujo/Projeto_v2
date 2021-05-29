@@ -25,10 +25,8 @@ int main()
 
     controlador.exibir_insumos_por_tipo("MIN", "vacina");*/
 
-<<<<<<< HEAD
-    controlador.Exibe_menu();
 
-=======
+    //controlador.Exibe_menu();
 
     controlador.loop_hole();
 
@@ -37,6 +35,6 @@ int main()
 
 
     cout << "Hello world!" << endl;
->>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
+
     return 0;
 }

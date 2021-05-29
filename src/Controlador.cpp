@@ -479,7 +479,6 @@ void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
         system(CLEAR_DEFINE);
         menus.Boas_vindas();
 
-        cout << "Digite a sua escolha : ";
         cin >> escolha;
         getchar();
 

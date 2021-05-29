@@ -39,11 +39,8 @@ class Vacina : public Insumos
         std::string get_tipo_vac();
         int get_quant_doses();
         int get_intervalo();
-<<<<<<< HEAD
 
         //void get_exclusivo();
-=======
->>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
 
         virtual ~Vacina();
 

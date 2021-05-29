@@ -236,24 +236,11 @@ void Menu::exibir_total(std::vector<Insumos*> &Insumos)
     }
 }
 
-<<<<<<< HEAD
-=======
+
 
 void Menu::exibir_vacina(Vacina *vacina) {
     cout << "\t\tInformações da vacina escolhida:" << endl;
-<<<<<<< HEAD
-    cout << "codigo do insumo: " << vacina.getCodigoUnico() << endl;
-    cout << "nome da vacina: " << vacina.getNome() << endl;
-    cout << "Preço: R$ " << vacina.get_valor() << endl;
-    cout << "data de vencimento: " << vacina.get_vencimento() << endl;
-    cout << "fabricante: " << vacina.get_fabricante() << endl;
-    cout << "quantidade de doses: " << vacina.get_quant_doses() << endl;
-    cout << "tempo entre doses: " << vacina.get_intervalo() << endl;
-    cout << "tipo de tecnologia: " << vacina.get_tipo_vac() << endl;
 
-}
->>>>>>> d2a1bd5d650c003d404bf9697d01d82bb13fdb65
-=======
     cout << "Codigo do insumo: " << vacina->getCodigoUnico() << endl;
     cout << "Nome da vacina: " << vacina->getNome() << endl;
     cout << "Preço: R$ " << vacina->get_valor() << endl;
@@ -263,7 +250,6 @@ void Menu::exibir_vacina(Vacina *vacina) {
     cout << "Tempo entre doses: " << vacina->get_intervalo() << endl;
     cout << "Tipo de tecnologia: " << vacina->get_tipo_vac() << endl;
 }
-
 
 void Menu::exibir_medicamento(Medicamento *medicamento) {
     cout << "\t\tInformações do medicamento escolhida:" << endl;
@@ -288,4 +274,4 @@ void Menu::exibir_EPI(EPI *epi) {
     cout << "Tipo da epi: " << epi->get_tipo_epi() << endl;
     cout << "Informacoes detalhadas: \n\t" << epi->get_descricao() << endl;
 }
->>>>>>> 59331ace5537441b3cae1095f8c3d92edee2ac61
+
