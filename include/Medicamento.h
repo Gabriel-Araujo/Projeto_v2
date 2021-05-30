@@ -11,7 +11,7 @@ class Medicamento : public Insumos
                std::string local, std::string codigo_unico, std::string dsg, std::string adm, std::string disp);
 
 
-        int get_quantidade() override;
+
         std::string get_dosagem();
         std::string get_administracao();
         std::string get_disposicao();

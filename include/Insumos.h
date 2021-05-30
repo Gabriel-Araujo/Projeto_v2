@@ -25,11 +25,8 @@ class Insumos
         std::string get_fabricante();
         std::string get_local();
 
+
         virtual int get_quantidade();
-
-
-
-
 
         void DescontaQuantidade(int quant);
         void acrescentar_quantidade(int quantidade);

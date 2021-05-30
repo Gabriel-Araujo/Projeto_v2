@@ -34,7 +34,7 @@ int Insumos::get_valor() {
 
 
 int Insumos::get_quantidade() {
-    return this->quantidade;
+    return quantidade;
 }
 
 std::string Insumos::getTipoInsumo()

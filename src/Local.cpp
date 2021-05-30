@@ -15,6 +15,10 @@ Local::Local(std::string nome, std::string sigla) {
 }
 
 Local::~Local(){
+}
+
+
+void Local::delete_all() {
     for (auto item: insumos) {
         delete item;
     }
@@ -143,10 +147,8 @@ std::string Local::get_insumo_tipo(const std::string codigo) {
 
 int Local::get_vacina_quantidade() {
     int quantidade = 0;
-    for (auto item: insumos) {
-        if (item->getTipoInsumo() == "vacina"){
+    for (const auto &item: insumos) {
         quantidade += item->get_quantidade();
-        }
     }
     return quantidade;
 }

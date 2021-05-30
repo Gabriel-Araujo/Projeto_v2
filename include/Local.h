@@ -29,6 +29,7 @@ public:
     Local();
     Local(std::string nome, std::string sigla);
     virtual ~Local();
+    void delete_all();
 
     Insumos* get_insumo(const std::string& codigo);
     Vacina* get_vacina(const std::string& codigo);

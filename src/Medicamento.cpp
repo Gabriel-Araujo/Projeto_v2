@@ -88,12 +88,6 @@ void Medicamento::set_disposicao(std::string disposicao)
 }
 
 
-
-int Medicamento::get_quantidade() {
-    return Insumos::get_quantidade();
-}
-
-
 std::string Medicamento::get_dosagem() {
     return dosagem;
 }

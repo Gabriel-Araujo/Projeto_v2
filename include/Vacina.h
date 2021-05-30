@@ -30,7 +30,6 @@ class Vacina : public Insumos
                std::string local, std::string codigo_unico, std::string tipo_vac, int quant_doses, int intervalo);
                std::string get_nome();
 
-        int get_quantidade() override;
         int set_valor_unitario();
         /*std::string get_vencimento();
         std::string get_fabricante();

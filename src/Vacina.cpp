@@ -97,12 +97,6 @@ void Vacina::set_intervalo(int it) {
     }
 }
 
-
-/*void Vacina::get_exclusivo()
-{
-    cout << setfill(' ') << setw(15) << get_tipo_vac() << setfill(' ') << setw(9) << "|";
-}
-*/
 std::string Vacina::get_tipo_vac()
 {
     return tipo_vac;
@@ -117,8 +111,8 @@ int Vacina::get_intervalo()
 {
     return intervalo;
 }
-
+/*
 int Vacina::get_quantidade() {
     return Insumos::get_quantidade();
 }
-
+*/
