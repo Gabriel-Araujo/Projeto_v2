@@ -30,7 +30,7 @@ class Menu
         void Distribuir_submenu_3();
 
         void ConsultarMs();
-        void Consultar_submenu_3();
+        void Consultar_submenu_2();
 
         void Unidades_distribuidas();
         void Unidades_distribuidas_submenu_3();

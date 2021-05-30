@@ -88,9 +88,9 @@ void Menu::ConsultarMs(){
 }
 
 //funcao caso o usuario escolher a opcao 3, escolha novamente a opcao 3, coloca dentro da funcao de insumos disponiveis se a funcao for necessaria
-void Menu::Consultar_submenu_3(){
+void Menu::Consultar_submenu_2(){
     printf("\n\n----------------------------------------------------------------------------------\n");
-    printf("Como voce escolheu o item 3, nos diga como voce quer receber a informa��o:\n\n");
+    printf("Como voce escolheu o item 2, nos diga como voce quer receber a informa��o:\n\n");
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Digite 1 caso queira receber a descricao e quantidade das vacinas\n ");
     printf("Digite 2 caso queira receber a descricao e quantidade dos medicamentos\n ");
@@ -105,14 +105,15 @@ void Menu::Unidades_distribuidas(){
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Como voce escolheu o item 4, nos diga como voce quer receber a informação:\n\n");
     printf("----------------------------------------------------------------------------------\n");
-    printf("Digite 1 caso queira receber a quantidade de itens distribuidos para os Estados no geral\n");
-    printf("Digite 2 caso queira receber a descricao dos itens distribuidos para os Estados\n");
-    printf("Digite 3 caso queira receber tanto a descricao e quantidade do tipo de insumo distribuido\n");
+    printf("Digite 1 caso queira receber a quantidade de itens distribuidos para o Estado no geral\n");
+    printf("Digite 2 caso queira receber a descricao dos itens distribuidos para o Estados\n");
+    printf("Digite 3 caso queira receber tanto a descricao,quantidade e informacoes exclusivas do tipo de insumo distribuido\n");
     printf("Digite 0 para sair\n");
     printf("Digita aqui sua escolha:");
 
 
 }
+
 //funcao caso o usuario escolher a opcao 4, escolha a opcao 3, coloca dentro da funcao de insumos distribuidos se a funcao for necessaria
 void Menu::Unidades_distribuidas_submenu_3(){
     printf("\n\n----------------------------------------------------------------------------------\n");
@@ -182,57 +183,35 @@ void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
 
 void Menu::exibir_total(std::vector<Insumos*> &Insumos)
 {
-     int index = 1;
-    cout << " 0 |";
-    cout << setfill(' ') << setw(15) << "CODIGO" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "NOME" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "PREÇO (R$)" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "TIPO" << setfill(' ') << setw(9) << "|";
-    cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|";
-    cout << setfill(' ') << setw(15) << "FABRICANTE" << setfill(' ') << setw(9) << "|" ;
 
 
     for (auto &insumo: Insumos) {
         if(insumo->getTipoInsumo() == "vacina"){
-            cout << setfill(' ') << setw(15) << "TIPO DA VACINA" << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << "QUANTIDADE DE DOSES" << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << "INTERVALO DE DOSES" << setfill(' ') << setw(9) << "|" << endl;
-
-            cout << " " << index << " |";
-            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
-
+            cout << "Codigo da unidade: " << insumo->getCodigoUnico() << endl;
+            cout << "Nome: " << insumo->getNome() << endl;
+            cout << "Valor da unidade: " << insumo->get_valor() << endl;
+            cout << "Tipo do Insumo: " << insumo->getTipoInsumo() << endl;
+            cout << "Quantidade: " << insumo->get_quantidade() << endl;
+            cout << "Nome do fabricante: " << insumo->getnome_fab() << endl;
 
         }else if(insumo->getTipoInsumo() == "medicamento"){
 
-            cout << setfill(' ') << setw(15) << "TIPO DA VACINA" << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << "QUANTIDADE DE DOSES" << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << "INTERVALO DE DOSES" << setfill(' ') << setw(9) << "|" << endl;
-
-            cout << " " << index << " |";
-            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
-
+            cout << "Codigo da unidade: " << insumo->getCodigoUnico() << endl;
+            cout << "Nome: " << insumo->getNome() << endl;
+            cout << "Valor da unidade: " << insumo->get_valor() << endl;
+            cout << "Tipo do Insumo: " << insumo->getTipoInsumo() << endl;
+            cout << "Quantidade: " << insumo->get_quantidade() << endl;
+            cout << "Nome do fabricante: " << insumo->getnome_fab() << endl;
 
         }else{
-            cout << " " << index << " |";
-            cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
-            cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|";
+            cout << "Codigo da unidade: " << insumo->getCodigoUnico() << endl;
+            cout << "Nome: " << insumo->getNome() << endl;
+            cout << "Valor da unidade: " << insumo->get_valor() << endl;
+            cout << "Tipo do Insumo: " << insumo->getTipoInsumo() << endl;
+            cout << "Quantidade: " << insumo->get_quantidade() << endl;
+            cout << "Nome do fabricante: " << insumo->getnome_fab() << endl;
 
         }
-        index++;
     }
 }
 
@@ -243,6 +222,7 @@ void Menu::exibir_vacina(Vacina *vacina) {
 
     cout << "Codigo do insumo: " << vacina->getCodigoUnico() << endl;
     cout << "Nome da vacina: " << vacina->getNome() << endl;
+    cout << "Quantidade: " << vacina->get_quantidade() << endl;
     cout << "Preço: R$ " << vacina->get_valor() << endl;
     cout << "Data de vencimento: " << vacina->get_vencimento() << endl;
     cout << "Fabricante: " << vacina->get_fabricante() << endl;
@@ -254,7 +234,8 @@ void Menu::exibir_vacina(Vacina *vacina) {
 void Menu::exibir_medicamento(Medicamento *medicamento) {
     cout << "\t\tInformações do medicamento escolhida:" << endl;
     cout << "Codigo do insumo: " << medicamento->getCodigoUnico() << endl;
-    cout << "nome da vacina: " << medicamento->getNome() << endl;
+    cout << "Nome da medicamento: " << medicamento->getNome() << endl;
+    cout << "Quantidade: " << medicamento->get_quantidade() << endl;
     cout << "Preço: R$ " << medicamento->get_valor() << endl;
     cout << "Data de vencimento: " << medicamento->get_vencimento() << endl;
     cout << "Fabricante: " << medicamento->get_fabricante() << endl;
@@ -267,7 +248,8 @@ void Menu::exibir_medicamento(Medicamento *medicamento) {
 void Menu::exibir_EPI(EPI *epi) {
     cout << "\t\tInformações da EPI escolhida:" << endl;
     cout << "Codigo do insumo: " << epi->getCodigoUnico() << endl;
-    cout << "Nome da vacina: " << epi->getNome() << endl;
+    cout << "Nome do EPI: " << epi->getNome() << endl;
+    cout << "Quantidade: " << epi->get_quantidade() << endl;
     cout << "Preço: R$ " << epi->get_valor() << endl;
     cout << "Data de vencimento: " << epi->get_vencimento() << endl;
     cout << "Fabricante: " << epi->get_fabricante() << endl;
