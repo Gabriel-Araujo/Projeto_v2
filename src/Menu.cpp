@@ -203,22 +203,20 @@ void Menu::exibir_quantidades(std::vector<Insumos*> &insumos)
 void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
     int index = 1;
     cout << " 0 |";
-    cout << setfill(' ') << setw(15) << "CODIGO" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "NOME" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "PREÇO (R$)" << setfill(' ') << setw(10) << "|";
-    cout << setfill(' ') << setw(15) << "TIPO" << setfill(' ') << setw(9) << "|";
-    cout << setfill(' ') << setw(15) << "QUANTIDADE" << setfill(' ') << setw(9) << "|";
-    cout << setfill(' ') << setw(15) << "FABRICANTE" << setfill(' ') << setw(9) << "|" << endl;
+    cout << setfill(' ') << setw(10) << "CODIGO" << setfill(' ') << setw(5) << "|";
+    cout << setfill(' ') << setw(10) << "NOME" << setfill(' ') << setw(5) << "|";
+    cout << setfill(' ') << setw(10) << "PREÇO (R$)" << setfill(' ') << setw(5) << "|";
+    cout << setfill(' ') << setw(10) << "QUANTIDADE" << setfill(' ') << setw(5) << "|";
+    cout << setfill(' ') << setw(10) << "FABRICANTE" << setfill(' ') << setw(5) << "|" << endl;
 
 
     for (auto &insumo: insumos) {
         cout << " " << index << " |";
-        cout << setfill(' ') << setw(15) << insumo->getCodigoUnico() << setfill(' ') << setw(10) << "|";
-        cout << setfill(' ') << setw(15) << insumo->getNome() << setfill(' ') << setw(10) << "|";
-        cout << setfill(' ') << setw(15) << insumo->get_valor() << setfill(' ') << setw(9) << "|";
-        cout << setfill(' ') << setw(15) << insumo->getTipoInsumo() << setfill(' ') << setw(9) << "|";
-        cout << setfill(' ') << setw(15) << insumo->get_quantidade() << setfill(' ') << setw(9) << "|";
-        cout << setfill(' ') << setw(15) << insumo->getnome_fab() << setfill(' ') << setw(9) << "|" << endl;
+        cout << setfill(' ') << setw(10) << insumo->getCodigoUnico() << setfill(' ') << setw(5) << "|";
+        cout << setfill(' ') << setw(10) << insumo->getNome() << setfill(' ') << setw(5) << "|";
+        cout << setfill(' ') << setw(10) << insumo->get_valor() << setfill(' ') << setw(5) << "|";
+        cout << setfill(' ') << setw(10) << insumo->get_quantidade() << setfill(' ') << setw(5) << "|";
+        cout << setfill(' ') << setw(10) << insumo->getnome_fab() << setfill(' ') << setw(5) << "|" << endl;
         index++;
     }
 }

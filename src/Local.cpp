@@ -123,7 +123,7 @@ void Local::exibir_insumos_por_tipo(const std::string& tipo) {
             generico.push_back(a);
         }
     }
-    menus.exibir_total(generico);
+    menus.exibir_formatado(generico);
 
     for (auto item: generico) {
         delete item;
