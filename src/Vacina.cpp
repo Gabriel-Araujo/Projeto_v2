@@ -111,8 +111,10 @@ int Vacina::get_intervalo()
 {
     return intervalo;
 }
-/*
-int Vacina::get_quantidade() {
-    return Insumos::get_quantidade();
+
+void Vacina::exibir() {
+    Menu::exibir_vacina(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->quantidade_doses, this->intervalo, this->tipo_vac);
 }
-*/
+
+
+

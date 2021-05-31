@@ -335,6 +335,7 @@ void Controlador::exibir_insumos_por_tipo(std::string local, std::string tipo) {
 }
 
 
+
 // Talvez temporario.
 void Controlador::insumo_existe_no_local(const std::string local, const std::string codigo) {
     if (locais.at(get_local(local)).insumo_existe(codigo)) {
@@ -350,7 +351,7 @@ bool Controlador::tipo_existe(std::string tipo) {
 }
 
 
-
+/* Não utilizar
 void Controlador::exibir_vacina(std::string codigo, std::string local) {
     Vacina *vacina = locais.at(get_local(local)).get_vacina(codigo);
 
@@ -358,18 +359,20 @@ void Controlador::exibir_vacina(std::string codigo, std::string local) {
 }
 
 
+// Não utilizar
 void Controlador::exibir_medicamento(std::string codigo, std::string local) {
     Medicamento *medicamento = locais.at(get_local(local)).get_medicamento(codigo);
 
     menus.exibir_medicamento(medicamento);
 }
 
-
+// Não utilizar
 void Controlador::exibir_epi(std::string codigo, std::string local) {
     EPI *epi = locais.at(get_local(local)).get_epi(codigo);
 
     menus.exibir_EPI(epi);
 }
+ */
 
 
 void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
@@ -380,15 +383,15 @@ void Controlador::exibir_insumo_detalhado(Insumos *insumo) {
 
     if(tipo_do_insumo == "vacina") {
         Vacina *vacina = local.get_vacina(codigo_do_insumo);
-        menus.exibir_vacina(vacina);
+        vacina->exibir();
     }
     else if (tipo_do_insumo == "medicamento") {
         Medicamento *medicamento = local.get_medicamento(codigo_do_insumo);
-        menus.exibir_medicamento(medicamento);
+        medicamento->exibir();
     }
     else if (tipo_do_insumo == "epi") {
         EPI *epi = local.get_epi(codigo_do_insumo);
-        menus.exibir_EPI(epi);
+        epi->exibir();
     }
 }
 

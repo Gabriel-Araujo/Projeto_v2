@@ -16,6 +16,8 @@ class Medicamento : public Insumos
         std::string get_administracao();
         std::string get_disposicao();
 
+        void exibir() override;
+
     protected:
 
     private:

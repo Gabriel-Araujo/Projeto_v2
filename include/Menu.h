@@ -5,15 +5,15 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
-#include "Insumos.h"
-#include "Vacina.h"
-#include "Medicamento.h"
-#include "EPI.h"
+#include <map>
 #include <cstdlib>
+#include "Insumos.h"
 
 #define CLEAR_DEFINE "cls"
 #define WAIT_DEFINE "pause"
 
+
+class Insumos;
 
 class Menu
 {
@@ -37,16 +37,16 @@ class Menu
         void Insumos_distribuidos();
 
         void exibir_estados();
+        static void exibir_vacina(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, int doses, int intervalo, std::string tipo_vac);
+        static void exibir_medicamento(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, std::string dosagem, std::string administracao, std::string disposicao);
+        static void exibir_EPI(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, std::string tipo_api, std::string descricao);
+
         void exibir_quantidades(std::vector<Insumos*> &Insumos);
         void exibir_formatado(std::vector<Insumos*> &insumos);
 
         void exibir_total(std::vector<Insumos*> &Insumos);
 
-        void exibir_vacina(Vacina &vacina);
-
-        void exibir_vacina(Vacina *vacina);
-        void exibir_medicamento(Medicamento *medicamento);
-        void exibir_EPI(EPI *epi);
+            //void exibir_EPI(EPI *epi);
 
 
 
