@@ -313,10 +313,12 @@ void Controlador::exibir_menus_distribuir() {
     else {
         menus.Distribuir_submenu_2();
         getline(cin, codigo_distribuir);
+        if (codigo_distribuir == "voltar") {return;}
 
         menus.Distribuir_submenu_3();
         cin >> quantidade_distribuir;
         getchar();
+        if (quantidade_distribuir == 0) {return;}
 
         if (tipo_para_distribuir == "vacina") {
             distribuir_vacina_para(local, codigo_distribuir, quantidade_distribuir);

@@ -71,7 +71,7 @@ void Menu::Distribuir_submenu_3(){
     printf("\n\n----------------------------------------------------------------------------------\n");
     printf("Informe-nos a quantidade do produto desejado a distribuicao: ");
     printf("----------------------------------------------------------------------------------\n");
-    printf("Digite \"voltar\" para sair\n");
+    printf("Digite \"0\" para sair\n");
 
 }
 
