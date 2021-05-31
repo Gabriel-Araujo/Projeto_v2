@@ -69,6 +69,7 @@ class Controlador
         */
 
 
+    void exibir_insumo_detalhado(Insumos &insumo);
 };
 
 #endif // CONTROLER_H

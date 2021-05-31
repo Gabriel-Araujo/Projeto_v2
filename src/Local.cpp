@@ -15,6 +15,9 @@ Local::Local(std::string nome, std::string sigla) {
 }
 
 Local::~Local(){
+    for (auto item: insumos) {
+        delete item;
+    }
 }
 
 
@@ -116,6 +119,8 @@ void Local::exibir_insumos() {
 
 void Local::exibir_insumos_por_tipo(const std::string& tipo) {
     std::vector<Insumos*> generico;
+
+    std::cout << tipo << " disponíveis no estoque de " << nome_extenso << "." << std::endl;
 
     for (auto item: insumos) {
         if (item->getTipoInsumo() == tipo) {
@@ -298,4 +303,12 @@ void Local::cadastrar_epis() {
     auto epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
     insumos.push_back(epi);
+}
+
+
+void Local::exibir_insumo_detalhado(std::string codigo) {
+    int insumo_index = get_insumo_index(codigo);
+    if (insumos[insumo_index]->getNome() == "NULL") {return;}
+
+    insumos[insumo_index]->exibir();
 }

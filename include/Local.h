@@ -54,6 +54,7 @@ public:
     void exibir_insumos_total();
     void exibir_insumos();
     void exibir_insumos_por_tipo(const std::string& tipo);
+    void exibir_insumo_detalhado(std::string codigo);
 
     bool insumo_existe(const std::string codigo);
 
