@@ -103,5 +103,6 @@ std::string Medicamento::get_disposicao() {
 }
 
 void Medicamento::exibir() {
-    int a = 1;
+    Menu::exibir_medicamento(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->dosagem, this->administracao, this->disposicao);
+
 }
