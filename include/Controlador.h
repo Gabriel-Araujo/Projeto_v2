@@ -27,14 +27,13 @@ class Controlador
 
     protected:
         bool local_existe(std::string &local);
-        int get_local(std::string local);
+        int get_local_index(const std::string local);
 
     public:
         Controlador();
         virtual ~Controlador();
         //Funcoes de cadastro
-        void CadastroInsumosMs(std::string tipoInsumo);
-        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
+        void CadastroInsumo(std::string tipoInsumo);
 
 
         int distribuir_vacina_para(const std::string estado, const std::string codigo, const int quantidade);
