@@ -126,6 +126,7 @@ void Local::exibir_insumos_por_tipo(const std::string& tipo) {
 }
 
 
+
 bool Local::insumo_existe(const std::string codigo) {
     return std::any_of(insumos.begin(), insumos.end(), [&codigo](Insumos *item){return item->getCodigoUnico() == codigo;});
 }

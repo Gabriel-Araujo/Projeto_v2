@@ -89,3 +89,8 @@ std::string Insumos::get_fabricante() {
 std::string Insumos::get_local() {
     return local;
 }
+
+
+void Insumos::exibir() {
+    std::cout << "exibir não implementado." << std::endl;
+}

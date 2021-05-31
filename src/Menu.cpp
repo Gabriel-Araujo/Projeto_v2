@@ -146,6 +146,48 @@ Menu::~Menu()
     //dtor
 }
 
+
+void Menu::exibir_vacina(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, int doses, int intervalo, std::string tipo_vac) {
+    cout << "\t\tInformações da vacina escolhida:" << endl;
+
+    cout << "Codigo do insumo: " << codigo << endl;
+    cout << "Nome da vacina: " << nome << endl;
+    cout << "Quantidade: " << quantidade << endl;
+    cout << "Preço: R$ " << valor << endl;
+    cout << "Data de vencimento: " << vencimento << endl;
+    cout << "Fabricante: " << fabricante << endl;
+    cout << "Quantidade de doses: " << doses << endl;
+    cout << "Tempo entre doses: " << intervalo << endl;
+    cout << "Tipo de tecnologia: " << tipo_vac << endl;
+}
+
+
+void Menu::exibir_medicamento(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, std::string dosagem, std::string administracao, std::string disposicao) {
+    cout << "\t\tInformações do medicamento escolhida:" << endl;
+    cout << "Codigo do insumo: " << codigo << endl;
+    cout << "Nome da medicamento: " << nome << endl;
+    cout << "Quantidade: " << quantidade << endl;
+    cout << "Preço: R$ " << valor << endl;
+    cout << "Data de vencimento: " << vencimento << endl;
+    cout << "Fabricante: " << fabricante << endl;
+    cout << "Dosagem: " << dosagem << endl;
+    cout << "Administracao: " << administracao << endl;
+    cout << "Disposicao: " << disposicao << endl;
+}
+
+
+void Menu::exibir_EPI(std::string codigo, std::string nome, int quantidade, int valor, std::string vencimento, std::string fabricante, std::string tipo_api, std::string descricao) {
+    cout << "\t\tInformações da EPI escolhida:" << endl;
+    cout << "Codigo do insumo: " << codigo << endl;
+    cout << "Nome do EPI: " << nome << endl;
+    cout << "Quantidade: " << quantidade << endl;
+    cout << "Preço: R$ " << valor << endl;
+    cout << "Data de vencimento: " << vencimento << endl;
+    cout << "Fabricante: " << fabricante << endl;
+    cout << "Tipo da epi: " << tipo_api << endl;
+    cout << "Informacoes detalhadas: \n\t" << descricao << endl;
+}
+
 void Menu::exibir_quantidades(std::vector<Insumos*> &insumos)
 {
     int soma = 0;
@@ -183,8 +225,6 @@ void Menu::exibir_formatado(std::vector<Insumos*> &insumos) {
 
 void Menu::exibir_total(std::vector<Insumos*> &Insumos)
 {
-
-
     for (auto &insumo: Insumos) {
         if(insumo->getTipoInsumo() == "vacina"){
             cout << "Codigo da unidade: " << insumo->getCodigoUnico() << endl;
@@ -214,46 +254,3 @@ void Menu::exibir_total(std::vector<Insumos*> &Insumos)
         }
     }
 }
-
-
-
-void Menu::exibir_vacina(Vacina *vacina) {
-    cout << "\t\tInformações da vacina escolhida:" << endl;
-
-    cout << "Codigo do insumo: " << vacina->getCodigoUnico() << endl;
-    cout << "Nome da vacina: " << vacina->getNome() << endl;
-    cout << "Quantidade: " << vacina->get_quantidade() << endl;
-    cout << "Preço: R$ " << vacina->get_valor() << endl;
-    cout << "Data de vencimento: " << vacina->get_vencimento() << endl;
-    cout << "Fabricante: " << vacina->get_fabricante() << endl;
-    cout << "Quantidade de doses: " << vacina->get_quant_doses() << endl;
-    cout << "Tempo entre doses: " << vacina->get_intervalo() << endl;
-    cout << "Tipo de tecnologia: " << vacina->get_tipo_vac() << endl;
-}
-
-void Menu::exibir_medicamento(Medicamento *medicamento) {
-    cout << "\t\tInformações do medicamento escolhida:" << endl;
-    cout << "Codigo do insumo: " << medicamento->getCodigoUnico() << endl;
-    cout << "Nome da medicamento: " << medicamento->getNome() << endl;
-    cout << "Quantidade: " << medicamento->get_quantidade() << endl;
-    cout << "Preço: R$ " << medicamento->get_valor() << endl;
-    cout << "Data de vencimento: " << medicamento->get_vencimento() << endl;
-    cout << "Fabricante: " << medicamento->get_fabricante() << endl;
-    cout << "Dosagem: " << medicamento->get_dosagem() << endl;
-    cout << "Administracao: " << medicamento->get_administracao() << endl;
-    cout << "Disposicao: " << medicamento->get_disposicao() << endl;
-}
-
-
-void Menu::exibir_EPI(EPI *epi) {
-    cout << "\t\tInformações da EPI escolhida:" << endl;
-    cout << "Codigo do insumo: " << epi->getCodigoUnico() << endl;
-    cout << "Nome do EPI: " << epi->getNome() << endl;
-    cout << "Quantidade: " << epi->get_quantidade() << endl;
-    cout << "Preço: R$ " << epi->get_valor() << endl;
-    cout << "Data de vencimento: " << epi->get_vencimento() << endl;
-    cout << "Fabricante: " << epi->get_fabricante() << endl;
-    cout << "Tipo da epi: " << epi->get_tipo_epi() << endl;
-    cout << "Informacoes detalhadas: \n\t" << epi->get_descricao() << endl;
-}
-

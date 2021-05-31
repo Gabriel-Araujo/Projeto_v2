@@ -89,3 +89,7 @@ std::string EPI::get_tipo_epi() {
 std::string EPI::get_descricao() {
     return descricao;
 }
+
+void EPI::exibir() {
+    int a = 1;
+}

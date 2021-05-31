@@ -101,3 +101,7 @@ std::string Medicamento::get_administracao() {
 std::string Medicamento::get_disposicao() {
     return disposicao;
 }
+
+void Medicamento::exibir() {
+    int a = 1;
+}
