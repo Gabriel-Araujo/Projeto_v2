@@ -343,7 +343,7 @@ void Controlador::exibir_menus_consultar_ms() {
                 cout << "\nQuantidade de medicamentos: " << local.get_medicamento_quantidade() <<
                      "\n_____________________________________________________________________________________________________\n"
                      << endl;
-                local.exibir_insumos_por_tipo("vacina");
+                local.exibir_insumos_por_tipo("medicamento");
                 system(WAIT_DEFINE);
                 break;
             case 3:
