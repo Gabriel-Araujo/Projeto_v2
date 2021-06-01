@@ -40,12 +40,6 @@ class Controlador
         int distribuir_medicamento_para(const std::string estado, const std::string codigo, const int quantidade);
         int distribuir_epi_para(const std::string estado, std::string codigo, int quantidade);
 
-        void insumo_existe_no_local(const std::string local, const std::string codigo);
-
-        // Não devem estar na classe Controlador, e sim na Local
-        void exibir_insumos_quantidade(std::string local);
-        void exibir_insumos_descricao(std::string local);
-        void exibir_insumos_total(std::string local);
 
         void exibir_menus(int escolha);
         void exibir_menus_cadastro();
