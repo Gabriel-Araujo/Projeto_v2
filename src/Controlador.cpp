@@ -67,6 +67,8 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
 
     if (locais.at(index_ministerio).insumo_existe(codigo)) {
         auto insumo_ministerio = locais.at(index_ministerio).get_vacina(codigo);
+        if (insumo_ministerio->getNome() == "NULL") {delete insumo_ministerio; return 0;}
+
         if (quantidade > insumo_ministerio->get_quantidade()) {
             return 0;
         }
