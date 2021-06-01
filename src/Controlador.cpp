@@ -185,7 +185,7 @@ void Controlador::cadastrar_vacina() {
 
     local = "MINISTÉRIO DA SAÚDE";
 
-    cout << "Digite um tipo vacina: " << endl;
+    cout << "Digite o tipo da vacina: " << endl;
     getline(cin, tipo_vacina);
 
     cout << "Digite a quantidade de doses: " << endl;
