@@ -101,3 +101,8 @@ std::string Medicamento::get_administracao() {
 std::string Medicamento::get_disposicao() {
     return disposicao;
 }
+
+void Medicamento::exibir() {
+    Menu::exibir_medicamento(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->dosagem, this->administracao, this->disposicao);
+
+}

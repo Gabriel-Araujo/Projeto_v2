@@ -19,7 +19,6 @@ class Vacina : public Insumos
         void set_quant_doses(int qd);
         void set_intervalo(int it);
 
-        void exibe_exclusivos();
 
     protected:
 
@@ -28,20 +27,16 @@ class Vacina : public Insumos
         Vacina();
         Vacina(std::string nome, int quantidade, int valor_unitario, std::string vencimento, std::string fabricante,
                std::string local, std::string codigo_unico, std::string tipo_vac, int quant_doses, int intervalo);
-               std::string get_nome();
+        virtual ~Vacina();
 
-        int set_valor_unitario();
-        /*std::string get_vencimento();
-        std::string get_fabricante();
-        std::string get_local();
-        std::string get_codigo();*/
+
         std::string get_tipo_vac();
         int get_quant_doses();
         int get_intervalo();
 
         //void get_exclusivo();
+        void exibir() override;
 
-        virtual ~Vacina();
 
 
 

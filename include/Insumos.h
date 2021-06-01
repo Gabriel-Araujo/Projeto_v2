@@ -2,6 +2,7 @@
 #define INSUMOS_H
 #include <string>
 #include <algorithm>
+#include "Menu.h"
 
 class Insumos
 {
@@ -11,19 +12,19 @@ class Insumos
 
 
         std::string getNome();
-
-        int get_valor();
-
         std::string getCodigoUnico();
         std::string getnome_fab();
-
         std::string getTipoInsumo();
-
-
         std::string get_tipo();
         std::string get_vencimento();
         std::string get_fabricante();
         std::string get_local();
+
+        int get_valor();
+
+        virtual void exibir();
+
+
 
 
         virtual int get_quantidade();

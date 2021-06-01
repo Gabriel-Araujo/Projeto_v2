@@ -27,32 +27,19 @@ class Controlador
 
     protected:
         bool local_existe(std::string &local);
-        int get_local(std::string local);
+        int get_local_index(const std::string local);
 
     public:
         Controlador();
         virtual ~Controlador();
         //Funcoes de cadastro
-        void CadastroInsumosMs(std::string tipoInsumo);
-        void CadastroInsumosEst(std::string tipoInsumo, std::string cdg, std::string estado, int quant);
+        void CadastroInsumo(std::string tipoInsumo);
 
 
         int distribuir_vacina_para(const std::string estado, const std::string codigo, const int quantidade);
         int distribuir_medicamento_para(const std::string estado, const std::string codigo, const int quantidade);
         int distribuir_epi_para(const std::string estado, std::string codigo, int quantidade);
 
-        void insumo_existe_no_local(const std::string local, const std::string codigo);
-
-        void exibir_insumos_quantidade(std::string local);
-        void exibir_insumos_descricao(std::string local);
-        void exibir_insumos_total(std::string local);
-        void exibir_insumos_por_tipo(std::string local, std::string tipo);
-
-        void exibir_vacina(std::string codigo, std::string local);
-        void exibir_medicamento(std::string codigo, std::string local);
-        void exibir_epi(std::string codigo, std::string local);
-
-        void exibir_insumo_detalhado(Insumos *insumo);
 
         void exibir_menus(int escolha);
         void exibir_menus_cadastro();
@@ -73,6 +60,7 @@ class Controlador
         */
 
 
+    void exibir_insumo_detalhado(Insumos &insumo);
 };
 
 #endif // CONTROLER_H

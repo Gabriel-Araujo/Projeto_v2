@@ -89,3 +89,8 @@ std::string EPI::get_tipo_epi() {
 std::string EPI::get_descricao() {
     return descricao;
 }
+
+void EPI::exibir() {
+    Menu::exibir_EPI(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->tipo_epi, this->descricao);
+
+}
