@@ -102,6 +102,11 @@ std::string Medicamento::get_disposicao() {
     return disposicao;
 }
 
+void Medicamento::get_especifico(std::ofstream &fp)
+{
+     fp << ", " << dosagem << ", " <<  administracao <<", " << disposicao << std::endl;
+}
+
 void Medicamento::exibir() {
     Menu::exibir_medicamento(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->dosagem, this->administracao, this->disposicao);
 

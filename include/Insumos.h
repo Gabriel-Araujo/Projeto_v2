@@ -19,12 +19,10 @@ class Insumos
         std::string get_vencimento();
         std::string get_fabricante();
         std::string get_local();
-
         int get_valor();
-
         virtual void exibir();
 
-
+        virtual void get_especifico(std::ofstream &fp);
 
 
         virtual int get_quantidade();

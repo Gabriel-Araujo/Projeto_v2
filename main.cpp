@@ -15,22 +15,7 @@ int main()
     system("chcp 65001");
 
     Controlador controlador;
-<<<<<<< HEAD
 
-=======
-    //string tipoinsumo;
-    /*cout << "Digite o tipo do insumo:" << endl;
-    cout << "| vacina | medicamento | epi |" << endl;
-    cin >> tipoinsumo;
-    getchar();
-    controlador.CadastroInsumosMs(tipoinsumo);
-
-
-    controlador.exibir_insumos_por_tipo("MIN", "vacina");*/
-
-
-    //controlador.Exibe_menu();
->>>>>>> b9e875928bf6934208253d788c276e6419c89fff
     controlador.loop_hole();
     //teste 2
     //controlador.loop_hole();

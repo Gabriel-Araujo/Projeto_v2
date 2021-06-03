@@ -116,5 +116,9 @@ void Vacina::exibir() {
     Menu::exibir_vacina(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->quantidade_doses, this->intervalo, this->tipo_vac);
 }
 
+void Vacina::get_especifico(std::ofstream &fp)
+{
+    fp << ", " << tipo_vac << ", " <<  to_string(quantidade_doses) <<", " << to_string(intervalo) << endl;
+}
 
 

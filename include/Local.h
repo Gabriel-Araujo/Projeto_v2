@@ -17,6 +17,7 @@ private:
     std::vector<Insumos*> insumos;
     Menu menus;
 
+
 protected:
     std::array<std::string, 29> locais_possiveis =
             {
@@ -48,7 +49,7 @@ public:
     int get_insumos_quantidade();
 
 
-    void adicionar_insumo(Insumos *insumo);
+    void adicionar_insumo(Insumos *insumo, std::string local);
     void exibir_insumos_quantidade();
     void exibir_insumos_descricao();
     void exibir_insumos_total();

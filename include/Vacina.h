@@ -1,6 +1,7 @@
 #ifndef VACINA_H
 #define VACINA_H
 #include "Insumos.h"
+#include <fstream>
 
 class Vacina : public Insumos
 {
@@ -29,6 +30,7 @@ class Vacina : public Insumos
                std::string local, std::string codigo_unico, std::string tipo_vac, int quant_doses, int intervalo);
         virtual ~Vacina();
 
+        virtual void get_especifico(std::ofstream &fp);
 
         std::string get_tipo_vac();
         int get_quant_doses();

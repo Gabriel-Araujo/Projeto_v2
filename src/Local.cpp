@@ -89,8 +89,10 @@ std::string Local::get_nome_extenso() {
 }
 
 
-void Local::adicionar_insumo(Insumos *insumo) {
+void Local::adicionar_insumo(Insumos *insumo, std::string local) {
     insumos.push_back(insumo);
+    //persiste.Salvar_Insumos(insumos, local);
+
 }
 
 

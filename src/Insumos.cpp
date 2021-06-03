@@ -90,6 +90,10 @@ std::string Insumos::get_local() {
     return local;
 }
 
+void get_especifico(std::ofstream &fp)
+{
+
+}
 
 void Insumos::exibir() {
     std::cout << "exibir não implementado." << std::endl;

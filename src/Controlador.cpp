@@ -86,7 +86,7 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
                 return 1;
             }
         }
@@ -120,7 +120,7 @@ int Controlador::distribuir_medicamento_para(const std::string estado, std::stri
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
                 return 1;
             }
         }
@@ -154,7 +154,7 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
                 return 1;
             }
         }
@@ -162,8 +162,6 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
     return 0;
 }
 
-
-<<<<<<< HEAD
 void Controlador::cadastrar_vacina() {
     string nome, vencimento, fabricante, local, codigo, tipo_vacina;
     int quantidade, valor_unitario, quant_doses, intervalo, local_index;
@@ -198,8 +196,8 @@ void Controlador::cadastrar_vacina() {
 
     auto vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
 
-    local_index = get_local(local);
-    locais.at(local_index).adicionar_insumo(vacina);
+    local_index = get_local_index(local);
+    locais.at(local_index).adicionar_insumo(vacina, local);
 }
 
 
@@ -236,8 +234,8 @@ void Controlador::cadastrar_medicamentos() {
 
     auto medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
 
-    local_index = get_local(local);
-    locais.at(local_index).adicionar_insumo(medicamento);
+    local_index = get_local_index(local);
+    locais.at(local_index).adicionar_insumo(medicamento, local);
 }
 
 
@@ -270,32 +268,10 @@ void Controlador::cadastrar_epis() {
 
     auto epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
 
-    local_index = get_local(local);
-    locais.at(local_index).adicionar_insumo(epi);
+    local_index = get_local_index(local);
+    locais.at(local_index).adicionar_insumo(epi, local);
 }
 
-
-void Controlador::CadastroInsumosEst(std::string tipoInsumo, std::string codigo, std::string estado, int quantidade)
-{
-    int index = get_local("MINISTÉRIO DA SAÚDE");
-    //int insumo_index = locais.at(index).get_insumo_index(codigo);
-
-    Insumos *insumo_do_ms = locais.at(index).get_insumo(codigo);
-
-    Insumos *insumo_distribuido = new Insumos(*insumo_do_ms);
-    insumo_do_ms->DescontaQuantidade(quantidade);
-
-    insumo_distribuido->setQuantidade(quantidade);
-
-
-    int estado_index = get_local(estado);
-    locais.at(estado_index).adicionar_insumo(insumo_distribuido);
-}
-
-
-
-=======
->>>>>>> b9e875928bf6934208253d788c276e6419c89fff
 bool Controlador::local_existe(std::string &local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_sigla() == local;});
     bool test_nome = any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_nome_extenso() == local;});

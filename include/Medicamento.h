@@ -1,6 +1,7 @@
 #ifndef MEDICAMENTO_H
 #define MEDICAMENTO_H
 #include "Insumos.h"
+#include <fstream>
 
 class Medicamento : public Insumos
 {
@@ -11,6 +12,7 @@ class Medicamento : public Insumos
                std::string local, std::string codigo_unico, std::string dsg, std::string adm, std::string disp);
 
 
+        virtual void get_especifico(std::ofstream &fp);
 
         std::string get_dosagem();
         std::string get_administracao();

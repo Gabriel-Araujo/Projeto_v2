@@ -1,6 +1,7 @@
 #ifndef EPI_H
 #define EPI_H
 #include "Insumos.h"
+#include <fstream>
 
 class EPI : public Insumos
 {
@@ -12,6 +13,9 @@ class EPI : public Insumos
 
 
         void exibir() override;
+
+        virtual void get_especifico(std::ofstream &fp);
+
         std::string get_tipo_epi();
         std::string get_descricao();
 
