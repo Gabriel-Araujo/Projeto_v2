@@ -34,7 +34,13 @@ Controlador::Controlador()
     locais[26] = {"Distrito Federal", "DF"};
     locais[27] = {"MINISTÉRIO DA SAÚDE", "MIN"};
 
-    persistencia.carregar_insumos();
+    std::vector<Insumos*> insumos = persistencia.carregar_insumos();
+    for(auto *item: insumos){
+        int index = get_local_index(item->get_local());
+        locais.at(index).adicionar_insumo(item);
+    }
+
+
 }
 
 
@@ -90,7 +96,7 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
             }
         }
@@ -124,7 +130,7 @@ int Controlador::distribuir_medicamento_para(const std::string estado, std::stri
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
             }
         }
@@ -158,7 +164,7 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
                 insumo_ministerio->DescontaQuantidade(quantidade);
-                locais.at(index_estado).adicionar_insumo(insumo_estado, estado);
+                locais.at(index_estado).adicionar_insumo(insumo_estado);
                 return 1;
             }
         }

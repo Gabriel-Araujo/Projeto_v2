@@ -48,7 +48,7 @@ public:
     int get_insumos_quantidade();
 
 
-    void adicionar_insumo(Insumos *insumo, std::string local);
+    void adicionar_insumo(Insumos *insumo);
     void exibir_insumos_quantidade();
     void exibir_insumos_descricao();
     void exibir_insumos_total();

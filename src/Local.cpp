@@ -78,7 +78,7 @@ std::string Local::get_nome_extenso() {
 }
 
 
-void Local::adicionar_insumo(Insumos *insumo, std::string local) {
+void Local::adicionar_insumo(Insumos *insumo) {
     insumos.push_back(insumo);
     //persiste.Salvar_Insumos(insumos, local);
 
@@ -190,7 +190,7 @@ int Local::get_insumos_quantidade() {
 
 void Local::cadastrar_vacina() {
     std::string nome, vencimento, fabricante, local, codigo, tipo_vacina;
-    int quantidade, valor_unitario, quant_doses, intervalo, local_index;
+    int quantidade, valor_unitario, quant_doses, intervalo;
 
 
     std::cout << "Digite o codigo unico:" << std::endl;
@@ -229,7 +229,7 @@ void Local::cadastrar_vacina() {
 
 void Local::cadastrar_medicamentos() {
     std::string nome, vencimento, fabricante, local, codigo, tipo_vacina, dosagem, disposicao, administracao;
-    int quantidade, valor_unitario, local_index;
+    int quantidade, valor_unitario;
 
     std::cout << "Digite o codigo unico:" << std::endl;
     getline(std::cin, codigo);
@@ -266,7 +266,7 @@ void Local::cadastrar_medicamentos() {
 
 void Local::cadastrar_epis() {
     std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao;
-    int quantidade, valor_unitario, local_index;
+    int quantidade, valor_unitario;
 
     std::cout << "Digite o codigo unico:" << std::endl;
     getline(std::cin, codigo);
