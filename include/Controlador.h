@@ -7,6 +7,7 @@
 #include "EPI.h"
 #include "Local.h"
 #include "Menu.h"
+#include "Persistencia.h"
 
 #include <vector>
 #include <array>
@@ -24,6 +25,7 @@ class Controlador
         void cadastrar_medicamentos();
         void cadastrar_epis();
         Menu menus;
+        Persistencia persistencia;
 
     protected:
         bool local_existe(std::string &local);

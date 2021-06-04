@@ -1,6 +1,7 @@
 #ifndef PERSISTENCIA_H
 #define PERSISTENCIA_H
-#include "Controlador.h"
+
+
 #include "Local.h"
 #include "Insumos.h"
 #include "Vacina.h"
@@ -22,8 +23,7 @@ class Persistencia
         // IMPLEMENTADOS
         void add_header_to_file(std::string a_header, std::string endereco);
         void criar_estoques();
-        void Salvar_Insumos(std::vector<Insumos*> insumos, std::string local);
-
+        void Salvar_Insumos(std::vector<Insumos*> insumos);
 
         // NÂO IMPLEMENTADOS
         int _find_row(std::string word, std::string file_name);                                                                           // CREATE
@@ -37,15 +37,18 @@ class Persistencia
     protected:
 
     private:
-    std::string vacina_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, tipo da vacina, doses, tempo entre doses\n";
-    std::string medicamento_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, dosagem, administração, disposição\n";
-    std::string epi_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, tipo do EPI, informações\n";
 
-    std::string VACINA_ENDERECO = "database/vacinas.csv";
-    std::string MEDICAMENTO_ENDERECO = "database/medicamentos.csv";
-    std::string EPI_ENDERECO = "database/epis.csv";
+        std::string vacina_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, tipo da vacina, doses, tempo entre doses\n";
+        std::string medicamento_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, dosagem, administração, disposição\n";
+        std::string epi_header = "codigo, nome, preço unitário, quantidade, vencimento, fabricante, tipo, local, tipo do EPI, informações\n";
 
-    bool estoques_existem();
+        std::string VACINA_ENDERECO = "database/vacinas.csv";
+        std::string MEDICAMENTO_ENDERECO = "database/medicamentos.csv";
+        std::string EPI_ENDERECO = "database/epis.csv";
+
+        bool estoques_existem();
 };
+
+
 
 #endif // PERSISTENCIA_H

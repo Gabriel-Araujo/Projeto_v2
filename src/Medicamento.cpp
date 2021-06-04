@@ -111,3 +111,23 @@ void Medicamento::exibir() {
     Menu::exibir_medicamento(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->dosagem, this->administracao, this->disposicao);
 
 }
+
+
+std::string Medicamento::para_string() {
+    std::string saida;
+
+    saida.append( codigo_unico + ", ");
+    saida.append(nome + ", ");
+    saida.append(std::to_string(valor_unitario) + ", ");
+    saida.append(std::to_string(quantidade) + ", ");
+    saida.append(data_vencimento + ", ");
+    saida.append(nome_fab + ", ");
+    saida.append(tipoInsumo + ", ");
+    saida.append(local + ", ");
+
+    saida.append(dosagem + ", ");
+    saida.append(administracao + ", ");
+    saida.append(disposicao + "\n");
+
+    return saida;
+}

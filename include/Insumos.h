@@ -22,7 +22,8 @@ class Insumos
         int get_valor();
         virtual void exibir();
 
-        virtual void get_especifico(std::ofstream &fp);
+
+        virtual std::string para_string();
 
 
         virtual int get_quantidade();

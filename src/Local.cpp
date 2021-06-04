@@ -21,12 +21,6 @@ Local::~Local(){
 }
 
 
-void Local::delete_all() {
-    for (auto item: insumos) {
-        delete item;
-    }
-}
-
 Insumos* Local::get_insumo(const std::string& codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
@@ -69,14 +63,9 @@ EPI *Local::get_epi(const std::string &codigo) {
 }
 
 
-Insumos* Local::getInsumos(const std::string& tipoInsumo)
+std::vector<Insumos *> Local::getInsumos()
 {
-    for (auto item: insumos) {
-        if (item->getTipoInsumo() == tipoInsumo) {
-            return item;
-        }
-    }
-    return new Insumos();
+    return insumos;
 }
 
 std::string Local::get_sigla() {

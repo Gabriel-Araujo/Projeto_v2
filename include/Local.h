@@ -30,14 +30,13 @@ public:
     Local();
     Local(std::string nome, std::string sigla);
     virtual ~Local();
-    void delete_all();
 
     Insumos* get_insumo(const std::string& codigo);
     Vacina* get_vacina(const std::string& codigo);
     Medicamento* get_medicamento(const std::string& codigo);
     EPI* get_epi(const std::string& codigo);
 
-    Insumos* getInsumos(const std::string& tipoInsumo);
+    std::vector<Insumos *> getInsumos();
     int get_insumo_index(const std::string codigo);
     std::string get_insumo_tipo(const std::string codigo);
     std::string get_sigla();

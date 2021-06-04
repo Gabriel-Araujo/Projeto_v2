@@ -37,10 +37,10 @@ Controlador::Controlador()
 
 
 Controlador::~Controlador()
-{/*
-    for (auto local: locais) {
-        local.delete_all();
-    }*/
+{
+    for (auto &local: locais) {
+        persistencia.Salvar_Insumos(local.getInsumos());
+    }
 }
 
 void Controlador::CadastroInsumo(string tipo_ins) {
@@ -75,6 +75,7 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
         else {
             if (locais.at(index_estado).insumo_existe(codigo)) {
                 auto insumo_estado = locais.at(index_estado).get_vacina(codigo);
+
                 if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
                 insumo_estado->acrescentar_quantidade(quantidade);
                 insumo_ministerio->DescontaQuantidade(quantidade);
@@ -82,6 +83,7 @@ int Controlador::distribuir_vacina_para(const std::string estado, std::string co
             }
             else {
                 auto insumo_estado = new Vacina(*insumo_ministerio);
+
                 if (!(insumo_estado->get_tipo() == tipo_insumo)) {return 0;}
                 insumo_estado->setQuantidade(quantidade);
                 insumo_estado->set_local(estado);
@@ -162,115 +164,6 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
     return 0;
 }
 
-void Controlador::cadastrar_vacina() {
-    string nome, vencimento, fabricante, local, codigo, tipo_vacina;
-    int quantidade, valor_unitario, quant_doses, intervalo, local_index;
-
-
-    cout << "Digite o codigo unico:" << endl;
-    getline(cin, codigo);
-    cout << "Digite o nome da vacina: " << endl;
-    getline(cin, nome);
-
-    cout << "Digite a quantidade a ser cadastrada: " << endl;
-    cin >> quantidade;
-    cout << "Digite o preço unitario: " << std::endl;
-    cin >> valor_unitario;
-    getchar();
-
-    cout << "Digite a data de vencimento (DD/MM/AAAA): " << endl;
-    getline(cin, vencimento);
-    cout << "Digite o nome do fabricante: " << endl;
-    getline(cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    cout << "Digite o tipo da vacina: " << endl;
-    getline(cin, tipo_vacina);
-
-    cout << "Digite a quantidade de doses: " << endl;
-    cin >> quant_doses;
-
-    cout << "Digite o tempo entre doses: " << endl;
-    cin >> intervalo;
-
-    auto vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
-
-    local_index = get_local_index(local);
-    locais.at(local_index).adicionar_insumo(vacina, local);
-}
-
-
-void Controlador::cadastrar_medicamentos() {
-    string nome, vencimento, fabricante, local, codigo, tipo_vacina, dosagem, disposicao, administracao;
-    int quantidade, valor_unitario, local_index;
-
-    cout << "Digite o codigo unico:" << endl;
-    getline(cin, codigo);
-    cout << "Digite o nome do Medicamento: " << endl;
-    getline(cin, nome);
-
-    cout << "Digite a quantidade a ser cadastrada: " << endl;
-    cin >> quantidade;
-    cout << "Digite o preço unitario: " << std::endl;
-    cin >> valor_unitario;
-    getchar();
-
-    cout << "Digite a data de vencimento (DD/MM/AAAA): " << endl;
-    getline(cin, vencimento);
-    cout << "Digite o nome do fabricante: " << endl;
-    getline(cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    cout << "Informe a dosagem do Medicamento: " << endl;
-    getline(cin, dosagem);
-
-    cout << "Informe a administracao do Medicamento: " << endl;
-    getline(cin, administracao);
-
-    cout << "Informe a disposicao do Medicamento: " << endl;
-    getline(cin, disposicao);
-
-    auto medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
-
-    local_index = get_local_index(local);
-    locais.at(local_index).adicionar_insumo(medicamento, local);
-}
-
-
-void Controlador::cadastrar_epis() {
-    string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao;
-    int quantidade, valor_unitario, local_index;
-
-    cout << "Digite o codigo unico:" << endl;
-    getline(cin, codigo);
-    cout << "Digite o nome do EPI: " << endl;
-    getline(cin, nome);
-
-    cout << "Digite a quantidade a ser cadastrada: " << endl;
-    cin >> quantidade;
-    cout << "Digite o preço unitario: " << std::endl;
-    cin >> valor_unitario;
-    getchar();
-
-    cout << "Digite a data de vencimento (DD/MM/AAAA): " << endl;
-    getline(cin, vencimento);
-    cout << "Digite o nome do fabricante: " << endl;
-    getline(cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    cout << "Informe o tipo da epi: " << endl;
-    getline(cin, tipo_epi);
-    cout << "Informe a descricap do EPI: " << endl;
-    getline(cin, descricao);
-
-    auto epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
-
-    local_index = get_local_index(local);
-    locais.at(local_index).adicionar_insumo(epi, local);
-}
 
 bool Controlador::local_existe(std::string &local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_sigla() == local;});

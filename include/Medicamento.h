@@ -13,6 +13,7 @@ class Medicamento : public Insumos
 
 
         virtual void get_especifico(std::ofstream &fp);
+        virtual std::string para_string();
 
         std::string get_dosagem();
         std::string get_administracao();

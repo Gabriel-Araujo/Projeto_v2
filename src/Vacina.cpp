@@ -122,3 +122,21 @@ void Vacina::get_especifico(std::ofstream &fp)
 }
 
 
+std::string Vacina::para_string() {
+    std::string saida;
+
+    saida.append( codigo_unico + ", ");
+    saida.append(nome + ", ");
+    saida.append(to_string(valor_unitario) + ", ");
+    saida.append(to_string(quantidade) + ", ");
+    saida.append(data_vencimento + ", ");
+    saida.append(nome_fab + ", ");
+    saida.append(tipoInsumo + ", ");
+    saida.append(local + ", ");
+
+    saida.append(tipo_vac + ", ");
+    saida.append(to_string(quantidade_doses) + ", ");
+    saida.append(to_string(intervalo) + "\n");
+
+    return saida;
+}

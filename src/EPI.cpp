@@ -99,3 +99,23 @@ void EPI::exibir() {
     Menu::exibir_EPI(this->codigo_unico, this->nome, this->quantidade, this->valor_unitario, this->data_vencimento, this->nome_fab, this->tipo_epi, this->descricao);
 
 }
+
+
+
+std::string EPI::para_string() {
+    std::string saida;
+
+    saida.append( codigo_unico + ", ");
+    saida.append(nome + ", ");
+    saida.append(std::to_string(valor_unitario) + ", ");
+    saida.append(std::to_string(quantidade) + ", ");
+    saida.append(data_vencimento + ", ");
+    saida.append(nome_fab + ", ");
+    saida.append(tipoInsumo + ", ");
+    saida.append(local + ", ");
+
+    saida.append(tipo_epi + ", ");
+    saida.append(descricao + "\n");
+
+    return saida;
+}

@@ -98,3 +98,8 @@ void get_especifico(std::ofstream &fp)
 void Insumos::exibir() {
     std::cout << "exibir não implementado." << std::endl;
 }
+
+
+std::string Insumos::para_string() {
+    return "\n";
+}

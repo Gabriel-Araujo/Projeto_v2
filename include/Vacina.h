@@ -31,6 +31,7 @@ class Vacina : public Insumos
         virtual ~Vacina();
 
         virtual void get_especifico(std::ofstream &fp);
+        virtual std::string para_string() override;
 
         std::string get_tipo_vac();
         int get_quant_doses();
