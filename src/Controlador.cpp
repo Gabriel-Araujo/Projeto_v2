@@ -33,6 +33,8 @@ Controlador::Controlador()
     locais[25] = {"Tocantins", "TO"};
     locais[26] = {"Distrito Federal", "DF"};
     locais[27] = {"MINISTÉRIO DA SAÚDE", "MIN"};
+
+    persistencia.carregar_insumos();
 }
 
 

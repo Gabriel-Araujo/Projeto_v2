@@ -85,3 +85,76 @@ void Persistencia::Salvar_Insumos(std::vector<Insumos*> ins)
     medicamento_database.close();
     epi_database.close();
 }
+
+
+Vacina* Persistencia::string_para_vacina(const std::string s) {
+    Vacina saida;
+    string insumo = s;
+    int index;
+
+    index = insumo.find(", ");
+    string codigo_unico = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int valor = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int qnt_itens = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string d_vencimento = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome_fab = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string local = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string tp_vac = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int qnt_doses = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int intervalo = stoi(insumo.substr(0, index-1));
+
+    return new Vacina(nome, qnt_itens, valor, d_vencimento, nome_fab, local, codigo_unico, tp_vac, qnt_doses, intervalo);
+}
+
+
+vector<Insumos *> Persistencia::carregar_insumos() {
+    string entrada;
+    int conta = 0;
+    vector<Insumos *> insumos;
+    fstream vacinas(VACINA_ENDERECO, iostream::in);
+    fstream medicamento(MEDICAMENTO_ENDERECO, iostream::in);
+    fstream epi(EPI_ENDERECO, iostream::in);
+
+    while (!vacinas.eof()) {
+        if (conta == 0) {
+            getline(vacinas, entrada);
+            conta++;
+            continue;
+        }
+        getline(vacinas, entrada);
+        if (size(entrada) == 0) {
+            break;
+        }
+
+
+    }
+        return insumos;
+}

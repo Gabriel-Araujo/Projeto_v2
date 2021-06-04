@@ -8,7 +8,7 @@
 #include "Medicamento.h"
 #include "EPI.h"
 
-
+#include <iostream>
 #include <filesystem>
 #include <fstream>
 #include <vector>
@@ -23,7 +23,9 @@ class Persistencia
         // IMPLEMENTADOS
         void add_header_to_file(std::string a_header, std::string endereco);
         void criar_estoques();
+
         void Salvar_Insumos(std::vector<Insumos*> insumos);
+        std::vector<Insumos *> carregar_insumos();
 
         // NÂO IMPLEMENTADOS
         int _find_row(std::string word, std::string file_name);                                                                           // CREATE
@@ -47,6 +49,7 @@ class Persistencia
         std::string EPI_ENDERECO = "database/epis.csv";
 
         bool estoques_existem();
+        static Vacina* string_para_vacina(std::string s);
 };
 
 
