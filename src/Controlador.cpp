@@ -216,10 +216,12 @@ int Controlador::loop_hole() {
 
     std::vector<Insumos*> _insumos = persistencia.carregar_insumos();
 
+
     for(auto *item: _insumos){
         int index = get_local_index(item->get_local());
         locais.at(index).adicionar_insumo(item);
     }
+
 
     // Mantem o programa rodando até chegar um break.
     while(true) {
@@ -229,9 +231,20 @@ int Controlador::loop_hole() {
         cin >> escolha;
         getchar();
 
-        if (escolha == 0) {return 0;}
+        if (escolha == 0) {
+            std::vector<Insumos*> _insumos_fim;
+            for (auto &local: locais) {
+                std::vector<Insumos*> l = local.getInsumos();
+                _insumos_fim.insert(_insumos_fim.end(), l.begin(), l.end());
+            }
+
+            persistencia.Salvar_Insumos(_insumos_fim);
+            return 0;
+        }
         else exibir_menus(escolha);
     }
+
+
 }
 
 

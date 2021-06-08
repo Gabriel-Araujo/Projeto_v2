@@ -56,6 +56,9 @@ void Persistencia::add_header_to_file(string a_header, string endereco) {
 void Persistencia::Salvar_Insumos(std::vector<Insumos*> ins)
 {
     ofstream vacina_database, medicamento_database, epi_database;
+
+    criar_estoques();
+
     vacina_database.open(VACINA_ENDERECO, fstream::app);
     medicamento_database.open(MEDICAMENTO_ENDERECO, fstream::app);
     epi_database.open(EPI_ENDERECO, fstream::app);
@@ -64,10 +67,6 @@ void Persistencia::Salvar_Insumos(std::vector<Insumos*> ins)
         cout << "não foi possível abrir um dos arquivos." << endl;
         return;
     }
-
-    vacina_database.clear();
-    medicamento_database.clear();
-    epi_database.clear();
 
     for (auto &item: ins) {
         if (item->get_tipo() == "vacina") {
@@ -145,6 +144,7 @@ vector<Insumos *> Persistencia::carregar_insumos() {
     string entrada;
     int conta = 0;
     vector<Insumos *> insumos;
+
     fstream vacinas(VACINA_ENDERECO, iostream::in);
     fstream medicamento(MEDICAMENTO_ENDERECO, iostream::in);
     fstream epi(EPI_ENDERECO, iostream::in);
@@ -159,10 +159,9 @@ vector<Insumos *> Persistencia::carregar_insumos() {
         if (size(entrada) != 0) {
 
             insumos.push_back(string_para_vacina(entrada));
-            break;
+
         }
-
-
     }
+
         return insumos;
 }
