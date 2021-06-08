@@ -26,6 +26,7 @@ class Persistencia
 
         void Salvar_Insumos(std::vector<Insumos*> insumos);
         std::vector<Insumos *> carregar_insumos();
+        void limpar_arquivos();
 
         // NÂO IMPLEMENTADOS
         int _find_row(std::string word, std::string file_name);                                                                           // CREATE

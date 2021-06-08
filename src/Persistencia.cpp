@@ -57,7 +57,7 @@ void Persistencia::Salvar_Insumos(std::vector<Insumos*> ins)
 {
     ofstream vacina_database, medicamento_database, epi_database;
 
-    criar_estoques();
+    limpar_arquivos();
 
     vacina_database.open(VACINA_ENDERECO, fstream::app);
     medicamento_database.open(MEDICAMENTO_ENDERECO, fstream::app);
@@ -164,4 +164,17 @@ vector<Insumos *> Persistencia::carregar_insumos() {
     }
 
         return insumos;
+}
+
+
+void Persistencia::limpar_arquivos() {
+    ofstream vacina_db, medicamento_db, epi_db;
+
+    vacina_db.open(VACINA_ENDERECO, ios::trunc);
+    medicamento_db.open(MEDICAMENTO_ENDERECO, ios::trunc);
+    epi_db.open(EPI_ENDERECO, ios::trunc);
+
+    vacina_db.close();
+    medicamento_db.close();
+    epi_db.close();
 }
