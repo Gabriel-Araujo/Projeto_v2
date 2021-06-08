@@ -92,6 +92,8 @@ Vacina* Persistencia::string_para_vacina(const std::string s) {
     string insumo = s;
     int index;
 
+    if (insumo.empty()) {return nullptr;}
+
     index = insumo.find(", ");
     string codigo_unico = insumo.substr(0, index);
     insumo = insumo.substr(index+2, insumo.size());
@@ -114,6 +116,10 @@ Vacina* Persistencia::string_para_vacina(const std::string s) {
 
     index = insumo.find(", ");
     string nome_fab = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string tipo_insumo = insumo.substr(0, index);
     insumo = insumo.substr(index+2, insumo.size());
 
     index = insumo.find(", ");
@@ -150,7 +156,9 @@ vector<Insumos *> Persistencia::carregar_insumos() {
             continue;
         }
         getline(vacinas, entrada);
-        if (size(entrada) == 0) {
+        if (size(entrada) != 0) {
+
+            insumos.push_back(string_para_vacina(entrada));
             break;
         }
 

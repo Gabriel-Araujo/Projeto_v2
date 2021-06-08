@@ -299,6 +299,7 @@ void Local::cadastrar_epis() {
 
 void Local::exibir_insumo_detalhado(std::string codigo) {
     int insumo_index = get_insumo_index(codigo);
+    if (insumo_index == -1) {return;}
     if (insumos[insumo_index]->getNome() == "NULL") {return;}
 
     insumos[insumo_index]->exibir();

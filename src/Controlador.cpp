@@ -33,22 +33,12 @@ Controlador::Controlador()
     locais[25] = {"Tocantins", "TO"};
     locais[26] = {"Distrito Federal", "DF"};
     locais[27] = {"MINISTÉRIO DA SAÚDE", "MIN"};
-
-    std::vector<Insumos*> insumos = persistencia.carregar_insumos();
-    for(auto *item: insumos){
-        int index = get_local_index(item->get_local());
-        locais.at(index).adicionar_insumo(item);
-    }
-
-
 }
 
 
 Controlador::~Controlador()
 {
-    for (auto &local: locais) {
-        persistencia.Salvar_Insumos(local.getInsumos());
-    }
+
 }
 
 void Controlador::CadastroInsumo(string tipo_ins) {
@@ -223,6 +213,13 @@ void Controlador::exibir_insumo_detalhado(Insumos &insumo) {
 
 int Controlador::loop_hole() {
     int escolha;
+
+    std::vector<Insumos*> _insumos = persistencia.carregar_insumos();
+
+    for(auto *item: _insumos){
+        int index = get_local_index(item->get_local());
+        locais.at(index).adicionar_insumo(item);
+    }
 
     // Mantem o programa rodando até chegar um break.
     while(true) {
