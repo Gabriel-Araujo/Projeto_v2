@@ -15,7 +15,6 @@ int main()
     system("chcp 65001");
 
     Controlador controlador;
-    controlador = Controlador();
 
     controlador.loop_hole();
     //teste 2

@@ -297,6 +297,67 @@ void Local::cadastrar_epis() {
 }
 
 
+void Local::cadastrar_insumo(std::string tipoInsumo) {
+    std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao, tipo_vacina, dosagem, administracao, disposicao;
+    int quantidade, valor_unitario, quant_doses, intervalo;
+
+    std::cout << "Digite o codigo unico:" << std::endl;
+    getline(std::cin, codigo);
+    std::cout << "Digite o nome do produto: " << std::endl;
+    getline(std::cin, nome);
+
+    std::cout << "Digite a quantidade a ser cadastrada: " << std::endl;
+    std::cin >> quantidade;
+    std::cout << "Digite o preço unitario: " << std::endl;
+    std::cin >> valor_unitario;
+    getchar();
+
+    std::cout << "Digite a data de vencimento (DD/MM/AAAA): " << std::endl;
+    getline(std::cin, vencimento);
+    std::cout << "Digite o nome do fabricante: " << std::endl;
+    getline(std::cin, fabricante);
+
+    local = "MINISTÉRIO DA SAÚDE";
+
+    if(tipoInsumo == "vacina"){
+        std::cout << "Digite um tipo vacina: " << std::endl;
+        getline(std::cin, tipo_vacina);
+
+        std::cout << "Digite a quantidade de doses: " << std::endl;
+        std::cin >> quant_doses;
+
+        std::cout << "Digite o tempo entre doses: " << std::endl;
+        std::cin >> intervalo;
+
+        auto insumo = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
+        insumos.push_back(insumo);
+
+    }else if(tipoInsumo == "medicamento"){
+        std::cout << "Informe a dosagem do Medicamento: " << std::endl;
+        getline(std::cin, dosagem);
+
+        std::cout << "Informe a administracao do Medicamento: " << std::endl;
+        getline(std::cin, administracao);
+
+        std::cout << "Informe a disposicao do Medicamento: " << std::endl;
+        getline(std::cin, disposicao);
+
+        auto insumo = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
+        insumos.push_back(insumo);
+
+    }else if(tipoInsumo == "epi"){
+        std::cout << "Informe o tipo da epi: " << std::endl;
+        getline(std::cin, tipo_epi);
+        std::cout << "Informe a descricap do EPI: " << std::endl;
+        getline(std::cin, descricao);
+
+        auto insumo = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
+        insumos.push_back(insumo);
+
+    }
+
+}
+
 void Local::exibir_insumo_detalhado(std::string codigo) {
     int insumo_index = get_insumo_index(codigo);
     if (insumo_index == -1) {return;}

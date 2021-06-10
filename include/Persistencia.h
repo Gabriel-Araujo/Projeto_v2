@@ -51,6 +51,8 @@ class Persistencia
 
         bool estoques_existem();
         static Vacina* string_para_vacina(std::string s);
+        static Medicamento* string_para_medicamento(std::string s);
+        static EPI* string_para_epi(std::string s);
 };
 
 

@@ -44,15 +44,7 @@ Controlador::~Controlador()
 void Controlador::CadastroInsumo(string tipo_ins) {
     transform(tipo_ins.begin(), tipo_ins.end(), tipo_ins.begin(), [](char c){ return tolower(c);});
 
-    if(tipo_ins == "vacina"){
-        locais.at(get_local_index("MIN")).cadastrar_vacina();
-
-    }else if(tipo_ins == "medicamento"){
-        locais.at(get_local_index("MIN")).cadastrar_medicamentos();
-
-    }else if(tipo_ins == "epi"){
-        locais.at(get_local_index("MIN")).cadastrar_epis();
-    }
+    locais.at(get_local_index("MIN")).cadastrar_insumo(tipo_ins);
 
 }
 

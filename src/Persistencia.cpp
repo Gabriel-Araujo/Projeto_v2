@@ -140,6 +140,109 @@ Vacina* Persistencia::string_para_vacina(const std::string s) {
 }
 
 
+Medicamento* Persistencia::string_para_medicamento(const std::string s) {
+    Medicamento saida;
+    string insumo = s;
+    int index;
+
+    if (insumo.empty()) {return nullptr;}
+
+    index = insumo.find(", ");
+    string codigo_unico = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int valor = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int qnt_itens = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string d_vencimento = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome_fab = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string tipo_insumo = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string local = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string dosagem = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string administracao = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string disposicao = insumo.substr(0, index-1);
+
+    return new Medicamento(nome, qnt_itens, valor, d_vencimento, nome_fab, local, codigo_unico, dosagem, administracao, disposicao);
+}
+
+EPI* Persistencia::string_para_epi(const std::string s) {
+    Vacina saida;
+    string insumo = s;
+    int index;
+
+    if (insumo.empty()) {return nullptr;}
+
+    index = insumo.find(", ");
+    string codigo_unico = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int valor = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    int qnt_itens = stoi(insumo.substr(0, index));
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string d_vencimento = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string nome_fab = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string tipo_insumo = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string local = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string tp_epi = insumo.substr(0, index);
+    insumo = insumo.substr(index+2, insumo.size());
+
+    index = insumo.find(", ");
+    string descricao = insumo.substr(0, index-1);
+
+    return new EPI(nome, qnt_itens, valor, d_vencimento, nome_fab, local, codigo_unico, tp_epi, descricao);
+}
+
+
 vector<Insumos *> Persistencia::carregar_insumos() {
     string entrada;
     int conta = 0;
@@ -159,6 +262,34 @@ vector<Insumos *> Persistencia::carregar_insumos() {
         if (size(entrada) != 0) {
 
             insumos.push_back(string_para_vacina(entrada));
+
+        }
+    }
+
+    while (!medicamento.eof()) {
+        if (conta == 0) {
+            getline(medicamento, entrada);
+            conta++;
+            continue;
+        }
+        getline(medicamento, entrada);
+        if (size(entrada) != 0) {
+
+            insumos.push_back(string_para_medicamento(entrada));
+
+        }
+    }
+
+    while (!epi.eof()) {
+        if (conta == 0) {
+            getline(epi, entrada);
+            conta++;
+            continue;
+        }
+        getline(epi, entrada);
+        if (size(entrada) != 0) {
+
+            insumos.push_back(string_para_epi(entrada));
 
         }
     }

@@ -58,7 +58,7 @@ public:
 
     bool insumo_existe(const std::string codigo);
 
-
+    void cadastrar_insumo(std::string tipoInsumo);
     void cadastrar_vacina();
     void cadastrar_medicamentos();
     void cadastrar_epis();
