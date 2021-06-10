@@ -203,7 +203,7 @@ void Controlador::exibir_insumo_detalhado(Insumos &insumo) {
 }
 
 
-int Controlador::loop_hole() {
+int Controlador::iniciar_programa() {
     int escolha;
 
     std::vector<Insumos*> _insumos = persistencia.carregar_insumos();

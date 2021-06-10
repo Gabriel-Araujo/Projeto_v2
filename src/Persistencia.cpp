@@ -17,39 +17,15 @@ void Persistencia::criar_estoques() {
     if (!filesystem::exists(VACINA_ENDERECO)) {
         ofstream createfile(VACINA_ENDERECO);
         createfile.close();
-        add_header_to_file(vacina_header, VACINA_ENDERECO);
     }
     if (!filesystem::exists(MEDICAMENTO_ENDERECO)) {
         ofstream createfile(MEDICAMENTO_ENDERECO);
         createfile.close();
-        add_header_to_file(medicamento_header, MEDICAMENTO_ENDERECO);
     }
     if (!filesystem::exists(EPI_ENDERECO)) {
         ofstream createfile(EPI_ENDERECO);
         createfile.close();
-        add_header_to_file(epi_header, EPI_ENDERECO);
     }
-}
-
-
-void Persistencia::add_header_to_file(string a_header, string endereco) {
-    /**
-     * Os itens do header devem ser separados por virgula, e no final deve ter um \n.
-     *
-     * Primeiro verifica se o arquivo existe.
-     * Se n�o existir, exibi mensagem de erro.
-     * Se existir adiciona o header no arquivo.
-     **/
-
-    fstream file(endereco);
-
-    if (file.fail()) {
-        cout << "Arquivo nao existe." << endl;
-    }
-    else {
-        file << a_header;
-    }
-    file.close();
 }
 
 
@@ -193,6 +169,7 @@ Medicamento* Persistencia::string_para_medicamento(const std::string s) {
     return new Medicamento(nome, qnt_itens, valor, d_vencimento, nome_fab, local, codigo_unico, dosagem, administracao, disposicao);
 }
 
+
 EPI* Persistencia::string_para_epi(const std::string s) {
     Vacina saida;
     string insumo = s;
@@ -253,47 +230,25 @@ vector<Insumos *> Persistencia::carregar_insumos() {
     fstream epi(EPI_ENDERECO, iostream::in);
 
     while (!vacinas.eof()) {
-        if (conta == 0) {
-            getline(vacinas, entrada);
-            conta++;
-            continue;
-        }
         getline(vacinas, entrada);
         if (size(entrada) != 0) {
-
             insumos.push_back(string_para_vacina(entrada));
-
         }
     }
 
     while (!medicamento.eof()) {
-        if (conta == 0) {
-            getline(medicamento, entrada);
-            conta++;
-            continue;
-        }
         getline(medicamento, entrada);
         if (size(entrada) != 0) {
-
             insumos.push_back(string_para_medicamento(entrada));
-
         }
     }
 
     while (!epi.eof()) {
-        if (conta == 0) {
-            getline(epi, entrada);
-            conta++;
-            continue;
-        }
         getline(epi, entrada);
         if (size(entrada) != 0) {
-
             insumos.push_back(string_para_epi(entrada));
-
         }
     }
-
         return insumos;
 }
 

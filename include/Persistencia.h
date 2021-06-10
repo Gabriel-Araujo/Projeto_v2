@@ -21,7 +21,6 @@ class Persistencia
         Persistencia();
         virtual ~Persistencia();
         // IMPLEMENTADOS
-        void add_header_to_file(std::string a_header, std::string endereco);
         void criar_estoques();
 
         void Salvar_Insumos(std::vector<Insumos*> insumos);
@@ -49,7 +48,7 @@ class Persistencia
         std::string MEDICAMENTO_ENDERECO = "database/medicamentos.csv";
         std::string EPI_ENDERECO = "database/epis.csv";
 
-        bool estoques_existem();
+
         static Vacina* string_para_vacina(std::string s);
         static Medicamento* string_para_medicamento(std::string s);
         static EPI* string_para_epi(std::string s);

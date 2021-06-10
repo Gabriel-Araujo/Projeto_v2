@@ -51,7 +51,7 @@ class Controlador
 
         bool tipo_existe(std::string tipo);
 
-        int loop_hole();
+        int iniciar_programa();
 
         // Funções de consulta:
         /*

@@ -11,20 +11,16 @@ using namespace std;
 
 int main()
 {
-    //Persistencia persistencia;
-    system("chcp 65001");
-
     Controlador controlador;
 
-    controlador.loop_hole();
-    //teste 2
-    //controlador.loop_hole();
+
+    system("chcp 65001");
 
 
+    controlador.iniciar_programa();
 
 
-
-    cout << "Hello world!" << endl;
+    cout << "Programa encerrou com sucesso." << endl;
 
     return 0;
 }
