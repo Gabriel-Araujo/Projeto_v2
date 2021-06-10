@@ -3,11 +3,9 @@
 
 #include "include/Vacina.h"
 #include "include/Controlador.h"
-#include "include/Persistencia.h"
 
 using namespace std;
 
-#define CLEAR_DEFINE "cls"
 
 int main()
 {
