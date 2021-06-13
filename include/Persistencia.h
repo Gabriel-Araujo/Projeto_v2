@@ -13,8 +13,6 @@
 #include <fstream>
 #include <vector>
 
-
-
 class Persistencia
 {
     public:

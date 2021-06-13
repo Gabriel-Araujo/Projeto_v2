@@ -24,7 +24,6 @@ Local::~Local(){
 Insumos* Local::get_insumo(const std::string& codigo) {
     for (auto item: insumos) {
         if (item->getCodigoUnico() == codigo) {
-            //std::cout << "Vai passar..." << std::endl;
             return item;
         }
     }
@@ -83,30 +82,6 @@ void Local::adicionar_insumo(Insumos *insumo) {
     //persiste.Salvar_Insumos(insumos, local);
 
 }
-
-
-void Local::exibir_insumos_quantidade()
-{
-    menus.exibir_quantidades(insumos);
-}
-
-
-void Local::exibir_insumos_descricao()
-{
-    menus.exibir_formatado(insumos);
-}
-
-
-void Local::exibir_insumos_total()
-{
-    menus.exibir_total(insumos);
-}
-
-
-void Local::exibir_insumos() {
-    menus.exibir_formatado(insumos);
-}
-
 
 void Local::exibir_insumos_por_tipo(const std::string& tipo) {
     std::vector<Insumos*> generico;
@@ -186,116 +161,6 @@ int Local::get_insumos_quantidade() {
     }
     return quantidade;
 }
-
-
-void Local::cadastrar_vacina() {
-    std::string nome, vencimento, fabricante, local, codigo, tipo_vacina;
-    int quantidade, valor_unitario, quant_doses, intervalo;
-
-
-    std::cout << "Digite o codigo unico:" << std::endl;
-    getline(std::cin, codigo);
-    std::cout << "Digite o nome da vacina: " << std::endl;
-    getline(std::cin, nome);
-
-    std::cout << "Digite a quantidade a ser cadastrada: " << std::endl;
-    std::cin >> quantidade;
-    std::cout << "Digite o preço unitario: " << std::endl;
-    std::cin >> valor_unitario;
-    getchar();
-
-    std::cout << "Digite a data de vencimento (DD/MM/AAAA): " << std::endl;
-    getline(std::cin, vencimento);
-    std::cout << "Digite o nome do fabricante: " << std::endl;
-    getline(std::cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    std::cout << "Digite um tipo vacina: " << std::endl;
-    getline(std::cin, tipo_vacina);
-
-    std::cout << "Digite a quantidade de doses: " << std::endl;
-    std::cin >> quant_doses;
-
-    std::cout << "Digite o tempo entre doses: " << std::endl;
-    std::cin >> intervalo;
-
-    auto vacina = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
-
-
-    insumos.push_back(vacina);
-}
-
-
-void Local::cadastrar_medicamentos() {
-    std::string nome, vencimento, fabricante, local, codigo, tipo_vacina, dosagem, disposicao, administracao;
-    int quantidade, valor_unitario;
-
-    std::cout << "Digite o codigo unico:" << std::endl;
-    getline(std::cin, codigo);
-    std::cout << "Digite o nome do Medicamento: " << std::endl;
-    getline(std::cin, nome);
-
-    std::cout << "Digite a quantidade a ser cadastrada: " << std::endl;
-    std::cin >> quantidade;
-    std::cout << "Digite o preço unitario: " << std::endl;
-    std::cin >> valor_unitario;
-    getchar();
-
-    std::cout << "Digite a data de vencimento (DD/MM/AAAA): " << std::endl;
-    getline(std::cin, vencimento);
-    std::cout << "Digite o nome do fabricante: " << std::endl;
-    getline(std::cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    std::cout << "Informe a dosagem do Medicamento: " << std::endl;
-    getline(std::cin, dosagem);
-
-    std::cout << "Informe a administracao do Medicamento: " << std::endl;
-    getline(std::cin, administracao);
-
-    std::cout << "Informe a disposicao do Medicamento: " << std::endl;
-    getline(std::cin, disposicao);
-
-    auto medicamento = new Medicamento(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, dosagem, administracao, disposicao);
-
-    insumos.push_back(medicamento);
-}
-
-
-void Local::cadastrar_epis() {
-    std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao;
-    int quantidade, valor_unitario;
-
-    std::cout << "Digite o codigo unico:" << std::endl;
-    getline(std::cin, codigo);
-    std::cout << "Digite o nome do EPI: " << std::endl;
-    getline(std::cin, nome);
-
-    std::cout << "Digite a quantidade a ser cadastrada: " << std::endl;
-    std::cin >> quantidade;
-    std::cout << "Digite o preço unitario: " << std::endl;
-    std::cin >> valor_unitario;
-    getchar();
-
-    std::cout << "Digite a data de vencimento (DD/MM/AAAA): " << std::endl;
-    getline(std::cin, vencimento);
-    std::cout << "Digite o nome do fabricante: " << std::endl;
-    getline(std::cin, fabricante);
-
-    local = "MINISTÉRIO DA SAÚDE";
-
-    std::cout << "Informe o tipo da epi: " << std::endl;
-    getline(std::cin, tipo_epi);
-    std::cout << "Informe a descricap do EPI: " << std::endl;
-    getline(std::cin, descricao);
-
-    auto epi = new EPI(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_epi, descricao);
-
-    insumos.push_back(epi);
-}
-
 
 void Local::cadastrar_insumo(std::string tipoInsumo) {
     std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao, tipo_vacina, dosagem, administracao, disposicao;

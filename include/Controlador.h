@@ -14,16 +14,14 @@
 #include <algorithm>
 #include <iostream>
 #include <iterator>
+#include <exception>
 
-
-class Controlador
+class Controlador: public std::exception
 {
     private:
         std::array<Local, 29> locais;
         std::array<std::string, 3> tipos_possiveis = {"vacina", "medicamento", "epi"};
-        void cadastrar_vacina();
-        void cadastrar_medicamentos();
-        void cadastrar_epis();
+
         Menu menus;
         Persistencia persistencia;
 
@@ -34,15 +32,16 @@ class Controlador
     public:
         Controlador();
         virtual ~Controlador();
+
         //Funcoes de cadastro
         void CadastroInsumo(std::string tipoInsumo);
 
-
+        //Funções de distribuição
         int distribuir_vacina_para(const std::string estado, const std::string codigo, const int quantidade);
         int distribuir_medicamento_para(const std::string estado, const std::string codigo, const int quantidade);
         int distribuir_epi_para(const std::string estado, std::string codigo, int quantidade);
 
-
+        //Funções de menus
         void exibir_menus(int escolha);
         void exibir_menus_cadastro();
         void exibir_menus_distribuir();
@@ -52,15 +51,6 @@ class Controlador
         bool tipo_existe(std::string tipo);
 
         int iniciar_programa();
-
-        // Funções de consulta:
-        /*
-        void Consultar_estoque_local(const string local, int choice); // testar
-        void Consult(t_insumos *ins, int escolha);
-        void Consult_est(t_est *est, int escolha);
-        void consult_est_especifico(t_est *est, std::string busca);
-        */
-
 
     void exibir_insumo_detalhado(Insumos &insumo);
 };

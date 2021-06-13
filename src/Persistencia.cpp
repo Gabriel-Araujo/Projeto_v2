@@ -40,8 +40,7 @@ void Persistencia::Salvar_Insumos(std::vector<Insumos*> ins)
     epi_database.open(EPI_ENDERECO, fstream::app);
 
     if (vacina_database.fail() || medicamento_database.fail() || epi_database.fail()) {
-        cout << "não foi possível abrir um dos arquivos." << endl;
-        return;
+        throw "Porém, não foi possível abrir os arquivos\n";
     }
 
     for (auto &item: ins) {

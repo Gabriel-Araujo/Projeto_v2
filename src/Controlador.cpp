@@ -52,8 +52,13 @@ Controlador::~Controlador()
         std::vector<Insumos*> l = local.getInsumos();
         _insumos_fim.insert(_insumos_fim.end(), l.begin(), l.end());
     }
-
-    persistencia.Salvar_Insumos(_insumos_fim);
+    try{
+        persistencia.Salvar_Insumos(_insumos_fim);
+        std::cout << "Dados salvos com sucesso" << std::endl;
+     }
+    catch(const char *retornoException){
+        std::cout << retornoException << std::endl;
+    }
 }
 
 void Controlador::CadastroInsumo(string tipo_ins) {
@@ -168,7 +173,6 @@ int Controlador::distribuir_epi_para(const std::string estado, std::string codig
     }
     return 0;
 }
-
 
 bool Controlador::local_existe(std::string &local) {
     bool test_sigla =  any_of(locais.begin(), locais.end(),[&local](Local &elem) {return elem.get_sigla() == local;});
@@ -472,9 +476,7 @@ void Controlador::exibir_menus_consulta_estados(){
         getline(cin, escolha_submenu_3);
         system(CLEAR_DEFINE);
 
-        //Insumos *insumo = local.get_insumo(escolha_submenu_3);
-
-        //exibir_insumo_detalhado(insumo);
+        local.exibir_insumo_detalhado(escolha_submenu_3);
 
         system(WAIT_DEFINE);
         return;
