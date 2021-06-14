@@ -1,3 +1,14 @@
+/**
+ * Integrantes :
+ *      - DAVID WILSON MELO SANTOS
+ *      - GABRIEL SOUZA CRUZ ARAUJO
+ *      - LUCAS EDUARDO MELO ALVES
+ *
+ * Versão mínima do compilador C++: 17
+ * Compilar para windows
+ */
+
+
 #include <iostream>
 #include <string>
 
