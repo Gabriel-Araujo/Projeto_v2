@@ -15,7 +15,7 @@ class EPI : public Insumos
         void exibir() override;
 
         virtual void get_especifico(std::ofstream &fp);
-        virtual std::string para_string();
+        virtual std::string para_string() override;
 
         std::string get_tipo_epi();
         std::string get_descricao();

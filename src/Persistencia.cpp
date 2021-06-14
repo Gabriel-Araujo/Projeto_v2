@@ -212,8 +212,8 @@ EPI* Persistencia::string_para_epi(const std::string s) {
     string tp_epi = insumo.substr(0, index);
     insumo = insumo.substr(index+2, insumo.size());
 
-    index = insumo.find(", ");
-    string descricao = insumo.substr(0, index-1);
+
+    string descricao = insumo;
 
     return new EPI(nome, qnt_itens, valor, d_vencimento, nome_fab, local, codigo_unico, tp_epi, descricao);
 }
