@@ -8,8 +8,13 @@
 
 #include <vector>
 #include <array>
+#include <exception>
+#include <algorithm>
+#include <iostream>
+#include <utility>
+#include <type_traits>
 
-class Local
+class Local: private std::exception
 {
 private:
     std::string nome_extenso;

@@ -1,7 +1,5 @@
 #include "../include/Local.h"
-#include <algorithm>
-#include <iostream>
-#include <utility>
+
 
 Local::Local()
 {
@@ -163,19 +161,38 @@ int Local::get_insumos_quantidade() {
 }
 
 void Local::cadastrar_insumo(std::string tipoInsumo) {
-    std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao, tipo_vacina, dosagem, administracao, disposicao;
+    std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao, tipo_vacina, dosagem, administracao, disposicao, _quantidade, _valor_unitario, _quant_doses, _intervalo;
     int quantidade, valor_unitario, quant_doses, intervalo;
 
     std::cout << "Digite o codigo unico:" << std::endl;
     getline(std::cin, codigo);
+
+    if (insumo_existe(codigo)) {
+        throw std::runtime_error("Código já existe");
+    }
+
     std::cout << "Digite o nome do produto: " << std::endl;
     getline(std::cin, nome);
 
     std::cout << "Digite a quantidade a ser cadastrada: " << std::endl;
-    std::cin >> quantidade;
+    getline(std::cin, _quantidade);
+
+    try {
+    quantidade = stoi(_quantidade);
+    }
+    catch (std::invalid_argument& err) {
+        throw std::runtime_error("Não foi passado um número inteiro em:\n quantidade.");
+    }
+
     std::cout << "Digite o preço unitario: " << std::endl;
-    std::cin >> valor_unitario;
-    getchar();
+    std::getline(std::cin, _valor_unitario);
+
+    try {
+        valor_unitario = stoi(_valor_unitario);
+    }
+    catch (std::invalid_argument& err) {
+        throw std::runtime_error("Não foi passado um número inteiro em:\n preço unitario.");
+    }
 
     std::cout << "Digite a data de vencimento (DD/MM/AAAA): " << std::endl;
     getline(std::cin, vencimento);
@@ -189,10 +206,24 @@ void Local::cadastrar_insumo(std::string tipoInsumo) {
         getline(std::cin, tipo_vacina);
 
         std::cout << "Digite a quantidade de doses: " << std::endl;
-        std::cin >> quant_doses;
+        std::getline(std::cin, _quant_doses);
+
+        try {
+            quant_doses = stoi(_quant_doses);
+        }
+        catch (std::invalid_argument& err) {
+            throw std::runtime_error("Não foi passado um número inteiro em:\n quantidade de doses.");
+        }
 
         std::cout << "Digite o tempo entre doses: " << std::endl;
-        std::cin >> intervalo;
+        std::getline(std::cin, _intervalo);
+
+        try {
+            intervalo = stoi(_intervalo);
+        }
+        catch (std::invalid_argument& err) {
+            throw std::runtime_error("Não foi passado um número inteiro em:\n intervalo.");
+        }
 
         auto insumo = new Vacina(nome, quantidade, valor_unitario, vencimento, fabricante, local, codigo, tipo_vacina, quant_doses, intervalo);
         insumos.push_back(insumo);

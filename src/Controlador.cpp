@@ -64,8 +64,14 @@ Controlador::~Controlador()
 void Controlador::CadastroInsumo(string tipo_ins) {
     transform(tipo_ins.begin(), tipo_ins.end(), tipo_ins.begin(), [](char c){ return tolower(c);});
 
+    try{
     locais.at(get_local_index("MIN")).cadastrar_insumo(tipo_ins);
-
+    }
+    catch (runtime_error& err){
+        cerr << err.what()<< endl;
+        system(WAIT_DEFINE);
+        return;
+    }
 }
 
 
@@ -198,27 +204,6 @@ bool Controlador::tipo_existe(std::string tipo) {
     transform(tipo.begin(), tipo.end(), tipo.begin(), [](char c) {return tolower(c);});
 
     return any_of(tipos_possiveis.begin(), tipos_possiveis.end(), [&tipo](std::string &item){return item == tipo;});
-}
-
-
-void Controlador::exibir_insumo_detalhado(Insumos &insumo) {
-    if (insumo.getNome() == "NULL") {return;}
-    std::string tipo_do_insumo = insumo.get_tipo();
-    std::string codigo_do_insumo = insumo.getCodigoUnico();
-    Local local = locais.at(get_local_index(insumo.get_local()));
-
-    if(tipo_do_insumo == "vacina") {
-        Vacina *vacina = local.get_vacina(codigo_do_insumo);
-        vacina->exibir();
-    }
-    else if (tipo_do_insumo == "medicamento") {
-        Medicamento *medicamento = local.get_medicamento(codigo_do_insumo);
-        medicamento->exibir();
-    }
-    else if (tipo_do_insumo == "epi") {
-        EPI *epi = local.get_epi(codigo_do_insumo);
-        epi->exibir();
-    }
 }
 
 

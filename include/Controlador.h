@@ -51,8 +51,6 @@ class Controlador: public std::exception
         bool tipo_existe(std::string tipo);
 
         int iniciar_programa();
-
-    void exibir_insumo_detalhado(Insumos &insumo);
 };
 
 #endif // CONTROLER_H
