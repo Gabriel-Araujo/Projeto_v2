@@ -172,7 +172,7 @@ void Local::cadastrar_insumo(std::string tipoInsumo) {
     int quantidade, valor_unitario, quant_doses, intervalo;
 
 
-    if (!insumo_existe(tipoInsumo)) {
+    if (!tipo_existe(tipoInsumo)) {
         throw std::runtime_error("Tipo não existe.");
     }
 
