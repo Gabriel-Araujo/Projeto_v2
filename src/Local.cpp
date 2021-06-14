@@ -105,6 +105,13 @@ bool Local::insumo_existe(const std::string codigo) {
 }
 
 
+bool Local::tipo_existe(std::string tipo) {
+    transform(tipo.begin(), tipo.end(), tipo.begin(), [](char c) {return tolower(c);});
+
+    return any_of(tipos_possiveis.begin(), tipos_possiveis.end(), [&tipo](std::string &item){return item == tipo;});
+}
+
+
 int Local::get_insumo_index(const std::string codigo) {
     for (unsigned int index = 0; index < insumos.size(); index++) {
         if (insumos.at(index)->getCodigoUnico() == codigo) {return index;}
@@ -163,6 +170,11 @@ int Local::get_insumos_quantidade() {
 void Local::cadastrar_insumo(std::string tipoInsumo) {
     std::string nome, vencimento, fabricante, local, codigo, tipo_epi, descricao, tipo_vacina, dosagem, administracao, disposicao, _quantidade, _valor_unitario, _quant_doses, _intervalo;
     int quantidade, valor_unitario, quant_doses, intervalo;
+
+
+    if (!insumo_existe(tipoInsumo)) {
+        throw std::runtime_error("Tipo não existe.");
+    }
 
     std::cout << "Digite o codigo unico:" << std::endl;
     getline(std::cin, codigo);

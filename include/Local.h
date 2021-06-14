@@ -20,6 +20,7 @@ private:
     std::string nome_extenso;
     std::string sigla;
     std::vector<Insumos*> insumos;
+    std::array<std::string, 3> tipos_possiveis = {"vacina", "medicamento", "epi"};
     Menu menus;
 
 
@@ -59,7 +60,7 @@ public:
     void exibir_insumo_detalhado(std::string codigo);
 
     bool insumo_existe(const std::string codigo);
-
+    bool tipo_existe(std::string tipo);
     void cadastrar_insumo(std::string tipoInsumo);
 
 
